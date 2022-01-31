@@ -85,7 +85,7 @@ proxies:
     udp: true
     type: trojan
     password: 3a357238-cc62-4995-8568-e15fa21538a3
-    sni: p16-tiktokcdn-com.akamaized.net&security=xtls&flow=xtls-rprx-direct
+    sni: p16-tiktokcdn-com.akamaized.net
     skip-cert-verify: true
     
   - name: Trojan ws SSL/TLS
@@ -102,12 +102,44 @@ proxies:
     sni: p16-tiktokcdn-com.akamaized.net
     skip-cert-verify: true
     
+  - name: vless WS
+    server: vip02.darktunnel.net
+    port: 80
+    type: vless
+    uuid: 3a357238-cc62-4995-8568-e15fa21538a3
+    cipher: auto
+    tls: null
+    skip-cert-verify: true
+    udp: true
+    network: ws
+    ws-opts:
+      path: vless-ws
+      headers:
+        Host: p16-tiktokcdn-com.akamaized.net
+        
+  - name: vless ws tls XRay
+    server: vip02.darktunnel.net
+    port: 443
+    type: vless
+    uuid: 3a357238-cc62-4995-8568-e15fa21538a3
+    sni: 3a357238-cc62-4995-8568-e15fa21538a3@vip02.darktunnel.net:443/?path=vless-ws&security=tls&encryption=none&type=ws&sni=p16-tiktokcdn-com.akamaized.net
+    cipher: auto
+    tls: true
+    skip-cert-verify: true
+    udp: true
+    network: ws
+    ws-opts:
+      path: vless-ws
+      headers:
+        Host: 3a357238-cc62-4995-8568-e15fa21538a3@vip02.darktunnel.net:443/?path=vless-ws
+        
 proxy-groups:
   - name: DARKTUNNEL.NET VIP
     type: select
     proxies:
       - VMESS VIP
       - TROJAN VIP
+      - VLESS VIP
   - name: VMESS VIP
     type: select
     proxies:
@@ -121,5 +153,10 @@ proxy-groups:
       - Trojan SSL/TLS
       - Trojan XTLS
       - Trojan ws SSL/TLS
+  - name: VLESS VIP
+    type: select
+    proxies:
+    - vless WS
+    - vless ws tls XRay
 rules:
   - MATCH,DARKTUNNEL.NET VIP
