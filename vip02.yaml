@@ -256,7 +256,7 @@ proxies:
         Host: 3a357238-cc62-4995-8568-e15fa21538a3@vip02.darktunnel.net:443/?path=vless-ws
         
 proxy-groups:
-  - name: DARKTUNNEL.NET VIP
+  - name: DARKTUNNEL.NET VIP02
     type: select
     proxies:
       - VMESS VIP
@@ -291,4 +291,4 @@ rule-providers:
     
 rules:
   - RULE-SET,Ads,REJECT
-  - MATCH,DARKTUNNEL.NET VIP
+  - MATCH,DARKTUNNEL.NET VIP02
