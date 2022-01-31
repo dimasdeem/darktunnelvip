@@ -7,7 +7,7 @@ proxies:
     port: 443
     type: vmess
     uuid: 3a357238-cc62-4995-8568-e15fa21538a3
-    sni: 
+    sni: p16-tiktokcdn-com.akamaized.net
     alterId: 0
     cipher: auto
     tls: 1
@@ -17,7 +17,7 @@ proxies:
     ws-opts:
       path: /vmess-ws
       headers:
-        Host: 
+        Host: p16-tiktokcdn-com.akamaized.net
     
   - name: VMess WS CDN noTLS
     server: p16-tiktokcdn-com.akamaized.net
