@@ -150,11 +150,12 @@ proxy-groups:
     proxies:
     - vless WS
     - vless ws tls XRay
+    
 rule-providers:
   Ads:
     type: http
     behavior: classical
-    path: "./rule_provider/Ads.yaml"
+    path: "./rule_provider/Advertising_Classical.yaml"
     url: https://raw.githubusercontent.com/dimasdeem/ClashMaster/main/Advertising_Classical.yaml
     interval: 86400
 rules:
