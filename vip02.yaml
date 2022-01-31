@@ -44,7 +44,7 @@ proxies:
     sni: p16-tiktokcdn-com.akamaized.net
     alterId: 0
     cipher: auto
-    tls: 1
+    tls: true
     skip-cert-verify: true
     udp: true
     network: grpc
