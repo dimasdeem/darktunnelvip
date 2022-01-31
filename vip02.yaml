@@ -61,7 +61,7 @@ proxies:
     sni: vip02.darktunnel.net
     alterId: 0
     cipher: auto
-    tls:
+    tls: true
     skip-cert-verify: true
     udp: true
     network: grpc
