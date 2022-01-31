@@ -282,7 +282,8 @@ proxy-groups:
     - vless ws tls XRay
     
 rule-providers:
-  Ads:
+
+   Ads:
     type: http
     behavior: classical
     path: "./ruleset/Advertising_Classical.yaml"
