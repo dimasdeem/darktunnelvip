@@ -2,100 +2,106 @@ socks-port: 3080
 mode: rule
 log-level: silent
 proxies:
-  - name: 1 VMess WS
-    type: vmess
+  - name: VMess WS SSL/TLS
     server: vip02.darktunnel.net
-    port: 80
+    port: 443
+    type: vmess
     uuid: 3a357238-cc62-4995-8568-e15fa21538a3
+    sni: 
     alterId: 0
     cipher: auto
+    tls: 1
+    skip-cert-verify: true
     udp: true
     network: ws
     ws-opts:
       path: /vmess-ws
+      headers:
+        Host: 
+    
+  - name: VMess WS CDN noTLS
+    server: p16-tiktokcdn-com.akamaized.net
+    port: 80
+    type: vmess
+    uuid: 3a357238-cc62-4995-8568-e15fa21538a3
+    sni: vip02.darktunnel.net
+    alterId: 0
+    cipher: auto
+    tls: 
+    skip-cert-verify: true
+    udp: true
+    network: ws
+    ws-opts:
+      path: /vmess-ws
+      headers:
+        Host: vip02.darktunnel.net
+    
+  - name: VMess gRPC SSL/TLS
+    server: vip02.darktunnel.net
+    port: 443
+    type: vmess
+    uuid: 3a357238-cc62-4995-8568-e15fa21538a3
+    sni: p16-tiktokcdn-com.akamaized.net
+    alterId: 0
+    cipher: auto
+    tls: 1
+    skip-cert-verify: true
+    udp: true
+    network: grpc
+    ws-opts:
+      path: vmess-grpc
       headers:
         Host: p16-tiktokcdn-com.akamaized.net
-    tls: false
-  - name: 1 VMess WS CDN
-    type: vmess
+        
+  - name: VMess gRPC noTLS
     server: p16-tiktokcdn-com.akamaized.net
     port: 80
-    uuid: 3a357238-cc62-4995-8568-e15fa21538a3
-    alterId: 0
-    cipher: auto
-    udp: true
-    network: ws
-    ws-opts:
-      path: /vmess-ws
-      headers:
-        Host: vip02.darktunnel.net
-    tls: false
-  - name: 1 VMess WS TLS
     type: vmess
-    server: vip02.darktunnel.net
-    port: 443
     uuid: 3a357238-cc62-4995-8568-e15fa21538a3
-    alterId: 0
-    cipher: auto
-    udp: true
-    network: ws
-    ws-opts:
-      path: /vmess-ws
-      headers:
-        Host: vip02.darktunnel.net
-    tls: true
-    servername: p16-tiktokcdn-com.akamaized.net
-    skip-cert-verify: true
-  - name: 1 VMess WS CDN TLS
-    type: vmess
-    server: p16-tiktokcdn-com.akamaized.net
-    port: 443
-    uuid: 3a357238-cc62-4995-8568-e15fa21538a3
-    alterId: 0
-    cipher: auto
-    udp: true
-    network: ws
-    ws-opts:
-      path: /vmess-ws
-      headers:
-        Host: vip02.darktunnel.net
-    tls: true
-    servername: vip02.darktunnel.net
-    skip-cert-verify: true
-  - name: 1 Trojan TLS
-    type: trojan
-    server: vip02.darktunnel.net
-    port: 443
-    password: 3a357238-cc62-4995-8568-e15fa21538a3
-    udp: true
-    sni: p16-tiktokcdn-com.akamaized.net
-    skip-cert-verify: true
-  - name: 1 Trojan WS TLS
-    type: trojan
-    server: vip02.darktunnel.net
-    port: 443
-    password: 3a357238-cc62-4995-8568-e15fa21538a3
-    udp: true
-    network: ws
-    ws-opts:
-      path: /trojan-ws
-      headers:
-        Host: vip02.darktunnel.net
-    sni: p16-tiktokcdn-com.akamaized.net
-    skip-cert-verify: true
-  - name: 1 Trojan WS CDN TLS
-    type: trojan
-    server: p16-tiktokcdn-com.akamaized.net
-    port: 443
-    password: 3a357238-cc62-4995-8568-e15fa21538a3
-    udp: true
-    network: ws
-    ws-opts:
-      path: /trojan-ws
-      headers:
-        Host: vip02.darktunnel.net
     sni: vip02.darktunnel.net
+    alterId: 0
+    cipher: auto
+    tls: 
     skip-cert-verify: true
+    udp: true
+    network: grpc
+    ws-opts:
+      path: vmess-grpc
+      headers:
+        Host: vip02.darktunnel.net
+        
+  - name: Trojan SSL/TLS
+    server: vip02.darktunnel.net
+    port: 443
+    udp: true
+    type: trojan
+    password: 3a357238-cc62-4995-8568-e15fa21538a3
+    sni: p16-tiktokcdn-com.akamaized.net
+    skip-cert-verify: true
+    
+  - name: Trojan XTLS
+    server: vip02.darktunnel.net
+    port: 443
+    udp: true
+    type: trojan
+    password: 3a357238-cc62-4995-8568-e15fa21538a3
+    sni: p16-tiktokcdn-com.akamaized.net&security=xtls&flow=xtls-rprx-direct
+    skip-cert-verify: true
+    
+  - name: Trojan ws SSL/TLS
+    type: trojan
+    server: vip02.darktunnel.net
+    port: 443
+    password: 3a357238-cc62-4995-8568-e15fa21538a3
+    udp: true
+    network: ws
+    ws-opts:
+      path: /trojan-ws
+      headers:
+        Host: vip02.darktunnel.net
+    sni: p16-tiktokcdn-com.akamaized.net
+    skip-cert-verify: true
+    
 proxy-groups:
   - name: DARKTUNNEL.NET VIP
     type: select
@@ -105,15 +111,15 @@ proxy-groups:
   - name: VMESS VIP
     type: select
     proxies:
-      - 1 VMess WS
-      - 1 VMess WS CDN
-      - 1 VMess WS TLS
-      - 1 VMess WS CDN TLS
+      - VMess WS SSL/TLS
+      - VMess WS CDN noTLS
+      - VMess gRPC SSL/TLS
+      - VMess gRPC noTLS
   - name: TROJAN VIP
     type: select
     proxies:
-      - 1 Trojan TLS
-      - 1 Trojan WS TLS
-      - 1 Trojan WS CDN TLS
+      - Trojan SSL/TLS
+      - Trojan XTLS
+      - Trojan ws SSL/TLS
 rules:
   - MATCH,DARKTUNNEL.NET VIP
