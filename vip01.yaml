@@ -133,7 +133,7 @@ dns:
     
 proxies:
   - name: VMess WS SSL/TLS
-    server: vip01.darktunnel.net
+    server: sgdo-vip02.darktunnel.net
     port: 443
     type: vmess
     uuid: 3a357238-cc62-4995-8568-e15fa21538a3
@@ -163,9 +163,9 @@ proxies:
     ws-opts:
       path: /vmess-ws
       headers:
-        Host: vip01.darktunnel.net
+        Host: sgdo-vip02.darktunnel.net
   - name: VMess gRPC SSL/TLS
-    server: vip01.darktunnel.net
+    server: sgdo-vip02.darktunnel.net
     port: 443
     type: vmess
     uuid: 3a357238-cc62-4995-8568-e15fa21538a3
@@ -195,9 +195,9 @@ proxies:
     ws-opts:
       path: vmess-grpc
       headers:
-        Host: vip01.darktunnel.net
+        Host: sgdo-vip02.darktunnel.net
   - name: Trojan SSL/TLS
-    server: vip01.darktunnel.net
+    server: sgdo-vip02.darktunnel.net
     port: 443
     udp: true
     type: trojan
@@ -214,7 +214,7 @@ proxies:
     skip-cert-verify: true
   - name: Trojan ws SSL/TLS
     type: trojan
-    server: vip01.darktunnel.net
+    server: sgdo-vip02.darktunnel.net
     port: 443
     password: 3a357238-cc62-4995-8568-e15fa21538a3
     udp: true
@@ -226,7 +226,7 @@ proxies:
     sni: p16-tiktokcdn-com.akamaized.net
     skip-cert-verify: true
   - name: vless WS
-    server: vip01.darktunnel.net
+    server: sgdo-vip02.darktunnel.net
     port: 80
     type: vless
     uuid: 3a357238-cc62-4995-8568-e15fa21538a3
@@ -240,7 +240,7 @@ proxies:
       headers:
         Host: p16-tiktokcdn-com.akamaized.net
   - name: vless ws tls XRay
-    server: vip01.darktunnel.net
+    server: sgdo-vip02.darktunnel.net
     port: 443
     type: vless
     uuid: 3a357238-cc62-4995-8568-e15fa21538a3
