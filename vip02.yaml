@@ -281,14 +281,6 @@ proxy-groups:
     - ID vless WS TLS
     - ID vless ws XRay SSL
     
-rule-providers:
-   Ads:
-    type: http
-    behavior: classical
-    path: /Advertising_Classical.yaml
-    url: https://raw.githubusercontent.com/dimasdeem/ClashMaster/main/Advertising_Classical.yaml
-    interval: 86400
-    
 rules:
   - RULE-SET,Ads,REJECT
   - MATCH,SERVER
