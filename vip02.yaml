@@ -1,13 +1,13 @@
 ---
 port: 7890
-socks-port: 7891
+socks-port: 3080
 redir-port: 7892
 tproxy-port: 7895
 mixed-port: 7893
 allow-lan: true
 bind-address: "*"
 mode: rule
-log-level: info
+log-level: silent
 external-controller: 0.0.0.0:9090
 dns:
   enable: true
