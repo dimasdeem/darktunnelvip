@@ -148,7 +148,7 @@ proxies:
       path: /vmess-ws
       headers:
         Host: p16-tiktokcdn-com.akamaized.net
-  - name: ID VMess WS TLS
+  - name: ID VMess TLS
     server: 104.22.25.131
     port: 80
     type: vmess
@@ -256,7 +256,7 @@ proxies:
         Host: 3a357238-cc62-4995-8568-e15fa21538a3@vip02.darktunnel.net:443/?path=vless-ws
         
 proxy-groups:
-  - name: METODE
+  - name: SERVER
     type: select
     proxies:
       - VMESS VIP
@@ -266,7 +266,7 @@ proxy-groups:
     type: select
     proxies:
       - ID VMess SSL
-      - ID VMess WS TLS
+      - ID VMess TLS
       - ID VMess gRPC SSL
       - ID VMess gRPC TLS
   - name: TROJAN VIP
@@ -276,10 +276,10 @@ proxy-groups:
       - ID Trojan XTLS
       - ID Trojan ws SSL
   - name: VLESS VIP
-    type: selectID Trojan ws SSL
+    type: select
     proxies:
     - ID vless WS TLS
     - ID vless ws XRay SSL
     
 rules:
-  - MATCH,METODE
+  - MATCH,SERVER
