@@ -132,20 +132,17 @@ dns:
     - "+.facebook.com"
     - "+.youtube.com"
     - "+.githubusercontent.com"
-
 tun:
   enable: true
   stack: gvisor
   dns-hijack:
   - tcp://8.8.8.8:53
   - tcp://8.8.4.4:53
-  
 profile:
   store-selected: true
   store-fake-ip: true
 experimental:
   interface-name: eth0
-    
 proxies:
   - name: ID VMess SSL
     server: vip02.darktunnel.net
@@ -164,6 +161,22 @@ proxies:
       headers:
         Host: p16-tiktokcdn-com.akamaized.net
   - name: ID VMess TLS
+    server: vip02.darktunnel.net
+    port: 80
+    type: vmess
+    uuid: 3a357238-cc62-4995-8568-e15fa21538a3
+    sni: p16-tiktokcdn-com.akamaized.net
+    alterId: 0
+    cipher: auto
+    tls:
+    skip-cert-verify: true
+    udp: true
+    network: ws
+    ws-opts:
+      path: /vmess-ws
+      headers:
+        Host: p16-tiktokcdn-com.akamaized.net
+  - name: ID VMess IPED VIP
     server: 104.22.25.131
     port: 80
     type: vmess
@@ -278,6 +291,11 @@ proxy-groups:
       - VMESS VIP
       - TROJAN VIP
       - VLESS VIP
+      - IPED VIP
+  - name: IPED VIP
+    type: select
+    proxies:
+      - ID VMess IPED VIP
   - name: VMESS VIP
     type: select
     proxies:
@@ -294,8 +312,8 @@ proxy-groups:
   - name: VLESS VIP
     type: select
     proxies:
-    - ID vless WS TLS
-    - ID vless ws XRay SSL
+      - ID vless WS TLS
+      - ID vless ws XRay SSL
     
 rules:
   - DOMAIN-SUFFIX,g.whatsapp.net,DIRECT
@@ -543,6 +561,65 @@ rules:
   - DOMAIN-SUFFIX,wiley.com,SERVER
   - DOMAIN-SUFFIX,worldbank.org,SERVER
   - DOMAIN-SUFFIX,worldscientific.com,SERVER
+  - DOMAIN-SUFFIX,wsa-sentry.shopeemobile.com,SERVER
+  - DOMAIN-SUFFIX,api.shopee.co.id,SERVER
+  - DOMAIN-SUFFIX,cf.shopee.co.id,SERVER
+  - DOMAIN-SUFFIX,deo.shopeemobile.com,SERVER
+  - DOMAIN-SUFFIX,mall.shopee.co.id,SERVER
+  - DOMAIN-SUFFIX,external2.shopee.co.id,SERVER
+  - DOMAIN-SUFFIX,shopee.co.id,SERVER
+  - DOMAIN-SUFFIX,games.shopee.co.id,SERVER
+  - DOMAIN-SUFFIX,livetech.shopee.co.id,SERVER
+  - DOMAIN-SUFFIX,data-rep.livetech.shopee.co.id,SERVER
+  - DOMAIN-SUFFIX,msdk.shopee.co.id,SERVER
+  - DOMAIN-SUFFIX,live.shopee.co.id,SERVER
+  - DOMAIN-SUFFIX,log-collector.shopee.co.id,SERVER
+  - DOMAIN-SUFFIX,play-tx.vod.shopee.com,SERVER
+  - DOMAIN-SUFFIX,feeds.shopee.co.id,SERVER
+  - DOMAIN-SUFFIX,cf.shopee.sg,SERVER
+  - DOMAIN-SUFFIX,df.infra.sz.shopee.co.id,SERVER
+  - DOMAIN-SUFFIX,play-ws.vod.shopee.com,SERVER
+  - DOMAIN-SUFFIX,seller-app.shopee.co.id,SERVER
+  - DOMAIN-SUFFIX,seller.shopee.sg,SERVER
+  - DOMAIN-SUFFIX,chatbot.shopee.co.id,SERVER
+  - DOMAIN-SUFFIX,uss.ms.shopee.co.id,SERVER
+  - DOMAIN-SUFFIX,play-tx.livestream.shopee.co.id,SERVER
+  - DOMAIN-SUFFIX,chatroom-live.shopee.co.id,SERVER
+  - DOMAIN-SUFFIX,c-api-bit.shopeemobile.com,SERVER
+  - DOMAIN-SUFFIX,lazada.co.id,SERVER
+  - DOMAIN-SUFFIX,acs-m.lazada.co.id,SERVER
+  - DOMAIN-SUFFIX,lzd-img-global.slatic.net,SERVER
+  - DOMAIN-SUFFIX,pages.lazada.co.id,SERVER
+  - DOMAIN-SUFFIX,member.lazada.co.id,SERVER
+  - DOMAIN-SUFFIX,my-m.lazada.co.id,SERVER
+  - DOMAIN-SUFFIX,retcode-sg-lazada.arms.aliyuncs.com,SERVER
+  - DOMAIN-SUFFIX,id-log-emagzal.lazada.com,SERVER
+  - DOMAIN-SUFFIX,s.lazada.co.id,SERVER
+  - DOMAIN-SUFFIX,id-pull.lazada-seller.cn,SERVER
+  - DOMAIN-SUFFIX,id-replay.lazada-seller.cn,SERVER
+  - DOMAIN-SUFFIX,filebroker-cdn.lazada.co.id,SERVER
+  - DOMAIN-SUFFIX,umlazada.alibaba.com,SERVER
+  - DOMAIN-SUFFIX,time-ak.alicdn.com,SERVER
+  - DOMAIN-SUFFIX,my.lazada.co.id,SERVER
+  - DOMAIN-SUFFIX,laz-img-cdn.alicdn.com,SERVER
+  - DOMAIN-SUFFIX,laz-g-cdn.alicdn.com,SERVER
+  - DOMAIN-SUFFIX,icms-image.slatic.net,SERVER
+  - DOMAIN-SUFFIX,fourier.taobao.com,SERVER
+  - DOMAIN-SUFFIX,cart.lazada.co.id,SERVER
+  - DOMAIN-SUFFIX,assets.alicdn.com,SERVER
+  - DOMAIN-SUFFIX,bukalapak.com,SERVER
+  - DOMAIN-SUFFIX,mitra.bukalapak.com,SERVER
+  - DOMAIN-SUFFIX,bukabantuan.bukalapak.com,SERVER
+  - DOMAIN-SUFFIX,api.bukalapak.com,SERVER
+  - DOMAIN-SUFFIX,t.bukalapak.com,SERVER
+  - DOMAIN-SUFFIX,static-hermes.bukalapak.com,SERVER
+  - DOMAIN-SUFFIX,s4.bukalapak.com,SERVER
+  - DOMAIN-SUFFIX,s3.bukalapak.com,SERVER
+  - DOMAIN-SUFFIX,s2.bukalapak.com,SERVER
+  - DOMAIN-SUFFIX,s1.bukalapak.com,SERVER
+  - DOMAIN-SUFFIX,s0.bukalapak.com,SERVER
+  - DOMAIN-SUFFIX,fragment.bukalapak.com,SERVER
+  - DOMAIN-SUFFIX,assets.bukalapak.com,SERVER
   - IP-CIDR,8.8.8.0/24,SERVER,VMESS VIP
   - IP-CIDR,1.1.1.0/24,SERVER,VMESS VIP
   - IP-CIDR,208.67.220.0/24,SERVER,VMESS VIP
