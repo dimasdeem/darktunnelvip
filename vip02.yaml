@@ -352,8 +352,34 @@ rules:
   - DOMAIN-SUFFIX,scontent-xsp1-2.cdninstagram.com,DIRECT
   - DOMAIN-SUFFIX,scontent.cdninstagram.com,DIRECT
   - DOMAIN-SUFFIX,instagram.fbdj2-1.fna.fbcdn.net,DIRECT
-  - DOMAIN-SUFFIX,www.youtube.com,SERVER
-  - DOMAIN-SUFFIX,i.ytimg.com,SERVER
+  - DOMAIN-SUFFIX,www.facebook.com,DIRECT
+  - DOMAIN-SUFFIX,static.xx.fbcdn.net,DIRECT
+  - DOMAIN-SUFFIX,web.facebook.com,DIRECT
+  - DOMAIN-SUFFIX,scontent.xx.fbcdn.net,DIRECT
+  - DOMAIN-SUFFIX,scontent-hkt1-2.xx.fbcdn.net,DIRECT
+  - DOMAIN-SUFFIX,graph.facebook.com,DIRECT
+  - DOMAIN-SUFFIX,gateway.facebook.com,DIRECT
+  - DOMAIN-SUFFIX,scontent-sin6-4.xx.fbcdn.net,DIRECT
+  - DOMAIN-SUFFIX,scontent-den4-1.xx.fbcdn.net,DIRECT
+  - DOMAIN-SUFFIX,scontent-xsp1-3.xx.fbcdn.net,DIRECT
+  - DOMAIN-SUFFIX,scontent-sin6-2.xx.fbcdn.net,DIRECT
+  - DOMAIN-SUFFIX,scontent-sin6-3.xx.fbcdn.net,DIRECT
+  - DOMAIN-SUFFIX,video-sin6-1.xx.fbcdn.net,DIRECT
+  - DOMAIN-SUFFIX,video-xsp1-3.xx.fbcdn.net,DIRECT
+  - DOMAIN-SUFFIX,video-xsp1-2.xx.fbcdn.net,DIRECT
+  - DOMAIN-SUFFIX,video-xsp1-1.xx.fbcdn.net,DIRECT
+  - DOMAIN-SUFFIX,video-sin6-2.xx.fbcdn.net,DIRECT
+  - DOMAIN-SUFFIX,video-sin6-3.xx.fbcdn.net,DIRECT
+  - DOMAIN-SUFFIX,video-sin6-4.xx.fbcdn.net,DIRECT
+  - DOMAIN-SUFFIX,scontent-sin6-1.xx.fbcdn.net,DIRECT
+  - DOMAIN-SUFFIX,edge-chat.facebook.com,DIRECT
+  - DOMAIN-SUFFIX,b-graph.facebook.com,DIRECT
+  - DOMAIN-SUFFIX,b-www.facebook.com,DIRECT
+  - DOMAIN-SUFFIX,scontent.fcgk6-2.fna.fbcdn.net,DIRECT
+  - DOMAIN-SUFFIX,mqtt-mini.facebook.com,DIRECT
+  - DOMAIN-SUFFIX,snaptu-z.facebook.com,DIRECT
+  - DOMAIN-SUFFIX,www.youtube.com,SERVER,DIRECT
+  - DOMAIN-SUFFIX,i.ytimg.com,SERVER,DIRECT
   - DOMAIN-SUFFIX,yt3.ggpht.com,SERVER
   - DOMAIN-SUFFIX,r2---sn-npoe7nez.googlevideo.com,SERVER
   - DOMAIN-SUFFIX,youtubei.googleapis.com,SERVER
