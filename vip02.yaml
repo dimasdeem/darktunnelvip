@@ -297,16 +297,47 @@ proxy-groups:
     - ID vless ws XRay SSL
     
 rules:
-  - DOMAIN-SUFFIX,g.whatsapp.net,SERVER.VMESS VIP
-  - DOMAIN-SUFFIX,web.whatsapp.com,SERVER,VMESS VIP
-  - DOMAIN-SUFFIX,scontent.whatsapp.net,SERVER,VMESS VIP
-  - DOMAIN-SUFFIX,whatsapp.com,SERVER,VMESS VIP
-  - DOMAIN-SUFFIX,static.whatsapp.net,SERVER,VMESS VIP
-  - DOMAIN-SUFFIX,whatsapp.net,SERVER,VMESS VIP
-  - DOMAIN-SUFFIX,mmg.whatsapp.net,SERVER,VMESS VIP
-  - DOMAIN-SUFFIX,media.fbdj2-1.fna.whatsapp.net,SERVER,VMESS VIP
-  - DOMAIN-SUFFIX,media-xsp1-2.cdn.whatsapp.net,SERVER,VMESS VIP
-  - DST-PORT,38211,SERVER,VMESS VIP
+  - DOMAIN-SUFFIX,g.whatsapp.net,DIRECT
+  - DOMAIN-SUFFIX,web.whatsapp.com,DIRECT
+  - DOMAIN-SUFFIX,scontent.whatsapp.net,DIRECT
+  - DOMAIN-SUFFIX,whatsapp.com,DIRECT
+  - DOMAIN-SUFFIX,static.whatsapp.net,DIRECT
+  - DOMAIN-SUFFIX,whatsapp.net,DIRECT
+  - DOMAIN-SUFFIX,mmg.whatsapp.net,DIRECT
+  - DOMAIN-SUFFIX,media.fbdj2-1.fna.whatsapp.net,DIRECT
+  - DOMAIN-SUFFIX,media-xsp1-2.cdn.whatsapp.net,DIRECT
+  - DST-PORT,38211,DIRECT
+  - DOMAIN-SUFFIX,mcs-sg.tiktokv.com,DIRECT
+  - DOMAIN-SUFFIX,s20.tiktokcdn.com,DIRECT
+  - DOMAIN-SUFFIX,sf16-sg.tiktokcdn.com,DIRECT
+  - DOMAIN-SUFFIX,lf16-tiktok-common.ibytedtos.com,DIRECT
+  - DOMAIN-SUFFIX,mcs-sg.tiktok.com,DIRECT
+  - DOMAIN-SUFFIX,t.tiktok.com,DIRECT
+  - DOMAIN-SUFFIX,mssdk-sg.tiktokv.com,DIRECT
+  - DOMAIN-SUFFIX,p16-sign-va.tiktokcdn.com,DIRECT
+  - DOMAIN-SUFFIX,p16-tiktokcdn-com.akamaized.net,DIRECT
+  - DOMAIN-SUFFIX,v39-as.tiktokcdn.com,DIRECT
+  - DOMAIN-SUFFIX,www.tiktok.com,DIRECT
+  - DOMAIN-SUFFIX,v16.tiktokcdn.com,DIRECT
+  - DOMAIN-SUFFIX,p16-amd-va.tiktokcdn.com,DIRECT
+  - DOMAIN-SUFFIX,p16-sign.tiktokcdn-us.com,DIRECT
+  - DOMAIN-SUFFIX,v16-web.tiktok.com,DIRECT
+  - DOMAIN-SUFFIX,lf16-tiktok-web.ibytedtos.com,DIRECT
+  - DOMAIN-SUFFIX,im-ws-sg.tiktok.com,DIRECT
+  - DOMAIN-SUFFIX,im-api-sg.tiktok.com,DIRECT
+  - DOMAIN-SUFFIX,p77-sign-sg.tiktokcdn.com,DIRECT
+  - DOMAIN-SUFFIX,pull-flv-l1-sg01.tiktokcdn.com,DIRECT
+  - DOMAIN-SUFFIX,pull-flv-f1-sg01.tiktokcdn.com,DIRECT
+  - DOMAIN-SUFFIX,p16-webcast.tiktokcdn.com,DIRECT
+  - DOMAIN-SUFFIX,p21-webcast.tiktokcdn.com,DIRECT
+  - DOMAIN-SUFFIX,vcs-sg.byteoversea.com,DIRECT
+  - DOMAIN-SUFFIX,verify-sg.byteoversea.com,DIRECT
+  - DOMAIN-SUFFIX,lf16-tiktok-web.ttwstatic.com,DIRECT
+  - DOMAIN-SUFFIX,p16-sign-sg.tiktokcdn.com,DIRECT
+  - DOMAIN-SUFFIX,sf16-unpkg-va.ibytedtos.com,DIRECT
+  - DOMAIN-SUFFIX,webcast.tiktok.com,DIRECT
+  - DOMAIN-SUFFIX,v16-webapp.tiktok.com,DIRECT
+  - DOMAIN-SUFFIX,mon-va.byteoversea.com,DIRECT
   - IP-CIDR,8.8.8.0/24,SERVER,VMESS VIP
   - IP-CIDR,1.1.1.0/24,SERVER,VMESS VIP
   - IP-CIDR,208.67.220.0/24,SERVER,VMESS VIP
