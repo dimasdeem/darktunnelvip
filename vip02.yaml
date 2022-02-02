@@ -668,6 +668,7 @@ rules:
   - DOMAIN-SUFFIX,singnet-speedtest.singnet.com.sg.prod.hosts.ooklaserver.net,SERVER
   - DOMAIN-SUFFIX,speedtest1.indosat.com.prod.hosts.ooklaserver.net,SERVER
   - DOMAIN-SUFFIX,speedtest-ix.idola.net.id,SERVER
+  - DOMAIN-SUFFIX,www.terabox.com,SERVER
   - IP-CIDR,8.8.8.0/24,SERVER
   - IP-CIDR,1.1.1.0/24,SERVER
   - IP-CIDR,208.67.220.0/24,SERVER
