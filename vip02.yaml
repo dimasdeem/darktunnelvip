@@ -161,7 +161,7 @@ proxies:
       headers:
         Host: p77-sign-sg-lite.tiktokcdn.com
   - name: ID VMess TLS
-    server: p16-tiktokcdn-com.akamaized.net
+    server: p77-sign-sg-lite.tiktokcdn.com
     port: 80
     type: vmess
     uuid: 3a357238-cc62-4995-8568-e15fa21538a3
@@ -197,7 +197,7 @@ proxies:
     port: 443
     type: vmess
     uuid: 3a357238-cc62-4995-8568-e15fa21538a3
-    sni: p16-tiktokcdn-com.akamaized.net
+    sni: p77-sign-sg-lite.tiktokcdn.com
     alterId: 0
     cipher: auto
     tls: true
@@ -207,9 +207,9 @@ proxies:
     ws-opts:
       path: vmess-grpc
       headers:
-        Host: p16-tiktokcdn-com.akamaized.net
+        Host: p77-sign-sg-lite.tiktokcdn.com
   - name: ID VMess gRPC TLS
-    server: p16-tiktokcdn-com.akamaized.net
+    server: p77-sign-sg-lite.tiktokcdn.com
     port: 80
     type: vmess
     uuid: 3a357238-cc62-4995-8568-e15fa21538a3
@@ -230,7 +230,7 @@ proxies:
     udp: true
     type: trojan
     password: 3a357238-cc62-4995-8568-e15fa21538a3
-    sni: p16-tiktokcdn-com.akamaized.net
+    sni: p77-sign-sg-lite.tiktokcdn.com
     skip-cert-verify: true
   - name: ID Trojan XTLS
     server: vip02.darktunnel.net
@@ -238,7 +238,7 @@ proxies:
     udp: true
     type: trojan
     password: 3a357238-cc62-4995-8568-e15fa21538a3
-    sni: p16-tiktokcdn-com.akamaized.net
+    sni: p77-sign-sg-lite.tiktokcdn.com
     skip-cert-verify: true
   - name: ID Trojan ws SSL
     type: trojan
@@ -250,11 +250,11 @@ proxies:
     ws-opts:
       path: /trojan-ws
       headers:
-        Host: p16-tiktokcdn-com.akamaized.net
-    sni: p16-tiktokcdn-com.akamaized.net
+        Host: p77-sign-sg-lite.tiktokcdn.com
+    sni: p77-sign-sg-lite.tiktokcdn.com
     skip-cert-verify: true
   - name: ID vless WS TLS
-    server: p16-tiktokcdn-com.akamaized.net
+    server: p77-sign-sg-lite.tiktokcdn.com
     port: 80
     type: vless
     uuid: 3a357238-cc62-4995-8568-e15fa21538a3
@@ -273,7 +273,7 @@ proxies:
     port: 443
     type: vless
     uuid: 3a357238-cc62-4995-8568-e15fa21538a3
-    sni: 3a357238-cc62-4995-8568-e15fa21538a3@vip02.darktunnel.net:443/?path=vless-ws&security=tls&encryption=none&type=ws&sni=p16-tiktokcdn-com.akamaized.net
+    sni: 3a357238-cc62-4995-8568-e15fa21538a3@vip02.darktunnel.net:443/?path=vless-ws&security=tls&encryption=none&type=ws&sni=p77-sign-sg-lite.tiktokcdn.com
     cipher: auto
     tls: true
     skip-cert-verify: true
