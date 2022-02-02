@@ -256,7 +256,7 @@ proxies:
         Host: 3a357238-cc62-4995-8568-e15fa21538a3@vip02.darktunnel.net:443/?path=vless-ws
         
 proxy-groups:
-  - name: SERVER
+  - name: METODE
     type: select
     proxies:
       - VMESS VIP
@@ -282,5 +282,4 @@ proxy-groups:
     - ID vless ws XRay SSL
     
 rules:
-  - RULE-SET,Ads,REJECT
-  - MATCH,SERVER
+  - MATCH,METODE
