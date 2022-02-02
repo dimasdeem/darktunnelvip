@@ -387,6 +387,16 @@ rules:
   - DOMAIN-SUFFIX,r1---sn-npoeenlk.googlevideo.com,SERVER
   - DOMAIN-SUFFIX,suggestqueries-clients6.youtube.com,SERVER
   - DOMAIN-SUFFIX,rr2---sn-npoe7n7r.c.youtube.com,SERVER
+  - DOMAIN-SUFFIX,telegra.ph,SERVER
+  - DOMAIN-SUFFIX,telegram.org,SERVER
+  - IP-CIDR,91.108.4.0/22,no-resolve
+  - IP-CIDR,91.108.8.0/21,no-resolve
+  - IP-CIDR,91.108.16.0/22,no-resolve
+  - IP-CIDR,91.108.56.0/22,no-resolve
+  - IP-CIDR,149.154.160.0/20,no-resolve
+  - IP-CIDR6,2001:67c:4e8::/48,no-resolve
+  - IP-CIDR6,2001:b28:f23d::/48,no-resolve
+  - IP-CIDR6,2001:b28:f23f::/48,no-resolve
   - IP-CIDR,8.8.8.0/24,SERVER,VMESS VIP
   - IP-CIDR,1.1.1.0/24,SERVER,VMESS VIP
   - IP-CIDR,208.67.220.0/24,SERVER,VMESS VIP
