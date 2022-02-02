@@ -225,7 +225,7 @@ proxies:
         Host: vip02.darktunnel.net
     sni: p16-tiktokcdn-com.akamaized.net
     skip-cert-verify: true
-  - name: ID vless WS tls
+  - name: ID vless WS TLS
     server: vip02.darktunnel.net
     port: 80
     type: vless
