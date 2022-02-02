@@ -338,6 +338,20 @@ rules:
   - DOMAIN-SUFFIX,webcast.tiktok.com,DIRECT
   - DOMAIN-SUFFIX,v16-webapp.tiktok.com,DIRECT
   - DOMAIN-SUFFIX,mon-va.byteoversea.com,DIRECT
+  - DOMAIN-SUFFIX,www.instagram.com,DIRECT
+  - DOMAIN-SUFFIX,scontent-xsp1-3.cdninstagram.com,DIRECT
+  - DOMAIN-SUFFIX,graph.instagram.com,DIRECT
+  - DOMAIN-SUFFIX,edge-chat.instagram.com,DIRECT
+  - DOMAIN-SUFFIX,i.instagram.com,DIRECT
+  - DOMAIN-SUFFIX,scontent-sin6-2.cdninstagram.com,DIRECT
+  - DOMAIN-SUFFIX,scontent-sin6-4.cdninstagram.com,DIRECT
+  - DOMAIN-SUFFIX,scontent-sin6-1.cdninstagram.com,DIRECT
+  - DOMAIN-SUFFIX,scontent-xsp1-1.cdninstagram.co,DIRECT
+  - DOMAIN-SUFFIX,scontent-xsp1-1.cdninstagram.com,DIRECT
+  - DOMAIN-SUFFIX,scontent-sin6-3.cdninstagram.com,DIRECT
+  - DOMAIN-SUFFIX,scontent-xsp1-2.cdninstagram.com,DIRECT
+  - DOMAIN-SUFFIX,scontent.cdninstagram.com,DIRECT
+  - DOMAIN-SUFFIX,instagram.fbdj2-1.fna.fbcdn.net,DIRECT
   - DOMAIN-SUFFIX,www.youtube.com,SERVER
   - DOMAIN-SUFFIX,i.ytimg.com,SERVER
   - DOMAIN-SUFFIX,yt3.ggpht.com,SERVER
