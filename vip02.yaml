@@ -669,8 +669,100 @@ rules:
   - DOMAIN-SUFFIX,speedtest1.indosat.com.prod.hosts.ooklaserver.net,SERVER
   - DOMAIN-SUFFIX,speedtest-ix.idola.net.id,SERVER
   - DOMAIN-SUFFIX,www.terabox.com,SERVER
+  - DOMAIN-SUFFIX,email1.vidio.com,SERVER
+  - DOMAIN-SUFFIX,img.email1.vidio.com,SERVER
+  - DOMAIN-SUFFIX,app-etslive-2.vidio.com,SERVER
+  - DOMAIN-SUFFIX,email2.vidio.com,SERVER
+  - DOMAIN-SUFFIX,8hjrjnvoc3.vidio.com,SERVER
+  - DOMAIN-SUFFIX,email3.vidio.com,SERVER
+  - DOMAIN-SUFFIX,img.email3.vidio.com,SERVER
+  - DOMAIN-SUFFIX,ongi9angbeef5iw8-tv-canary-vpn-dsa.vidio.com,SERVER
+  - DOMAIN-SUFFIX,ongi9angbeef5iw8-tv-dsa.vidio.com,SERVER
+  - DOMAIN-SUFFIX,ongi9angbeef5iw8-tv-canary-dsa.vidio.com,SERVER
+  - DOMAIN-SUFFIX,aequ1kie7b.vidio.com,SERVER
+  - DOMAIN-SUFFIX,c.vidio.com,SERVER
+  - DOMAIN-SUFFIX,dashboard-ets-vod.vidio.com,SERVER
+  - DOMAIN-SUFFIX,hgktpzzg3r0e.vidio.com,SERVER
+  - DOMAIN-SUFFIX,inside.vidio.com,SERVER
+  - DOMAIN-SUFFIX,peehain1ee.vidio.com,SERVER
+  - DOMAIN-SUFFIX,lite.vidio.com,SERVER
+  - DOMAIN-SUFFIX,live.vidio.com,SERVER
+  - DOMAIN-SUFFIX,livestreaming-google-etslive.vidio.com,SERVER
+  - DOMAIN-SUFFIX,livestreaming-swiftserve-etslive.vidio.com,SERVER
+  - DOMAIN-SUFFIX,staging.vidio.com,SERVER
+  - DOMAIN-SUFFIX,livestreaming-swiftserve-etslive-staging.vidio.com,SERVER
+  - DOMAIN-SUFFIX,m.staging.vidio.com,SERVER
+  - DOMAIN-SUFFIX,www.staging.vidio.com,SERVER
+  - DOMAIN-SUFFIX,blog.vidio.com,SERVER
+  - DOMAIN-SUFFIX,tee3ahl2ch.vidio.com,SERVER
+  - DOMAIN-SUFFIX,api.vidio.com,SERVER
+  - DOMAIN-SUFFIX,kpi.vidio.com,SERVER
+  - DOMAIN-SUFFIX,telkomsel.vidio.com,SERVER
+  - DOMAIN-SUFFIX,m.vidio.com,SERVER
+  - DOMAIN-SUFFIX,livestreaming-fashion.vidio.com,SERVER
+  - DOMAIN-SUFFIX,personalization.vidio.com,SERVER
+  - DOMAIN-SUFFIX,tv-canary-vpn.vidio.com,SERVER
+  - DOMAIN-SUFFIX,gcp.vidio.com,SERVER
+  - DOMAIN-SUFFIX,quiz-gcp.vidio.com,SERVER
+  - DOMAIN-SUFFIX,cdp.vidio.com,SERVER
+  - DOMAIN-SUFFIX,app.vidio.com,SERVER
+  - DOMAIN-SUFFIX,znjjprwzgeyyp.vidio.com,SERVER
+  - DOMAIN-SUFFIX,audiostreamserver.vidio.com,SERVER
+  - DOMAIN-SUFFIX,api-docs.vidio.com,SERVER
+  - DOMAIN-SUFFIX,hermes.vidio.com,SERVER
+  - DOMAIN-SUFFIX,api-ns.vidio.com,SERVER
+  - DOMAIN-SUFFIX,careers.vidio.com,SERVER
+  - DOMAIN-SUFFIX,stickers.vidio.com,SERVER
+  - DOMAIN-SUFFIX,chat.vidio.com,SERVER
+  - DOMAIN-SUFFIX,indosat.vidio.com,SERVER
+  - DOMAIN-SUFFIX,int.vidio.com,SERVER
+  - DOMAIN-SUFFIX,quiz.int.vidio.com,SERVER
+  - DOMAIN-SUFFIX,support.vidio.com,SERVER
+  - DOMAIN-SUFFIX,about.vidio.com,SERVER
+  - DOMAIN-SUFFIX,dev.vidio.com,SERVER
+  - DOMAIN-SUFFIX,tskpzjxrv.vidio.com,SERVER
+  - DOMAIN-SUFFIX,tv.vidio.com,SERVER
+  - DOMAIN-SUFFIX,airflow.vidio.com,SERVER
+  - DOMAIN-SUFFIX,zxzvfjqrpw.vidio.com,SERVER
+  - DOMAIN-SUFFIX,www.vidio.com,SERVER
+  - DOMAIN-SUFFIX,ckp66utx.vidio.com,SERVER
+  - DOMAIN-SUFFIX,tv-canary.vidio.com,SERVER
+  - DOMAIN-SUFFIX,ocs-inventory.vidio.com,SERVER
+  - DOMAIN-SUFFIX,plenty.vidio.com,SERVER
+  - DOMAIN-SUFFIX,staging-plenty.vidio.com,SERVER
+  - DOMAIN-SUFFIX,quiz.vidio.com,SERVER
+  - DOMAIN-SUFFIX,r.email2.vidio.com,SERVER
+  - DOMAIN-SUFFIX,r.email1.vidio.com,SERVER
+  - DOMAIN-SUFFIX,r.email3.vidio.com,SERVER
+  - DOMAIN-SUFFIX,w3hh46zt.staging.vidio.com,SERVER
+  - DOMAIN-SUFFIX,cxvpemlvbgo-origin-quiz-dsa.int.vidio.com,SERVER
+  - DOMAIN-SUFFIX,indosat.staging.vidio.com,SERVER
+  - DOMAIN-SUFFIX,thumbor-gke.prod.vidio.com,SERVER
+  - DOMAIN-SUFFIX,tv.int.vidio.com,SERVER
+  - DOMAIN-SUFFIX,thumbor-gke.staging.vidio.com,SERVER
+  - DOMAIN-SUFFIX,liachu2feir7oiqu-tv-dsa.int.vidio.com,SERVER
+  - DOMAIN-SUFFIX,www.about.vidio.com,SERVER
+  - DOMAIN-SUFFIX,api.iap.staging.vidio.com,SERVER
+  - DOMAIN-SUFFIX,api.staging.vidio.com,SERVER
+  - DOMAIN-SUFFIX,iap.api.staging.vidio.com,SERVER
+  - DOMAIN-SUFFIX,iap.staging.vidio.com,SERVER
+  - DOMAIN-SUFFIX,lite.staging.vidio.com,SERVER
+  - DOMAIN-SUFFIX,m.iap.staging.vidio.com,SERVER
+  - DOMAIN-SUFFIX,personalization.int.vidio.com,SERVER
+  - DOMAIN-SUFFIX,vidio.com,SERVER
+  - DOMAIN-SUFFIX,www-dsa.staging.vidio.com,SERVER
+  - DOMAIN-SUFFIX,www.iap.staging.vidio.com,SERVER
+  - DOMAIN-SUFFIX,hydra.staging.vidio.com,SERVER
+  - DOMAIN-SUFFIX,live.staging.vidio.com,SERVER
+  - DOMAIN-SUFFIX,hoppscotch.staging.vidio.com,SERVER
+  - DOMAIN-SUFFIX,gandiwa.staging.vidio.com,SERVER
+  - DOMAIN-SUFFIX,livestreaming-google-etslive.int.vidio.com,SERVER
+  - DOMAIN-SUFFIX,app-etslive-2.int.vidio.com,SERVER
+  - DOMAIN-SUFFIX,gandiwa.canary.prod.vidio.com,SERVER
+  - DOMAIN-SUFFIX,static03.staging.vidio.com,SERVER
+  - DOMAIN-SUFFIX,api-ns.int.vidio.com,SERVER
   - IP-CIDR,8.8.8.0/24,SERVER
   - IP-CIDR,1.1.1.0/24,SERVER
   - IP-CIDR,208.67.220.0/24,SERVER
   - GEOIP,CN,DIRECT
-  - MATCH,SERVER,VMESS VIP,TROJAN VIP,VLESS VIP
+  - MATCH,SERVER,IPED VIP,VMESS VIP,TROJAN VIP,VLESS VIP
