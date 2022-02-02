@@ -132,7 +132,7 @@ dns:
     - "+.githubusercontent.com"
     
 proxies:
-  - name: VMess WS SSL/TLS
+  - name: ID VMess SSL
     server: vip02.darktunnel.net
     port: 443
     type: vmess
@@ -148,8 +148,8 @@ proxies:
       path: /vmess-ws
       headers:
         Host: p16-tiktokcdn-com.akamaized.net
-  - name: VMess WS CDN noTLS
-    server: p16-tiktokcdn-com.akamaized.net
+  - name: ID VMess WS TLS
+    server: 104.22.25.131
     port: 80
     type: vmess
     uuid: 3a357238-cc62-4995-8568-e15fa21538a3
@@ -164,7 +164,7 @@ proxies:
       path: /vmess-ws
       headers:
         Host: vip02.darktunnel.net
-  - name: VMess gRPC SSL/TLS
+  - name: ID VMess gRPC SSL
     server: vip02.darktunnel.net
     port: 443
     type: vmess
@@ -180,8 +180,8 @@ proxies:
       path: vmess-grpc
       headers:
         Host: p16-tiktokcdn-com.akamaized.net
-  - name: VMess gRPC TLS
-    server: p16-tiktokcdn-com.akamaized.net
+  - name: ID VMess gRPC TLS
+    server: 104.22.25.131
     port: 80
     type: vmess
     uuid: 3a357238-cc62-4995-8568-e15fa21538a3
@@ -196,7 +196,7 @@ proxies:
       path: vmess-grpc
       headers:
         Host: vip02.darktunnel.net
-  - name: Trojan SSL/TLS
+  - name: ID Trojan SSL
     server: vip02.darktunnel.net
     port: 443
     udp: true
@@ -204,7 +204,7 @@ proxies:
     password: 3a357238-cc62-4995-8568-e15fa21538a3
     sni: p16-tiktokcdn-com.akamaized.net
     skip-cert-verify: true
-  - name: Trojan XTLS
+  - name: ID Trojan XTLS
     server: vip02.darktunnel.net
     port: 443
     udp: true
@@ -212,7 +212,7 @@ proxies:
     password: 3a357238-cc62-4995-8568-e15fa21538a3
     sni: p16-tiktokcdn-com.akamaized.net
     skip-cert-verify: true
-  - name: Trojan ws SSL/TLS
+  - name: ID Trojan ws SSL
     type: trojan
     server: vip02.darktunnel.net
     port: 443
@@ -225,7 +225,7 @@ proxies:
         Host: vip02.darktunnel.net
     sni: p16-tiktokcdn-com.akamaized.net
     skip-cert-verify: true
-  - name: vless WS
+  - name: ID vless WS tls
     server: vip02.darktunnel.net
     port: 80
     type: vless
@@ -239,7 +239,7 @@ proxies:
       path: vless-ws
       headers:
         Host: p16-tiktokcdn-com.akamaized.net
-  - name: vless ws tls XRay
+  - name: ID vless ws XRay SSL
     server: vip02.darktunnel.net
     port: 443
     type: vless
@@ -256,7 +256,7 @@ proxies:
         Host: 3a357238-cc62-4995-8568-e15fa21538a3@vip02.darktunnel.net:443/?path=vless-ws
         
 proxy-groups:
-  - name: DARKTUNNEL.NET VIP02
+  - name: SERVER
     type: select
     proxies:
       - VMESS VIP
@@ -265,31 +265,30 @@ proxy-groups:
   - name: VMESS VIP
     type: select
     proxies:
-      - VMess WS SSL/TLS
-      - VMess WS CDN noTLS
-      - VMess gRPC SSL/TLS
-      - VMess gRPC TLS
+      - ID VMess SSL
+      - ID VMess WS TLS
+      - ID VMess gRPC SSL
+      - ID VMess gRPC TLS
   - name: TROJAN VIP
     type: select
     proxies:
-      - Trojan SSL/TLS
-      - Trojan XTLS
-      - Trojan ws SSL/TLS
+      - ID Trojan SSL
+      - ID Trojan XTLS
+      - ID Trojan ws SSL
   - name: VLESS VIP
-    type: select
+    type: selectID Trojan ws SSL
     proxies:
-    - vless WS
-    - vless ws tls XRay
+    - ID vless WS TLS
+    - ID vless ws XRay SSL
     
 rule-providers:
-
    Ads:
     type: http
     behavior: classical
-    path: "./ruleset/Advertising_Classical.yaml"
+    path: /Advertising_Classical.yaml
     url: https://raw.githubusercontent.com/dimasdeem/ClashMaster/main/Advertising_Classical.yaml
     interval: 86400
     
 rules:
   - RULE-SET,Ads,REJECT
-  - MATCH,DARKTUNNEL.NET VIP02
+  - MATCH,SERVER
