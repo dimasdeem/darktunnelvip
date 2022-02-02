@@ -297,4 +297,8 @@ proxy-groups:
     - ID vless ws XRay SSL
     
 rules:
+  - IP-CIDR,8.8.8.0/24,SERVER
+  - IP-CIDR,1.1.1.0/24,SERVER
+  - IP-CIDR,208.67.220.0/24,SERVER
+  - GEOIP,CN,DIRECT
   - MATCH,SERVER
