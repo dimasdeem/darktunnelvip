@@ -1,11 +1,13 @@
+---
 port: 7890
-socks-port: 3080
+socks-port: 7891
 redir-port: 7892
 tproxy-port: 7895
 mixed-port: 7893
 allow-lan: true
+bind-address: "*"
 mode: rule
-log-level: silent
+log-level: info
 external-controller: 0.0.0.0:9090
 dns:
   enable: true
@@ -130,6 +132,19 @@ dns:
     - "+.facebook.com"
     - "+.youtube.com"
     - "+.githubusercontent.com"
+
+tun:
+  enable: true
+  stack: gvisor
+  dns-hijack:
+  - tcp://8.8.8.8:53
+  - tcp://8.8.4.4:53
+  
+profile:
+  store-selected: true
+  store-fake-ip: true
+experimental:
+  interface-name: eth0
     
 proxies:
   - name: ID VMess SSL
