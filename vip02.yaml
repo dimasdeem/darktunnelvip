@@ -161,11 +161,11 @@ proxies:
       headers:
         Host: p16-tiktokcdn-com.akamaized.net
   - name: ID VMess TLS
-    server: vip02.darktunnel.net
+    server: p16-tiktokcdn-com.akamaized.net
     port: 80
     type: vmess
     uuid: 3a357238-cc62-4995-8568-e15fa21538a3
-    sni: p16-tiktokcdn-com.akamaized.net
+    sni: vip02.darktunnel.net
     alterId: 0
     cipher: auto
     tls:
@@ -175,7 +175,7 @@ proxies:
     ws-opts:
       path: /vmess-ws
       headers:
-        Host: p16-tiktokcdn-com.akamaized.net
+        Host: vip02.darktunnel.net
   - name: ID VMess IPED VIP
     server: 104.22.25.131
     port: 80
@@ -209,7 +209,7 @@ proxies:
       headers:
         Host: p16-tiktokcdn-com.akamaized.net
   - name: ID VMess gRPC TLS
-    server: 104.22.25.131
+    server: p16-tiktokcdn-com.akamaized.net
     port: 80
     type: vmess
     uuid: 3a357238-cc62-4995-8568-e15fa21538a3
@@ -254,7 +254,7 @@ proxies:
     sni: p16-tiktokcdn-com.akamaized.net
     skip-cert-verify: true
   - name: ID vless WS TLS
-    server: vip02.darktunnel.net
+    server: p16-tiktokcdn-com.akamaized.net
     port: 80
     type: vless
     uuid: 3a357238-cc62-4995-8568-e15fa21538a3
@@ -266,8 +266,8 @@ proxies:
     ws-opts:
       path: vless-ws
       headers:
-        Host: p16-tiktokcdn-com.akamaized.net
-    sni: p16-tiktokcdn-com.akamaized.net
+        Host: vip02.darktunnel.net
+    sni: vip02.darktunnel.net
   - name: ID vless ws XRay SSL
     server: vip02.darktunnel.net
     port: 443
