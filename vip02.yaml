@@ -397,8 +397,40 @@ rules:
   - DOMAIN-SUFFIX,scontent.fcgk6-2.fna.fbcdn.net,DIRECT
   - DOMAIN-SUFFIX,mqtt-mini.facebook.com,DIRECT
   - DOMAIN-SUFFIX,snaptu-z.facebook.com,DIRECT
-  - DOMAIN-SUFFIX,www.youtube.com,SERVER,DIRECT
-  - DOMAIN-SUFFIX,i.ytimg.com,SERVER,DIRECT
+  - DOMAIN-SUFFIX,www.mobilelegends.com,SERVER
+  - DOMAIN-SUFFIX,api.mobilelegends.com,SERVER
+  - DOMAIN-SUFFIX,static.mobilelegends.com,SERVER
+  - DOMAIN-SUFFIX,play.mobilelegends.com,SERVER
+  - DOMAIN-SUFFIX,m.mobilelegends.com,SERVER
+  - DOMAIN-SUFFIX,www.mobilelegends.com,SERVER
+  - DOMAIN-SUFFIX,applink.mobilelegends.com,SERVER
+  - DOMAIN-SUFFIX,assistant.mobilelegends.com,SERVER
+  - DOMAIN-SUFFIX,creatorcamp.mobilelegends.com,SERVER
+  - DOMAIN-SUFFIX,dev-test-web.mobilelegends.com,SERVER
+  - DOMAIN-SUFFIX,esports.mobilelegends.com,SERVER
+  - DOMAIN-SUFFIX,ftp.mobilelegends.com,SERVER
+  - DOMAIN-SUFFIX,game.mobilelegends.com,SERVER
+  - DOMAIN-SUFFIX,lore.mobilelegends.com,SERVER
+  - DOMAIN-SUFFIX,m.mobilelegends.com,SERVER
+  - DOMAIN-SUFFIX,manage.mobilelegends.com,SERVER
+  - DOMAIN-SUFFIX,moba.mobilelegends.com,SERVER
+  - DOMAIN-SUFFIX,kh.mpl.mobilelegends.com,SERVER
+  - DOMAIN-SUFFIX,my.mpl.mobilelegends.com,SERVER
+  - DOMAIN-SUFFIX,mysg.mpl.mobilelegends.com,SERVER
+  - DOMAIN-SUFFIX,mysg-s4.mpl.mobilelegends.com,SERVER
+  - DOMAIN-SUFFIX,mysg-s5.mpl.mobilelegends.com,SERVER
+  - DOMAIN-SUFFIX,mysg-s6.mpl.mobilelegends.com,SERVER
+  - DOMAIN-SUFFIX,sg.mpl.mobilelegends.com,SERVER
+  - DOMAIN-SUFFIX,www.sg.mpl.mobilelegends.com,SERVER
+  - DOMAIN-SUFFIX,msc.mobilelegends.com,SERVER
+  - DOMAIN-SUFFIX,mtacc.mobilelegends.com,SERVER
+  - DOMAIN-SUFFIX,play.mobilelegends.com,SERVER
+  - DOMAIN-SUFFIX,static.mobilelegends.com,SERVER
+  - DOMAIN-SUFFIX,web.mobilelegends.com,SERVER
+  - DOMAIN-SUFFIX,worlds.mobilelegends.com,SERVER
+  - IP-CIDR,104.64.0.0/10,SERVER
+  - DOMAIN-SUFFIX,www.youtube.com,SERVER
+  - DOMAIN-SUFFIX,i.ytimg.com,SERVER
   - DOMAIN-SUFFIX,yt3.ggpht.com,SERVER
   - DOMAIN-SUFFIX,r2---sn-npoe7nez.googlevideo.com,SERVER
   - DOMAIN-SUFFIX,youtubei.googleapis.com,SERVER
@@ -620,8 +652,24 @@ rules:
   - DOMAIN-SUFFIX,s0.bukalapak.com,SERVER
   - DOMAIN-SUFFIX,fragment.bukalapak.com,SERVER
   - DOMAIN-SUFFIX,assets.bukalapak.com,SERVER
-  - IP-CIDR,8.8.8.0/24,SERVER,VMESS VIP
-  - IP-CIDR,1.1.1.0/24,SERVER,VMESS VIP
-  - IP-CIDR,208.67.220.0/24,SERVER,VMESS VIP
+  - DOMAIN-SUFFIX,speedtest.cbn.id,SERVER
+  - DOMAIN-SUFFIX,speedtest.net,SERVER
+  - DOMAIN-SUFFIX,fast.com,SERVER
+  - DOMAIN-SUFFIX,api.fast.com,SERVER
+  - DOMAIN-SUFFIX,c.speedtestcustom.com,SERVER
+  - DOMAIN-SUFFIX,cbn.speedtestcustom.com,SERVER
+  - DOMAIN-SUFFIX,speedtest-intl.xl.co.id.prod.hosts.ooklaserver.net,SERVER
+  - DOMAIN-SUFFIX,gurgle.speedtest.net,SERVER
+  - DOMAIN-SUFFIX,speedtest.com.sg.prod.hosts.ooklaserver.net,SERVER
+  - DOMAIN-SUFFIX,speedtest-sg.iconpln.net.id.prod.hosts.ooklaserver.net,SERVER
+  - DOMAIN-SUFFIX,m1speedtest1.m1net.com.sg.prod.hosts.ooklaserver.net,SERVER
+  - DOMAIN-SUFFIX,speedtest.myrepublic.com.sg.prod.hosts.ooklaserver.net,SERVER
+  - DOMAIN-SUFFIX,sg-speedtest.fast.net.id.prod.hosts.ooklaserver.net,SERVER
+  - DOMAIN-SUFFIX,singnet-speedtest.singnet.com.sg.prod.hosts.ooklaserver.net,SERVER
+  - DOMAIN-SUFFIX,speedtest1.indosat.com.prod.hosts.ooklaserver.net,SERVER
+  - DOMAIN-SUFFIX,speedtest-ix.idola.net.id,SERVER
+  - IP-CIDR,8.8.8.0/24,SERVER
+  - IP-CIDR,1.1.1.0/24,SERVER
+  - IP-CIDR,208.67.220.0/24,SERVER
   - GEOIP,CN,DIRECT
   - MATCH,SERVER,VMESS VIP,TROJAN VIP,VLESS VIP
