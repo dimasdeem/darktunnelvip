@@ -139,7 +139,7 @@ proxy-groups:
       - SG Trojan ws SSL
     
 rules:
-  - "+.whatsapp.net",DIRECT
+  - DOMAIN-SUFFIX,whatsapp.net,DIRECT
   - "+.whatsapp.com",DIRECT
   - "+.whatsapp-sg.com",DIRECT
   - DST-PORT,38211,DIRECT
