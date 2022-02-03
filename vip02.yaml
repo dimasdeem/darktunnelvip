@@ -314,7 +314,7 @@ rules:
   - DOMAIN-SUFFIX,backend.chat.restream.io,SERVER
   - DOMAIN-SUFFIX,studio-backend.restream.io,SERVER
   - DOMAIN-SUFFIX,app.restream.io,SERVER
-  - DOMAIN,scholar.google.com,SERVER
+  - DOMAIN,scholar.google.com,REJECT
   - DOMAIN-SUFFIX,acm.org,SERVER
   - DOMAIN-SUFFIX,acs.org,SERVER
   - DOMAIN-SUFFIX,aip.org,SERVER
