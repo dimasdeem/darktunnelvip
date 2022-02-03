@@ -1,6 +1,44 @@
+port: 7890
 socks-port: 3080
-mode: rule
-log-level: silent
+allow-lan: false
+mode: Rule
+log-level: info
+external-controller: 127.0.0.1:9090
+dns:
+  enable: true
+  listen: 0.0.0.0:53
+  ipv6: false
+  nameserver:
+    - 119.29.29.29
+    - 114.114.114.114
+    - 223.5.5.5
+    - tls://1.1.1.1
+cfw-bypass:
+  - qq.com
+  - music.163.com
+  - "*.music.126.net"
+  - localhost
+  - 127.*
+  - 10.*
+  - 172.16.*
+  - 172.17.*
+  - 172.18.*
+  - 172.19.*
+  - 172.20.*
+  - 172.21.*
+  - 172.22.*
+  - 172.23.*
+  - 172.24.*
+  - 172.25.*
+  - 172.26.*
+  - 172.27.*
+  - 172.28.*
+  - 172.29.*
+  - 172.30.*
+  - 172.31.*
+  - 192.168.*
+  - <local>
+cfw-latency-timeout: 5000
 proxies:
   - name: ID VMess SSL
     server: vip02.darktunnel.net
@@ -637,5 +675,10 @@ rules:
   - IP-CIDR,8.8.8.0/24,SERVER
   - IP-CIDR,1.1.1.0/24,SERVER
   - IP-CIDR,208.67.220.0/24,SERVER
-  - GEOIP,CN,DIRECT
+  - GEOIP,US,SERVER
+  - GEOIP,JP,SERVER
+  - GEOIP,TW,SERVER
+  - GEOIP,HK,SERVER
+  - GEOIP,SG,SERVER
+  - GEOIP,CN,SERVER
   - MATCH,SERVER
