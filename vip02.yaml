@@ -119,7 +119,6 @@ proxy-groups:
     proxies:
       - VMESS VIP
       - TROJAN VIP
-      - VLESS VIP
   - name: VMESS VIP
     type: select
     url: 'http://www.gstatic.com/generate_204'
