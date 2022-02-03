@@ -264,7 +264,7 @@ rules:
   - DOMAIN-SUFFIX,connectivitycheck.gstatic.com,SERVER
   - DOMAIN-SUFFIX,inbox.google.com,SERVER
   - DOMAIN-SUFFIX,lh3.googleusercontent.com,SERVER
-  - DOMAIN-SUFFIX,.google.com,SERVER
+  - DOMAIN-SUFFIX,.google.com,REJECT
   - DOMAIN-SUFFIX,functions3.ultraviewer.net,SERVER
   - DOMAIN-SUFFIX,clients3.google.com,SERVER
   - DOMAIN-SUFFIX,playatoms-pa.googleapis.com,SERVER
@@ -314,7 +314,7 @@ rules:
   - DOMAIN-SUFFIX,backend.chat.restream.io,SERVER
   - DOMAIN-SUFFIX,studio-backend.restream.io,SERVER
   - DOMAIN-SUFFIX,app.restream.io,SERVER
-  - DOMAIN,scholar.google.com,REJECT
+  - DOMAIN,scholar.google.com,SERVER
   - DOMAIN-SUFFIX,acm.org,SERVER
   - DOMAIN-SUFFIX,acs.org,SERVER
   - DOMAIN-SUFFIX,aip.org,SERVER
