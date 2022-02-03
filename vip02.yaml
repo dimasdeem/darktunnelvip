@@ -109,6 +109,22 @@ proxies:
         Host: v24.muscdn.com
     sni: v24.muscdn.com
     skip-cert-verify: true
+  - name: US VMess SSL
+    server: us-vip.darktunnel.net
+    port: 443
+    type: vmess
+    uuid: 3a357238-cc62-4995-8568-e15fa21538a3
+    sni: v24.muscdn.com
+    alterId: 0
+    cipher: auto
+    tls: 1
+    skip-cert-verify: true
+    udp: true
+    network: ws
+    ws-opts:
+      path: /vmess-ws
+      headers:
+        Host: v24.muscdn.com
         
 proxy-groups:
   - name: SERVER
@@ -127,6 +143,7 @@ proxy-groups:
     proxies:
       - ID VMess SSL
       - SG VMess SSL
+      - US VMess SSL
   - name: TROJAN VIP
     type: select
     url: 'http://www.gstatic.com/generate_204'
