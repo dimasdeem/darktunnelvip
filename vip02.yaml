@@ -455,6 +455,8 @@ rules:
   - DOMAIN-SUFFIX,singnet-speedtest.singnet.com.sg.prod.hosts.ooklaserver.net,SERVER
   - DOMAIN-SUFFIX,speedtest1.indosat.com.prod.hosts.ooklaserver.net,SERVER
   - DOMAIN-SUFFIX,speedtest-ix.idola.net.id,SERVER
+  - DOMAIN-SUFFIX,.fast.com,SERVER
+  - DOMAIN-SUFFIX,.github.com,SERVER
   - DOMAIN-SUFFIX,www.terabox.com,SERVER
   - DOMAIN-SUFFIX,email1.vidio.com,SERVER
   - DOMAIN-SUFFIX,img.email1.vidio.com,SERVER
