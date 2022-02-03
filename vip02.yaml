@@ -153,11 +153,11 @@ rules:
   - DOMAIN-SUFFIX,.ibytedtos.com,DIRECT
   - DOMAIN-SUFFIX,.ttwstatic.com,DIRECT
   - DOMAIN-SUFFIX,.tiktokcdn-us.com,DIRECT
-  - DOMAIN-SUFFIX,"+.instagram.com",DIRECT
-  - DOMAIN-SUFFIX,"+.www.instagram.com",DIRECT
-  - DOMAIN-SUFFIX,"+.cdninstagram.com",DIRECT
-  - DOMAIN-SUFFIX,"+.graph.instagram.com",DIRECT
-  - DOMAIN-SUFFIX,"+.instagram.fbdj2-1.fna.fbcdn.net",DIRECT
+  - DOMAIN-SUFFIX,.instagram.com,DIRECT
+  - DOMAIN-SUFFIX,.www.instagram.com,DIRECT
+  - DOMAIN-SUFFIX,.cdninstagram.com,DIRECT
+  - DOMAIN-SUFFIX,.graph.instagram.com,DIRECT
+  - DOMAIN-SUFFIX,.instagram.fbdj2-1.fna.fbcdn.net,DIRECT
   - DOMAIN-SUFFIX,www.facebook.com,DIRECT
   - DOMAIN-SUFFIX,static.xx.fbcdn.net,DIRECT
   - DOMAIN-SUFFIX,web.facebook.com,DIRECT
@@ -548,11 +548,11 @@ rules:
   - DOMAIN-SUFFIX,gandiwa.canary.prod.vidio.com,SERVER
   - DOMAIN-SUFFIX,static03.staging.vidio.com,SERVER
   - DOMAIN-SUFFIX,api-ns.int.vidio.com,SERVER
-  - "+.play-fe.googleapis.com",SERVER
-  - "+.play-lh.googleusercontent.com",SERVER
-  - "+.play.google.com",SERVER
-  - "+.play.googleapis.com",SERVER
-  - "+.gvt1.com",SERVER
+  - DOMAIN-SUFFIX,.play-fe.googleapis.com,SERVER
+  - DOMAIN-SUFFIX,.play-lh.googleusercontent.com,SERVER
+  - DOMAIN-SUFFIX,.play.google.com,SERVER
+  - DOMAIN-SUFFIX,.play.googleapis.com,SERVER
+  - DOMAIN-SUFFIX,.gvt1.com,SERVER
   - IP-CIDR,198.18.0.1/16,REJECT,no-resolve
   - DST-PORT,22,DIRECT
   - DST-PORT,21,GLOBAL
