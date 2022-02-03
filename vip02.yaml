@@ -1,44 +1,40 @@
-port: 7890
-socks-port: 3080
-allow-lan: false
-mode: Rule
-log-level: info
-external-controller: 127.0.0.1:9090
+redir-port: 3082
+port: 3080
+socks-port: 3081
+mixed-port: 3083
+mode: global
+log-level: silent
+allow-lan: true
+external-controller: 0.0.0.0:9090
+secret: '123456'
+bind-address: "*"
+external-ui: "/usr/share/openclash/dashboard"
 dns:
   enable: true
-  listen: 0.0.0.0:53
   ipv6: false
+  system-dns: false
+  enhanced-mode: redir-host
+  listen: 0.0.0.0:5354
+  default-nameserver:
+    - 162.159.36.1
+    - 162.159.46.1
   nameserver:
-    - 119.29.29.29
-    - 114.114.114.114
-    - 223.5.5.5
-    - tls://1.1.1.1
-cfw-bypass:
-  - qq.com
-  - music.163.com
-  - "*.music.126.net"
-  - localhost
-  - 127.*
-  - 10.*
-  - 172.16.*
-  - 172.17.*
-  - 172.18.*
-  - 172.19.*
-  - 172.20.*
-  - 172.21.*
-  - 172.22.*
-  - 172.23.*
-  - 172.24.*
-  - 172.25.*
-  - 172.26.*
-  - 172.27.*
-  - 172.28.*
-  - 172.29.*
-  - 172.30.*
-  - 172.31.*
-  - 192.168.*
-  - <local>
-cfw-latency-timeout: 5000
+    - https://162.159.36.1/dns-query
+    - udp://162.159.36.1:53
+  fallback:
+    - https://162.159.36.1/dns-query
+    - udp://162.159.36.1:53
+  fallback-filter:
+    geoip: false
+    ipcidr:
+      - 240.0.0.0/4
+tun:
+  enable: true
+  stack: gvisor
+  dns-hijack:
+  - https://162.159.36.1/dns-query
+  - udp://162.159.36.1:53
+tproxy-port: 3084
 proxies:
   - name: ID VMess SSL
     server: vip02.darktunnel.net
