@@ -8,7 +8,6 @@ allow-lan: true
 external-controller: 0.0.0.0:9090
 secret: '123456'
 bind-address: "*"
-external-ui: "/usr/share/openclash/dashboard"
 dns:
   enable: true
   ipv6: false
@@ -52,70 +51,6 @@ proxies:
       path: /vmess-ws
       headers:
         Host: v24.muscdn.com
-  - name: ID VMess TLS
-    server: v24.muscdn.com
-    port: 80
-    type: vmess
-    uuid: 3a357238-cc62-4995-8568-e15fa21538a3
-    sni: vip02.darktunnel.net
-    alterId: 0
-    cipher: auto
-    tls:
-    skip-cert-verify: true
-    udp: true
-    network: ws
-    ws-opts:
-      path: /vmess-ws
-      headers:
-        Host: vip02.darktunnel.net
-  - name: ID VMess IPED VIP
-    server: 104.22.25.131
-    port: 80
-    type: vmess
-    uuid: 3a357238-cc62-4995-8568-e15fa21538a3
-    sni: vip02.darktunnel.net
-    alterId: 0
-    cipher: auto
-    tls:
-    skip-cert-verify: true
-    udp: true
-    network: ws
-    ws-opts:
-      path: /vmess-ws
-      headers:
-        Host: vip02.darktunnel.net
-  - name: ID VMess gRPC SSL
-    server: vip02.darktunnel.net
-    port: 443
-    type: vmess
-    uuid: 3a357238-cc62-4995-8568-e15fa21538a3
-    sni: p77-sign-sg-lite.tiktokcdn.com
-    alterId: 0
-    cipher: auto
-    tls: true
-    skip-cert-verify: true
-    udp: true
-    network: grpc
-    ws-opts:
-      path: vmess-grpc
-      headers:
-        Host: v24.muscdn.com
-  - name: ID VMess gRPC TLS
-    server: p77-sign-sg-lite.tiktokcdn.com
-    port: 80
-    type: vmess
-    uuid: 3a357238-cc62-4995-8568-e15fa21538a3
-    sni: vip02.darktunnel.net
-    alterId: 0
-    cipher: auto
-    tls: true
-    skip-cert-verify: true
-    udp: true
-    network: grpc
-    ws-opts:
-      path: vmess-grpc
-      headers:
-        Host: vip02.darktunnel.net
   - name: ID Trojan SSL
     server: vip02.darktunnel.net
     port: 443
@@ -123,14 +58,6 @@ proxies:
     type: trojan
     password: 3a357238-cc62-4995-8568-e15fa21538a3
     sni: v24.muscdn.com
-    skip-cert-verify: true
-  - name: ID Trojan XTLS
-    server: vip02.darktunnel.net
-    port: 443
-    udp: true
-    type: trojan
-    password: 3a357238-cc62-4995-8568-e15fa21538a3
-    sni: p77-sign-sg-lite.tiktokcdn.com
     skip-cert-verify: true
   - name: ID Trojan ws SSL
     type: trojan
@@ -145,36 +72,43 @@ proxies:
         Host: v24.muscdn.com
     sni: v24.muscdn.com
     skip-cert-verify: true
-  - name: ID vless WS TLS
-    server: p77-sign-sg-lite.tiktokcdn.com
-    port: 80
-    type: vless
-    uuid: 3a357238-cc62-4995-8568-e15fa21538a3
-    cipher: auto
-    tls: null
-    skip-cert-verify: true
-    udp: true
-    network: ws
-    ws-opts:
-      path: vless-ws
-      headers:
-        Host: vip02.darktunnel.net
-    sni: vip02.darktunnel.net
-  - name: ID vless ws XRay SSL
-    server: vip02.darktunnel.net
+  - name: SG VMess SSL
+    server: sgdo-vip02.darktunnel.net
     port: 443
-    type: vless
+    type: vmess
     uuid: 3a357238-cc62-4995-8568-e15fa21538a3
-    sni: 3a357238-cc62-4995-8568-e15fa21538a3@vip02.darktunnel.net:443/?path=vless-ws&security=tls&encryption=none&type=ws&sni=p77-sign-sg-lite.tiktokcdn.com
+    sni: v24.muscdn.com
+    alterId: 0
     cipher: auto
-    tls: true
+    tls: 1
     skip-cert-verify: true
     udp: true
     network: ws
     ws-opts:
-      path: vless-ws
+      path: /vmess-ws
       headers:
-        Host: 3a357238-cc62-4995-8568-e15fa21538a3@vip02.darktunnel.net:443/?path=vless-ws
+        Host: v24.muscdn.com
+  - name: SG Trojan SSL
+    server: sgdo-vip02.darktunnel.net
+    port: 443
+    udp: true
+    type: trojan
+    password: 3a357238-cc62-4995-8568-e15fa21538a3
+    sni: v24.muscdn.com
+    skip-cert-verify: true
+  - name: SG Trojan ws SSL
+    type: trojan
+    server: sgdo-vip02.darktunnel.net
+    port: 443
+    password: 3a357238-cc62-4995-8568-e15fa21538a3
+    udp: true
+    network: ws
+    ws-opts:
+      path: /trojan-ws
+      headers:
+        Host: v24.muscdn.com
+    sni: v24.muscdn.com
+    skip-cert-verify: true
         
 proxy-groups:
   - name: SERVER
@@ -186,14 +120,6 @@ proxy-groups:
       - VMESS VIP
       - TROJAN VIP
       - VLESS VIP
-      - IPED VIP
-  - name: IPED VIP
-    type: select
-    url: 'http://www.gstatic.com/generate_204'
-    interval: 300
-    strategy: consistent-hashing
-    proxies:
-      - ID VMess IPED VIP
   - name: VMESS VIP
     type: select
     url: 'http://www.gstatic.com/generate_204'
@@ -201,9 +127,7 @@ proxy-groups:
     strategy: consistent-hashing
     proxies:
       - ID VMess SSL
-      - ID VMess TLS
-      - ID VMess gRPC SSL
-      - ID VMess gRPC TLS
+      - SG VMess SSL
   - name: TROJAN VIP
     type: select
     url: 'http://www.gstatic.com/generate_204'
@@ -211,16 +135,9 @@ proxy-groups:
     strategy: consistent-hashing
     proxies:
       - ID Trojan SSL
-      - ID Trojan XTLS
       - ID Trojan ws SSL
-  - name: VLESS VIP
-    type: select
-    url: 'http://www.gstatic.com/generate_204'
-    interval: 300
-    strategy: consistent-hashing
-    proxies:
-      - ID vless WS TLS
-      - ID vless ws XRay SSL
+      - SG Trojan SSL
+      - SG Trojan ws SSL
     
 rules:
   - DOMAIN-SUFFIX,g.whatsapp.net,DIRECT
