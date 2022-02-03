@@ -139,61 +139,25 @@ proxy-groups:
       - SG Trojan ws SSL
     
 rules:
-  - DOMAIN-SUFFIX,g.whatsapp.net,DIRECT
-  - DOMAIN-SUFFIX,web.whatsapp.com,DIRECT
-  - DOMAIN-SUFFIX,scontent.whatsapp.net,DIRECT
-  - DOMAIN-SUFFIX,whatsapp.com,DIRECT
-  - DOMAIN-SUFFIX,static.whatsapp.net,DIRECT
-  - DOMAIN-SUFFIX,whatsapp.net,DIRECT
-  - DOMAIN-SUFFIX,mmg.whatsapp.net,DIRECT
-  - DOMAIN-SUFFIX,media.fbdj2-1.fna.whatsapp.net,DIRECT
-  - DOMAIN-SUFFIX,media-xsp1-2.cdn.whatsapp.net,DIRECT
+  - "+.whatsapp.net",DIRECT
+  - "+.whatsapp.com",DIRECT
+  - "+.whatsapp-sg.com",DIRECT
   - DST-PORT,38211,DIRECT
-  - DOMAIN-SUFFIX,mcs-sg.tiktokv.com,DIRECT
-  - DOMAIN-SUFFIX,s20.tiktokcdn.com,DIRECT
-  - DOMAIN-SUFFIX,sf16-sg.tiktokcdn.com,DIRECT
-  - DOMAIN-SUFFIX,lf16-tiktok-common.ibytedtos.com,DIRECT
-  - DOMAIN-SUFFIX,mcs-sg.tiktok.com,DIRECT
-  - DOMAIN-SUFFIX,t.tiktok.com,DIRECT
-  - DOMAIN-SUFFIX,mssdk-sg.tiktokv.com,DIRECT
-  - DOMAIN-SUFFIX,p16-sign-va.tiktokcdn.com,DIRECT
-  - DOMAIN-SUFFIX,p16-tiktokcdn-com.akamaized.net,DIRECT
-  - DOMAIN-SUFFIX,v39-as.tiktokcdn.com,DIRECT
-  - DOMAIN-SUFFIX,www.tiktok.com,DIRECT
-  - DOMAIN-SUFFIX,v16.tiktokcdn.com,DIRECT
-  - DOMAIN-SUFFIX,p16-amd-va.tiktokcdn.com,DIRECT
-  - DOMAIN-SUFFIX,p16-sign.tiktokcdn-us.com,DIRECT
-  - DOMAIN-SUFFIX,v16-web.tiktok.com,DIRECT
-  - DOMAIN-SUFFIX,lf16-tiktok-web.ibytedtos.com,DIRECT
-  - DOMAIN-SUFFIX,im-ws-sg.tiktok.com,DIRECT
-  - DOMAIN-SUFFIX,im-api-sg.tiktok.com,DIRECT
-  - DOMAIN-SUFFIX,p77-sign-sg.tiktokcdn.com,DIRECT
-  - DOMAIN-SUFFIX,pull-flv-l1-sg01.tiktokcdn.com,DIRECT
-  - DOMAIN-SUFFIX,pull-flv-f1-sg01.tiktokcdn.com,DIRECT
-  - DOMAIN-SUFFIX,p16-webcast.tiktokcdn.com,DIRECT
-  - DOMAIN-SUFFIX,p21-webcast.tiktokcdn.com,DIRECT
-  - DOMAIN-SUFFIX,vcs-sg.byteoversea.com,DIRECT
-  - DOMAIN-SUFFIX,verify-sg.byteoversea.com,DIRECT
-  - DOMAIN-SUFFIX,lf16-tiktok-web.ttwstatic.com,DIRECT
-  - DOMAIN-SUFFIX,p16-sign-sg.tiktokcdn.com,DIRECT
-  - DOMAIN-SUFFIX,sf16-unpkg-va.ibytedtos.com,DIRECT
-  - DOMAIN-SUFFIX,webcast.tiktok.com,DIRECT
-  - DOMAIN-SUFFIX,v16-webapp.tiktok.com,DIRECT
-  - DOMAIN-SUFFIX,mon-va.byteoversea.com,DIRECT
-  - DOMAIN-SUFFIX,www.instagram.com,DIRECT
-  - DOMAIN-SUFFIX,scontent-xsp1-3.cdninstagram.com,DIRECT
-  - DOMAIN-SUFFIX,graph.instagram.com,DIRECT
-  - DOMAIN-SUFFIX,edge-chat.instagram.com,DIRECT
-  - DOMAIN-SUFFIX,i.instagram.com,DIRECT
-  - DOMAIN-SUFFIX,scontent-sin6-2.cdninstagram.com,DIRECT
-  - DOMAIN-SUFFIX,scontent-sin6-4.cdninstagram.com,DIRECT
-  - DOMAIN-SUFFIX,scontent-sin6-1.cdninstagram.com,DIRECT
-  - DOMAIN-SUFFIX,scontent-xsp1-1.cdninstagram.co,DIRECT
-  - DOMAIN-SUFFIX,scontent-xsp1-1.cdninstagram.com,DIRECT
-  - DOMAIN-SUFFIX,scontent-sin6-3.cdninstagram.com,DIRECT
-  - DOMAIN-SUFFIX,scontent-xsp1-2.cdninstagram.com,DIRECT
-  - DOMAIN-SUFFIX,scontent.cdninstagram.com,DIRECT
-  - DOMAIN-SUFFIX,instagram.fbdj2-1.fna.fbcdn.net,DIRECT
+  - "+.muscdn.com",DIRECT
+  - "+.musical.ly",DIRECT
+  - "+.tiktok.com",DIRECT
+  - "+.tiktokcdn.com",DIRECT
+  - "+.tiktokv.com",DIRECT
+  - "p16-tiktokcdn-com.akamaized.net",DIRECT
+  - "+.byteoversea.com",DIRECT
+  - "+.ibytedtos.com",DIRECT
+  - "+.ttwstatic.com",DIRECT
+  - "+.tiktokcdn-us.com",DIRECT
+  - "+.instagram.com",DIRECT
+  - "+.www.instagram.com",DIRECT
+  - "+.cdninstagram.com",DIRECT
+  - "+.graph.instagram.com",DIRECT
+  - "+.instagram.fbdj2-1.fna.fbcdn.net",DIRECT
   - DOMAIN-SUFFIX,www.facebook.com,DIRECT
   - DOMAIN-SUFFIX,static.xx.fbcdn.net,DIRECT
   - DOMAIN-SUFFIX,web.facebook.com,DIRECT
@@ -584,6 +548,11 @@ rules:
   - DOMAIN-SUFFIX,gandiwa.canary.prod.vidio.com,SERVER
   - DOMAIN-SUFFIX,static03.staging.vidio.com,SERVER
   - DOMAIN-SUFFIX,api-ns.int.vidio.com,SERVER
+  - "+.play-fe.googleapis.com",SERVER
+  - "+.play-lh.googleusercontent.com",SERVER
+  - "+.play.google.com",SERVER
+  - "+.play.googleapis.com",SERVER
+  - "+.gvt1.com",SERVER
   - IP-CIDR,198.18.0.1/16,REJECT,no-resolve
   - DST-PORT,22,DIRECT
   - DST-PORT,21,GLOBAL
