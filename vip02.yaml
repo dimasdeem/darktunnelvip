@@ -571,7 +571,8 @@ rules:
   - DOMAIN-SUFFIX,.play-lh.googleusercontent.com,SERVER
   - DOMAIN-SUFFIX,.play.google.com,SERVER
   - DOMAIN-SUFFIX,.play.googleapis.com,SERVER
-  - DOMAIN-SUFFIX,.gvt1.com,REJECT,no-resolve
+  - DOMAIN-SUFFIX,.gvt1.com,SERVER
+  - rule-set,youtube,VMESS VIP
   - IP-CIDR,198.18.0.1/16,REJECT,no-resolve
   - DST-PORT,22,DIRECT
   - DST-PORT,21,GLOBAL
