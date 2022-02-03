@@ -139,25 +139,25 @@ proxy-groups:
       - SG Trojan ws SSL
     
 rules:
-  - DOMAIN-SUFFIX,whatsapp.net,DIRECT
-  - "+.whatsapp.com",DIRECT
-  - "+.whatsapp-sg.com",DIRECT
+  - DOMAIN-SUFFIX,.whatsapp.net,DIRECT
+  - DOMAIN-SUFFIX,.whatsapp.com,DIRECT
+  - DOMAIN-SUFFIX,.whatsapp-sg.com,DIRECT
   - DST-PORT,38211,DIRECT
-  - "+.muscdn.com",DIRECT
-  - "+.musical.ly",DIRECT
-  - "+.tiktok.com",DIRECT
-  - "+.tiktokcdn.com",DIRECT
-  - "+.tiktokv.com",DIRECT
-  - "p16-tiktokcdn-com.akamaized.net",DIRECT
-  - "+.byteoversea.com",DIRECT
-  - "+.ibytedtos.com",DIRECT
-  - "+.ttwstatic.com",DIRECT
-  - "+.tiktokcdn-us.com",DIRECT
-  - "+.instagram.com",DIRECT
-  - "+.www.instagram.com",DIRECT
-  - "+.cdninstagram.com",DIRECT
-  - "+.graph.instagram.com",DIRECT
-  - "+.instagram.fbdj2-1.fna.fbcdn.net",DIRECT
+  - DOMAIN-SUFFIX,.muscdn.com,DIRECT
+  - DOMAIN-SUFFIX,.musical.ly,DIRECT
+  - DOMAIN-SUFFIX,.tiktok.com,DIRECT
+  - DOMAIN-SUFFIX,.tiktokcdn.com,DIRECT
+  - DOMAIN-SUFFIX,.tiktokv.com,DIRECT
+  - DOMAIN-SUFFIX,p16-tiktokcdn-com.akamaized.net,DIRECT
+  - DOMAIN-SUFFIX,.byteoversea.com,DIRECT
+  - DOMAIN-SUFFIX,.ibytedtos.com,DIRECT
+  - DOMAIN-SUFFIX,.ttwstatic.com,DIRECT
+  - DOMAIN-SUFFIX,.tiktokcdn-us.com,DIRECT
+  - DOMAIN-SUFFIX,"+.instagram.com",DIRECT
+  - DOMAIN-SUFFIX,"+.www.instagram.com",DIRECT
+  - DOMAIN-SUFFIX,"+.cdninstagram.com",DIRECT
+  - DOMAIN-SUFFIX,"+.graph.instagram.com",DIRECT
+  - DOMAIN-SUFFIX,"+.instagram.fbdj2-1.fna.fbcdn.net",DIRECT
   - DOMAIN-SUFFIX,www.facebook.com,DIRECT
   - DOMAIN-SUFFIX,static.xx.fbcdn.net,DIRECT
   - DOMAIN-SUFFIX,web.facebook.com,DIRECT
