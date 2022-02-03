@@ -7,7 +7,7 @@ proxies:
     port: 443
     type: vmess
     uuid: 3a357238-cc62-4995-8568-e15fa21538a3
-    sni: p77-sign-sg-lite.tiktokcdn.com
+    sni: v24.muscdn.com
     alterId: 0
     cipher: auto
     tls: 1
@@ -17,9 +17,9 @@ proxies:
     ws-opts:
       path: /vmess-ws
       headers:
-        Host: p77-sign-sg-lite.tiktokcdn.com
+        Host: v24.muscdn.com
   - name: ID VMess TLS
-    server: p77-sign-sg-lite.tiktokcdn.com
+    server: v24.muscdn.com
     port: 80
     type: vmess
     uuid: 3a357238-cc62-4995-8568-e15fa21538a3
@@ -65,7 +65,7 @@ proxies:
     ws-opts:
       path: vmess-grpc
       headers:
-        Host: p77-sign-sg-lite.tiktokcdn.com
+        Host: v24.muscdn.com
   - name: ID VMess gRPC TLS
     server: p77-sign-sg-lite.tiktokcdn.com
     port: 80
@@ -88,7 +88,7 @@ proxies:
     udp: true
     type: trojan
     password: 3a357238-cc62-4995-8568-e15fa21538a3
-    sni: p77-sign-sg-lite.tiktokcdn.com
+    sni: v24.muscdn.com
     skip-cert-verify: true
   - name: ID Trojan XTLS
     server: vip02.darktunnel.net
@@ -108,8 +108,8 @@ proxies:
     ws-opts:
       path: /trojan-ws
       headers:
-        Host: p77-sign-sg-lite.tiktokcdn.com
-    sni: p77-sign-sg-lite.tiktokcdn.com
+        Host: v24.muscdn.com
+    sni: v24.muscdn.com
     skip-cert-verify: true
   - name: ID vless WS TLS
     server: p77-sign-sg-lite.tiktokcdn.com
