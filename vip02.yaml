@@ -145,6 +145,9 @@ proxies:
 proxy-groups:
   - name: SERVER
     type: select
+    url: 'http://www.gstatic.com/generate_204'
+    interval: 300
+    strategy: consistent-hashing
     proxies:
       - VMESS VIP
       - TROJAN VIP
@@ -152,10 +155,16 @@ proxy-groups:
       - IPED VIP
   - name: IPED VIP
     type: select
+    url: 'http://www.gstatic.com/generate_204'
+    interval: 300
+    strategy: consistent-hashing
     proxies:
       - ID VMess IPED VIP
   - name: VMESS VIP
     type: select
+    url: 'http://www.gstatic.com/generate_204'
+    interval: 300
+    strategy: consistent-hashing
     proxies:
       - ID VMess SSL
       - ID VMess TLS
@@ -163,12 +172,18 @@ proxy-groups:
       - ID VMess gRPC TLS
   - name: TROJAN VIP
     type: select
+    url: 'http://www.gstatic.com/generate_204'
+    interval: 300
+    strategy: consistent-hashing
     proxies:
       - ID Trojan SSL
       - ID Trojan XTLS
       - ID Trojan ws SSL
   - name: VLESS VIP
     type: select
+    url: 'http://www.gstatic.com/generate_204'
+    interval: 300
+    strategy: consistent-hashing
     proxies:
       - ID vless WS TLS
       - ID vless ws XRay SSL
@@ -623,4 +638,4 @@ rules:
   - IP-CIDR,1.1.1.0/24,SERVER
   - IP-CIDR,208.67.220.0/24,SERVER
   - GEOIP,CN,DIRECT
-  - MATCH,SERVER,IPED VIP,VMESS VIP,TROJAN VIP,VLESS VIP
+  - MATCH,SERVER
