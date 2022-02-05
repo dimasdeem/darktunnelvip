@@ -1,0 +1,570 @@
+port: 3080
+socks-port: 3081
+redir-port: 3082
+mixed-port: 3083
+mode: rule
+log-level: silent
+allow-lan: true
+external-controller: 0.0.0.0:9090
+bind-address: "*"
+ipv6: false
+dns:
+  enable: true
+  ipv6: true
+  system-dns: false
+  enhanced-mode: redir-host
+  listen: 127.0.0.1:5354
+  geoip: false
+  default-nameserver:
+    - 162.159.36.1
+    - 162.159.46.1
+  nameserver:
+    - 162.159.36.1
+    - https://162.159.36.1/dns-query
+    - udp://162.159.36.1:53
+  fallback:
+    - https://162.159.36.1/dns-query
+    - udp://162.159.36.1:53
+  fallback-filter:
+    geoip: true
+    ipcidr:
+      - 0.0.0.0/8
+      - 10.0.0.0/8
+      - 100.64.0.0/10
+      - 127.0.0.0/8
+      - 169.254.0.0/16
+      - 172.16.0.0/12
+      - 192.0.0.0/24
+      - 192.0.2.0/24
+      - 192.88.99.0/24
+      - 192.168.0.0/16
+      - 198.18.0.0/15
+      - 198.51.100.0/24
+      - 203.0.113.0/24
+      - 224.0.0.0/4
+      - 240.0.0.0/4
+      - 255.255.255.255/32
+    domain:
+      - '+.google.com'
+      - '+.cloudflare.com'
+      - '+.cloudflare-dns.com'
+      - '+.facebook.com'
+      - '+.youtube.com'
+      - "+.githubusercontent.com"
+profile:
+  store-selected: true
+proxies:
+#VMess
+#ID
+  - name: ID gRPC
+    type: vmess
+    server: vip01.darktunnel.net
+    port: 80
+    uuid: 
+    alterId: 0
+    cipher: auto
+    udp: true
+    tls: true
+    servername: 
+    network: grpc
+    grpc-opts:
+      grpc-service-name: vmess-grpc
+    skip-cert-verify: true
+#DO
+  - name: DO gRPC
+    type: vmess
+    server: sgdo-vip02.darktunnel.net
+    port: 80
+    uuid: 
+    alterId: 0
+    cipher: auto
+    udp: true
+    tls: true
+    servername: 
+    network: grpc
+    grpc-opts:
+      grpc-service-name: vmess-grpc
+    skip-cert-verify: true
+#WS
+#ID
+  - name: ID WS CDN
+    type: vmess
+    server: 104.18.20.219
+    port: 80
+    uuid: 
+    alterId: 0
+    cipher: auto
+    udp: true
+    tls: false
+    network: ws
+    ws-opts:
+      path: /vmess-ws
+      headers:
+        Host: vip01.darktunnel.net
+  - name: ID WS CDN TLS
+    type: vmess
+    server: 104.18.20.219
+    port: 443
+    uuid: 
+    alterId: 0
+    cipher: auto
+    udp: true
+    network: ws
+    ws-opts:
+      path: /vmess-ws
+      headers:
+        Host: vip01.darktunnel.net
+    tls: true
+    servername: vip01.darktunnel.net
+    skip-cert-verify: true
+#DO
+  - name: DO WS CDN
+    type: vmess
+    server: 104.18.20.219
+    port: 80
+    uuid: 
+    alterId: 0
+    cipher: auto
+    udp: true
+    tls: false
+    network: ws
+    ws-opts:
+      path: /vmess-ws
+      headers:
+        Host: sgdo-vip02.darktunnel.net
+  - name: DO WS CDN TLS
+    type: vmess
+    server: 104.18.20.219
+    port: 443
+    uuid: 
+    alterId: 0
+    cipher: auto
+    udp: true
+    network: ws
+    ws-opts:
+      path: /vmess-ws
+      headers:
+        Host: sgdo-vip02.darktunnel.net
+    tls: true
+    servername: sgdo-vip02.darktunnel.net
+    skip-cert-verify: true
+#VLess
+#ID
+  - name: ID VL WS CDN
+    type: vless
+    server: 104.18.20.219
+    port: 80
+    uuid: 
+    cipher: none
+    udp: true
+    tls: false
+    network: ws
+    ws-opts:
+      path: /vless-ws
+      headers:
+        Host: vip01.darktunnel.net
+  - name: ID VL WS CDN TLS
+    type: vless
+    server: 104.18.20.219
+    port: 443
+    uuid: 
+    cipher: none
+    udp: true
+    network: ws
+    ws-opts:
+      path: /vless-ws
+      headers:
+        Host: vip01.darktunnel.net
+    tls: true
+    servername: vip01.darktunnel.net
+    skip-cert-verify: true
+#DO
+  - name: DO VL WS CDN
+    type: vless
+    server: 104.18.20.219
+    port: 80
+    uuid: 
+    cipher: none
+    udp: true
+    tls: false
+    network: ws
+    ws-opts:
+      path: /vless-ws
+      headers:
+        Host: sgdo-vip02.darktunnel.net
+  - name: DO VL WS CDN TLS
+    type: vless
+    server: 104.18.20.219
+    port: 443
+    uuid: 
+    cipher: none
+    udp: true
+    network: ws
+    ws-opts:
+      path: /vless-ws
+      headers:
+        Host: sgdo-vip02.darktunnel.net
+    tls: true
+    servername: sgdo-vip02.darktunnel.net
+    skip-cert-verify: true
+#Trojan
+#ID
+  - name: ID TR TLS
+    type: trojan
+    server: vip01.darktunnel.net
+    port: 80
+    password: 
+    udp: true
+    sni: 
+    skip-cert-verify: true
+#DO
+  - name: DO TR TLS
+    type: trojan
+    server: sgdo-vip02.darktunnel.net
+    port: 80
+    password: 
+    network: tcp
+    udp: true
+    sni: 
+    skip-cert-verify: true
+#Trojan WS
+#ID
+  - name: ID TR-GO
+    type: trojan
+    server: 104.18.20.219
+    port: 443
+    password: 
+    udp: true
+    network: ws
+    ws-opts:
+      path: /trojan-ws
+      headers:
+        Host: vip01.darktunnel.net
+    sni: vip01.darktunnel.net
+    skip-cert-verify: true
+#DO
+  - name: DO TR-GO
+    type: trojan
+    server: 104.18.20.219
+    port: 443
+    password: 
+    udp: true
+    network: ws
+    ws-opts:
+      path: /trojan-ws
+      headers:
+        Host: sgdo-vip02.darktunnel.net
+    sni: sgdo-vip02.darktunnel.net
+    skip-cert-verify: true
+proxy-groups:
+  - name: MAIN
+    type: select
+    proxies:
+      - VMess
+      - VLess
+      - Trojan
+      - Global ID
+      - Global SG
+      - Global ID WS
+      - Global SG WS
+      - BP gRPC
+      - BP CDN
+      - BP CDN TLS
+      - LB CH gRPC
+      - LB RR gRPC
+      - LB CH CDN
+      - LB RR CDN
+      - LB CH CDN TLS
+      - LB RR CDN TLS
+  - name: VMess
+    type: select
+    proxies:
+      - ID gRPC
+      - ID WS CDN
+      - ID WS CDN TLS
+      - DO gRPC
+      - DO WS CDN
+      - DO WS CDN TLS
+  - name: VLess
+    type: select
+    proxies:
+      - ID VL WS CDN
+      - ID VL WS CDN TLS
+      - DO VL WS CDN
+      - DO VL WS CDN TLS
+  - name: Trojan
+    type: select
+    proxies:
+      - ID TR TLS
+      - ID TR-GO
+      - DO TR TLS
+      - DO TR-GO
+  - name: Global ID
+    type: fallback
+    url: http://www.gstatic.com/generate_204
+    interval: 300
+    tolerance: 150
+    proxies:
+      - ID gRPC
+      - ID TR TLS
+  - name: Global SG
+    type: fallback
+    url: http://www.gstatic.com/generate_204
+    interval: 300
+    tolerance: 150
+    proxies:
+      - DO gRPC
+      - DO TR TLS
+  - name: Global ID WS
+    type: fallback
+    url: http://www.gstatic.com/generate_204
+    interval: 300
+    tolerance: 150
+    proxies:
+      - ID WS CDN
+      - ID WS CDN TLS
+      - ID VL WS CDN
+      - ID VL WS CDN TLS
+      - ID TR-GO
+  - name: Global SG WS
+    type: fallback
+    url: http://www.gstatic.com/generate_204
+    interval: 300
+    tolerance: 150
+    proxies:
+      - DO WS CDN
+      - DO WS CDN TLS
+      - DO VL WS CDN
+      - DO VL WS CDN TLS
+      - DO TR-GO
+  - name: BP gRPC
+    type: url-test
+    url: http://www.gstatic.com/generate_204
+    interval: 300
+    tolerance: 150
+    proxies:
+      - ID gRPC
+      - DO gRPC
+  - name: BP CDN
+    type: url-test
+    url: http://www.gstatic.com/generate_204
+    interval: 300
+    tolerance: 150
+    proxies:
+      - ID WS CDN
+      - ID VL WS CDN
+      - DO WS CDN
+      - DO VL WS CDN
+  - name: BP CDN TLS
+    type: url-test
+    url: http://www.gstatic.com/generate_204
+    interval: 300
+    tolerance: 150
+    proxies:
+      - ID WS CDN TLS
+      - ID VL WS CDN TLS
+      - ID TR-GO
+      - DO WS CDN TLS
+      - DO VL WS CDN TLS
+      - DO TR-GO
+  - name: LB CH gRPC
+    type: load-balance
+    url: http://www.gstatic.com/generate_204
+    interval: 300
+    strategy: consistent-hashing
+    proxies:
+     - ID gRPC
+     - DO gRPC
+  - name: LB RR gRPC
+    type: load-balance
+    url: http://www.gstatic.com/generate_204
+    interval: 300
+    strategy: round-robin
+    proxies:
+      - ID gRPC
+      - DO gRPC
+  - name: LB CH CDN
+    type: load-balance
+    url: http://www.gstatic.com/generate_204
+    interval: 300
+    strategy: consistent-hashing
+    proxies:
+      - ID WS CDN
+      - ID VL WS CDN
+      - DO WS CDN
+      - DO VL WS CDN
+  - name: LB RR CDN
+    type: load-balance
+    url: http://www.gstatic.com/generate_204
+    interval: 300
+    strategy: round-robin
+    proxies:
+      - ID WS CDN
+      - ID VL WS CDN
+      - DO WS CDN
+      - DO VL WS CDN
+  - name: LB CH CDN TLS
+    type: load-balance
+    url: http://www.gstatic.com/generate_204
+    interval: 300
+    strategy: consistent-hashing
+    proxies:
+      - ID WS CDN TLS
+      - ID VL WS CDN TLS
+      - ID TR-GO
+      - DO WS CDN TLS
+      - DO VL WS CDN TLS
+      - DO TR-GO
+  - name: LB RR CDN TLS
+    type: load-balance
+    url: http://www.gstatic.com/generate_204
+    interval: 300
+    strategy: round-robin
+    proxies:
+      - ID WS CDN TLS
+      - ID VL WS CDN TLS
+      - ID TR-GO
+      - DO WS CDN TLS
+      - DO VL WS CDN TLS
+      - DO TR-GO
+rule-providers:
+  rule_browser:
+    type: file
+    behavior: classical
+    path: "./rule_browser.yaml"
+  rule_videoconferences:
+    type: file
+    behavior: classical
+    path: "./rule_videoconferences.yaml"
+  rule_sosmed:
+    type: file
+    behavior: classical
+    path: "./rule_sosmed.yaml"
+  rule_speedtest:
+    type: file
+    behavior: domain
+    path: "./rule_speedtest.yaml"
+  rule_streaming:
+    type: file
+    behavior: classical
+    path: "./rule_streaming.yaml"
+  rule_gaming:
+    type: file
+    behavior: classical
+    path: "./rule_gaming.yaml"
+  rule_direct:
+    type: file
+    behavior: classical
+    path: "./rule_direct.yaml"
+  rule_reject:
+    type: file
+    behavior: domain
+    path: "./rule_reject.yaml"
+  rule_porn:
+    type: file
+    behavior: domain
+    path: "./rule_porn.yaml"
+  rule_lancidr:
+    type: file
+    behavior: ipcidr
+    path: "./rule_lancidr.yaml"
+  rule_telegramcidr:
+    type: file
+    behavior: ipcidr
+    path: "./rule_telegramcidr.yaml"
+  rule_telegram:
+    type: file
+    behavior: domain
+    path: "./rule_telegram.yaml"
+  rule_games:
+    type: file
+    behavior: domain
+    path: "./rule_games.yaml"
+  rule_portgames:
+    type: file
+    behavior: classical
+    path: "./rule_portgames.yaml"
+  rule_line:
+    type: file
+    behavior: domain
+    path: "./rule_line.yaml"
+  rule_metaverse:
+    type: file
+    behavior: domain
+    path: "./rule_metaverse.yaml"
+  rule_metaverse-dev:
+    type: file
+    behavior: domain
+    path: "./rule_metaverse-dev.yaml"
+  rule_whatsappcidr:
+    type: file
+    behavior: ipcidr
+    path: "./rule_whatsappcidr.yaml"
+  rule_youtube:
+    type: file
+    behavior: domain
+    path: "./rule_youtube.yaml"
+rules:
+  - PROCESS-NAME,v2ray,DIRECT
+  - PROCESS-NAME,xray,DIRECT
+  - PROCESS-NAME,naive,DIRECT
+  - PROCESS-NAME,trojan,DIRECT
+  - PROCESS-NAME,trojan-go,DIRECT
+  - PROCESS-NAME,ss-local,DIRECT
+  - PROCESS-NAME,privoxy,DIRECT
+  - PROCESS-NAME,leaf,DIRECT
+  - PROCESS-NAME,v2ray.exe,DIRECT
+  - PROCESS-NAME,xray.exe,DIRECT
+  - PROCESS-NAME,naive.exe,DIRECT
+  - PROCESS-NAME,trojan.exe,DIRECT
+  - PROCESS-NAME,trojan-go.exe,DIRECT
+  - PROCESS-NAME,ss-local.exe,DIRECT
+  - PROCESS-NAME,privoxy.exe,DIRECT
+  - RULE-SET,rule_reject,REJECT
+  - RULE-SET,rule_porn,LB RR CDN TLS
+  - RULE-SET,rule_lancidr,DIRECT,no-resolve
+  - RULE-SET,rule_direct,DIRECT
+  - RULE-SET,rule_speedtest,Global ID WS
+  - RULE-SET,rule_streaming,LB RR CDN TLS
+  - RULE-SET,rule_youtube,LB RR CDN TLS
+  - RULE-SET,rule_sosmed,LB RR gRPC
+  - RULE-SET,rule_line,LB CH gRPC
+  - RULE-SET,rule_metaverse,LB RR gRPC
+  - RULE-SET,rule_metaverse-dev,LB RR gRPC
+  - RULE-SET,rule_telegram,LB CH gRPC
+  - RULE-SET,rule_telegramcidr,LB CH gRPC
+  - RULE-SET,rule_gaming,BP gRPC
+  - RULE-SET,rule_games,BP gRPC
+  - RULE-SET,rule_portgames,BP gRPC
+  - RULE-SET,rule_whatsappcidr,BP gRPC
+  - RULE-SET,rule_browser,Global ID
+  - RULE-SET,rule_videoconferences,LB CH CDN
+  - DST-PORT,21,MAIN
+  - DST-PORT,22,MAIN
+  - DST-PORT,23,MAIN
+  - DST-PORT,25,MAIN
+  - DST-PORT,80,MAIN
+  - DST-PORT,81,MAIN
+  - DST-PORT,143,MAIN
+  - DST-PORT,443,MAIN
+  - DST-PORT,465,MAIN
+  - DST-PORT,587,MAIN
+  - DST-PORT,993,MAIN
+  - DST-PORT,995,MAIN
+  - DST-PORT,8000,MAIN
+  - DST-PORT,8008,MAIN
+  - DST-PORT,8080,MAIN
+  - DST-PORT,8081,MAIN
+  - DST-PORT,8090,MAIN
+  - DST-PORT,8443,MAIN
+  - DST-PORT,8888,MAIN
+  - IP-CIDR,192.168.0.0/16,DIRECT,no-resolve
+  - IP-CIDR,10.0.0.0/8,DIRECT,no-resolve
+  - IP-CIDR,172.16.0.0/12,DIRECT,no-resolve
+  - IP-CIDR,127.0.0.0/8,DIRECT,no-resolve
+  - IP-CIDR,100.64.0.0/10,DIRECT,no-resolve
+  - IP-CIDR6,::1/128,DIRECT,no-resolve
+  - IP-CIDR6,fc00::/7,DIRECT,no-resolve
+  - IP-CIDR6,fe80::/10,DIRECT,no-resolve
+  - IP-CIDR6,fd00::/8,DIRECT,no-resolve
+  - MATCH,MAIN
