@@ -58,14 +58,14 @@ proxies:
 #ID
   - name: ID gRPC
     type: vmess
-    server: vip01.darktunnel.net
+    server: vip02.darktunnel.net
     port: 80
-    uuid: 
+    uuid: 3a357238-cc62-4995-8568-e15fa21538a3
     alterId: 0
     cipher: auto
     udp: true
     tls: true
-    servername: 
+    servername: v27.tiktokcdn.com
     network: grpc
     grpc-opts:
       grpc-service-name: vmess-grpc
@@ -75,12 +75,12 @@ proxies:
     type: vmess
     server: sgdo-vip02.darktunnel.net
     port: 80
-    uuid: 
+    uuid: 3a357238-cc62-4995-8568-e15fa21538a3
     alterId: 0
     cipher: auto
     udp: true
     tls: true
-    servername: 
+    servername: v27.tiktokcdn.com
     network: grpc
     grpc-opts:
       grpc-service-name: vmess-grpc
@@ -89,9 +89,9 @@ proxies:
 #ID
   - name: ID WS CDN
     type: vmess
-    server: 104.18.20.219
+    server: v27.tiktokcdn.com
     port: 80
-    uuid: 
+    uuid: 3a357238-cc62-4995-8568-e15fa21538a3
     alterId: 0
     cipher: auto
     udp: true
@@ -100,12 +100,12 @@ proxies:
     ws-opts:
       path: /vmess-ws
       headers:
-        Host: vip01.darktunnel.net
+        Host: vip02.darktunnel.net
   - name: ID WS CDN TLS
     type: vmess
-    server: 104.18.20.219
+    server: v27.tiktokcdn.com
     port: 443
-    uuid: 
+    uuid: 3a357238-cc62-4995-8568-e15fa21538a3
     alterId: 0
     cipher: auto
     udp: true
@@ -113,16 +113,16 @@ proxies:
     ws-opts:
       path: /vmess-ws
       headers:
-        Host: vip01.darktunnel.net
+        Host: vip02.darktunnel.net
     tls: true
-    servername: vip01.darktunnel.net
+    servername: vip02.darktunnel.net
     skip-cert-verify: true
 #DO
   - name: DO WS CDN
     type: vmess
-    server: 104.18.20.219
+    server: v27.tiktokcdn.com
     port: 80
-    uuid: 
+    uuid: 3a357238-cc62-4995-8568-e15fa21538a3
     alterId: 0
     cipher: auto
     udp: true
@@ -134,9 +134,9 @@ proxies:
         Host: sgdo-vip02.darktunnel.net
   - name: DO WS CDN TLS
     type: vmess
-    server: 104.18.20.219
+    server: v27.tiktokcdn.com
     port: 443
-    uuid: 
+    uuid: 3a357238-cc62-4995-8568-e15fa21538a3
     alterId: 0
     cipher: auto
     udp: true
@@ -148,74 +148,15 @@ proxies:
     tls: true
     servername: sgdo-vip02.darktunnel.net
     skip-cert-verify: true
-#VLess
-#ID
-  - name: ID VL WS CDN
-    type: vless
-    server: 104.18.20.219
-    port: 80
-    uuid: 
-    cipher: none
-    udp: true
-    tls: false
-    network: ws
-    ws-opts:
-      path: /vless-ws
-      headers:
-        Host: vip01.darktunnel.net
-  - name: ID VL WS CDN TLS
-    type: vless
-    server: 104.18.20.219
-    port: 443
-    uuid: 
-    cipher: none
-    udp: true
-    network: ws
-    ws-opts:
-      path: /vless-ws
-      headers:
-        Host: vip01.darktunnel.net
-    tls: true
-    servername: vip01.darktunnel.net
-    skip-cert-verify: true
-#DO
-  - name: DO VL WS CDN
-    type: vless
-    server: 104.18.20.219
-    port: 80
-    uuid: 
-    cipher: none
-    udp: true
-    tls: false
-    network: ws
-    ws-opts:
-      path: /vless-ws
-      headers:
-        Host: sgdo-vip02.darktunnel.net
-  - name: DO VL WS CDN TLS
-    type: vless
-    server: 104.18.20.219
-    port: 443
-    uuid: 
-    cipher: none
-    udp: true
-    network: ws
-    ws-opts:
-      path: /vless-ws
-      headers:
-        Host: sgdo-vip02.darktunnel.net
-    tls: true
-    servername: sgdo-vip02.darktunnel.net
-    skip-cert-verify: true
 #Trojan
 #ID
   - name: ID TR TLS
     type: trojan
-    server: vip01.darktunnel.net
-    port: 80
+    server: vip02.darktunnel.net
+    port: 443
     password: 
     udp: true
-    sni: 
+    sni: v27.tiktokcdn.com
     skip-cert-verify: true
 #DO
   - name: DO TR TLS
@@ -225,13 +166,13 @@ proxies:
     password: 
     network: tcp
     udp: true
-    sni: 
+    sni: v27.tiktokcdn.com
     skip-cert-verify: true
 #Trojan WS
 #ID
   - name: ID TR-GO
     type: trojan
-    server: 104.18.20.219
+    server: v27.tiktokcdn.com
     port: 443
     password: 
     udp: true
@@ -239,13 +180,13 @@ proxies:
     ws-opts:
       path: /trojan-ws
       headers:
-        Host: vip01.darktunnel.net
-    sni: vip01.darktunnel.net
+        Host: vip02.darktunnel.net
+    sni: vip02.darktunnel.net
     skip-cert-verify: true
 #DO
   - name: DO TR-GO
     type: trojan
-    server: 104.18.20.219
+    server: v27.tiktokcdn.com
     port: 443
     password: 
     udp: true
@@ -261,7 +202,6 @@ proxy-groups:
     type: select
     proxies:
       - VMess
-      - VLess
       - Trojan
       - Global ID
       - Global SG
@@ -285,13 +225,6 @@ proxy-groups:
       - DO gRPC
       - DO WS CDN
       - DO WS CDN TLS
-  - name: VLess
-    type: select
-    proxies:
-      - ID VL WS CDN
-      - ID VL WS CDN TLS
-      - DO VL WS CDN
-      - DO VL WS CDN TLS
   - name: Trojan
     type: select
     proxies:
@@ -323,8 +256,6 @@ proxy-groups:
     proxies:
       - ID WS CDN
       - ID WS CDN TLS
-      - ID VL WS CDN
-      - ID VL WS CDN TLS
       - ID TR-GO
   - name: Global SG WS
     type: fallback
@@ -334,8 +265,6 @@ proxy-groups:
     proxies:
       - DO WS CDN
       - DO WS CDN TLS
-      - DO VL WS CDN
-      - DO VL WS CDN TLS
       - DO TR-GO
   - name: BP gRPC
     type: url-test
@@ -352,9 +281,7 @@ proxy-groups:
     tolerance: 150
     proxies:
       - ID WS CDN
-      - ID VL WS CDN
       - DO WS CDN
-      - DO VL WS CDN
   - name: BP CDN TLS
     type: url-test
     url: http://www.gstatic.com/generate_204
@@ -362,10 +289,8 @@ proxy-groups:
     tolerance: 150
     proxies:
       - ID WS CDN TLS
-      - ID VL WS CDN TLS
       - ID TR-GO
       - DO WS CDN TLS
-      - DO VL WS CDN TLS
       - DO TR-GO
   - name: LB CH gRPC
     type: load-balance
@@ -390,9 +315,7 @@ proxy-groups:
     strategy: consistent-hashing
     proxies:
       - ID WS CDN
-      - ID VL WS CDN
       - DO WS CDN
-      - DO VL WS CDN
   - name: LB RR CDN
     type: load-balance
     url: http://www.gstatic.com/generate_204
@@ -400,9 +323,7 @@ proxy-groups:
     strategy: round-robin
     proxies:
       - ID WS CDN
-      - ID VL WS CDN
       - DO WS CDN
-      - DO VL WS CDN
   - name: LB CH CDN TLS
     type: load-balance
     url: http://www.gstatic.com/generate_204
@@ -410,10 +331,8 @@ proxy-groups:
     strategy: consistent-hashing
     proxies:
       - ID WS CDN TLS
-      - ID VL WS CDN TLS
       - ID TR-GO
       - DO WS CDN TLS
-      - DO VL WS CDN TLS
       - DO TR-GO
   - name: LB RR CDN TLS
     type: load-balance
@@ -422,10 +341,8 @@ proxy-groups:
     strategy: round-robin
     proxies:
       - ID WS CDN TLS
-      - ID VL WS CDN TLS
       - ID TR-GO
       - DO WS CDN TLS
-      - DO VL WS CDN TLS
       - DO TR-GO
 rule-providers:
   rule_browser:
