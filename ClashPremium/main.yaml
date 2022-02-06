@@ -101,6 +101,7 @@ proxies:
       path: /vmess-ws
       headers:
         Host: vip02.darktunnel.net
+    servername: vip02.darktunnel.net
   - name: ID WS CDN TLS
     type: vmess
     server: v27.tiktokcdn.com
@@ -132,6 +133,7 @@ proxies:
       path: /vmess-ws
       headers:
         Host: sgdo-vip02.darktunnel.net
+    servername: sgdo-vip02.darktunnel.net
   - name: DO WS CDN TLS
     type: vmess
     server: v27.tiktokcdn.com
