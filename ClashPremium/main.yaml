@@ -156,7 +156,7 @@ proxies:
     type: trojan
     server: vip02.darktunnel.net
     port: 443
-    password: 
+    password: 3a357238-cc62-4995-8568-e15fa21538a3
     udp: true
     sni: v27.tiktokcdn.com
     skip-cert-verify: true
