@@ -352,115 +352,115 @@ rule-providers:
     behavior: classical
     path: "./rule_browser.yaml"
     url: https://darktunnel-vip02.netlify.app/ClashPremium/rule_browser.yaml
-    interval: 300
+    interval: 600
   rule_videoconferences:
     type: http
     behavior: classical
     path: "./rule_videoconferences.yaml"
     url: https://darktunnel-vip02.netlify.app/ClashPremium/rule_videoconferences.yaml
-    interval: 300
+    interval: 600
   rule_sosmed:
     type: http
     behavior: classical
     path: "./rule_sosmed.yaml"
     url: https://darktunnel-vip02.netlify.app/ClashPremium/rule_sosmed.yaml
-    interval: 300
+    interval: 600
   rule_speedtest:
     type: http
     behavior: domain
     path: "./rule_speedtest.yaml"
     url: https://darktunnel-vip02.netlify.app/ClashPremium/rule_speedtest.yaml
-    interval: 300
+    interval: 600
   rule_streaming:
     type: http
     behavior: classical
     path: "./rule_streaming.yaml"
     url: https://darktunnel-vip02.netlify.app/ClashPremium/rule_streaming.yaml
-    interval: 300
+    interval: 600
   rule_gaming:
     type: http
     behavior: classical
     path: "./rule_gaming.yaml"
     url: https://darktunnel-vip02.netlify.app/ClashPremium/rule_gaming.yaml
-    interval: 300
+    interval: 600
   rule_direct:
     type: http
     behavior: classical
     path: "./rule_direct.yaml"
     url: https://darktunnel-vip02.netlify.app/ClashPremium/rule_direct.yaml
-    interval: 300
+    interval: 600
   rule_reject:
     type: http
     behavior: domain
     path: "./rule_reject.yaml"
     url: https://darktunnel-vip02.netlify.app/ClashPremium/rule_reject.yaml
-    interval: 300
+    interval: 600
   rule_porn:
     type: http
     behavior: domain
     path: "./rule_porn.yaml"
     url: https://darktunnel-vip02.netlify.app/ClashPremium/rule_porn.yaml
-    interval: 300
+    interval: 600
   rule_lancidr:
     type: http
     behavior: ipcidr
     path: "./rule_lancidr.yaml"
     url: https://darktunnel-vip02.netlify.app/ClashPremium/rule_lancidr.yaml
-    interval: 300
+    interval: 600
   rule_telegramcidr:
     type: http
     behavior: ipcidr
     path: "./rule_telegramcidr.yaml"
     url: https://darktunnel-vip02.netlify.app/ClashPremium/rule_telegramcidr.yaml
-    interval: 300
+    interval: 600
   rule_telegram:
     type: http
     behavior: domain
     path: "./rule_telegram.yaml"
     url: https://darktunnel-vip02.netlify.app/ClashPremium/rule_telegram.yaml
-    interval: 300
+    interval: 600
   rule_games:
     type: http
     behavior: domain
     path: "./rule_games.yaml"
     url: https://darktunnel-vip02.netlify.app/ClashPremium/rule_games.yaml
-    interval: 300
+    interval: 600
   rule_portgames:
     type: http
     behavior: classical
     path: "./rule_portgames.yaml"
     url: https://darktunnel-vip02.netlify.app/ClashPremium/rule_portgames.yaml
-    interval: 300
+    interval: 600
   rule_line:
     type: http
     behavior: domain
     path: "./rule_line.yaml"
     url: https://darktunnel-vip02.netlify.app/ClashPremium/rule_line.yaml
-    interval: 300
+    interval: 600
   rule_metaverse:
     type: http
     behavior: domain
     path: "./rule_metaverse.yaml"
     url: https://darktunnel-vip02.netlify.app/ClashPremium/rule_metaverse.yaml
-    interval: 300
+    interval: 600
   rule_metaverse-dev:
     type: http
     behavior: domain
     path: "./rule_metaverse-dev.yaml"
     url: https://darktunnel-vip02.netlify.app/ClashPremium/rule_metaverse-dev.yaml
-    interval: 300
+    interval: 600
   rule_whatsappcidr:
     type: http
     behavior: ipcidr
     path: "./rule_whatsappcidr.yaml"
     url: https://darktunnel-vip02.netlify.app/ClashPremium/rule_whatsappcidr.yaml
-    interval: 300
+    interval: 600
   rule_youtube:
     type: http
     behavior: domain
     path: "./rule_youtube.yaml"
     url: https://darktunnel-vip02.netlify.app/ClashPremium/rule_youtube.yaml
-    interval: 300
+    interval: 600
 rules:
   - PROCESS-NAME,v2ray,DIRECT
   - PROCESS-NAME,xray,DIRECT
