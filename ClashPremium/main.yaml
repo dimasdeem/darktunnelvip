@@ -451,7 +451,7 @@ rule-providers:
     interval: 600
   rule_whatsappcidr:
     type: http
-    behavior: ipcid
+    behavior: ipcidr
     path: "./rule_whatsappcidr.yaml"
     url: https://darktunnel-vip02.netlify.app/ClashPremium/rule_whatsappcidr.yaml
     interval: 600
