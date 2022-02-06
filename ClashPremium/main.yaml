@@ -449,6 +449,7 @@ rule-providers:
     path: "./rule_metaverse-dev.yaml"
     url: https://darktunnel-vip02.netlify.app/ClashPremium/rule_metaverse-dev.yaml
     interval: 600
+  
   rule_youtube:
     type: http
     behavior: domain
