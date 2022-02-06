@@ -87,7 +87,7 @@ proxies:
     skip-cert-verify: true
 #WS
 #ID
-  - name: ID WS CDN
+  - name: ID WS
     type: vmess
     server: vip02.darktunnel.net
     port: 443
@@ -95,31 +95,15 @@ proxies:
     alterId: 0
     cipher: auto
     udp: true
-    tls: false
-    network: ws
-    ws-opts:
-      path: /vmess-ws
-      headers:
-        Host: p77-sign-sg-lite.tiktokcdn.com
-    servername: p77-sign-sg-lite.tiktokcdn.com
-  - name: ID WS CDN TLS
-    type: vmess
-    server: vip02.darktunnel.net
-    port: 443
-    uuid: 3a357238-cc62-4995-8568-e15fa21538a3
-    alterId: 0
-    cipher: auto
-    udp: true
-    network: ws
-    ws-opts:
-      path: /vmess-ws
-      headers:
-        Host: p77-sign-sg-lite.tiktokcdn.com
     tls: true
+    network: ws
+    ws-opts:
+      path: /vmess-ws
+      headers:
+        Host: p77-sign-sg-lite.tiktokcdn.com
     servername: p77-sign-sg-lite.tiktokcdn.com
-    skip-cert-verify: true
 #DO
-  - name: DO WS CDN
+  - name: DO WS
     type: vmess
     server: sgdo-vip02.darktunnel.net
     port: 443
@@ -127,32 +111,16 @@ proxies:
     alterId: 0
     cipher: auto
     udp: true
-    tls: false
-    network: ws
-    ws-opts:
-      path: /vmess-ws
-      headers:
-        Host: p77-sign-sg-lite.tiktokcdn.com
-    servername: p77-sign-sg-lite.tiktokcdn.com
-  - name: DO WS CDN TLS
-    type: vmess
-    server: sgdo-vip02.darktunnel.net
-    port: 443
-    uuid: 3a357238-cc62-4995-8568-e15fa21538a3
-    alterId: 0
-    cipher: auto
-    udp: true
-    network: ws
-    ws-opts:
-      path: /vmess-ws
-      headers:
-        Host: p77-sign-sg-lite.tiktokcdn.com
     tls: true
+    network: ws
+    ws-opts:
+      path: /vmess-ws
+      headers:
+        Host: p77-sign-sg-lite.tiktokcdn.com
     servername: p77-sign-sg-lite.tiktokcdn.com
-    skip-cert-verify: true
 #Trojan
 #ID
-  - name: ID TR TLS
+  - name: ID TR
     type: trojan
     server: vip02.darktunnel.net
     port: 443
@@ -161,7 +129,7 @@ proxies:
     sni: p77-sign-sg-lite.tiktokcdn.com
     skip-cert-verify: true
 #DO
-  - name: DO TR TLS
+  - name: DO TR
     type: trojan
     server: sgdo-vip02.darktunnel.net
     port: 443
@@ -222,17 +190,15 @@ proxy-groups:
     type: select
     proxies:
       - ID gRPC
-      - ID WS CDN
-      - ID WS CDN TLS
       - DO gRPC
-      - DO WS CDN
-      - DO WS CDN TLS
+      - ID WS
+      - DO WS
   - name: Trojan
     type: select
     proxies:
-      - ID TR TLS
+      - ID TR
       - ID TR-GO
-      - DO TR TLS
+      - DO TR
       - DO TR-GO
   - name: Global ID
     type: fallback
@@ -241,7 +207,7 @@ proxy-groups:
     tolerance: 150
     proxies:
       - ID gRPC
-      - ID TR TLS
+      - ID TR
   - name: Global SG
     type: fallback
     url: http://www.gstatic.com/generate_204
@@ -249,15 +215,14 @@ proxy-groups:
     tolerance: 150
     proxies:
       - DO gRPC
-      - DO TR TLS
+      - DO TR
   - name: Global ID WS
     type: fallback
     url: http://www.gstatic.com/generate_204
     interval: 300
     tolerance: 150
     proxies:
-      - ID WS CDN
-      - ID WS CDN TLS
+      - ID WS
       - ID TR-GO
   - name: Global SG WS
     type: fallback
@@ -265,8 +230,7 @@ proxy-groups:
     interval: 300
     tolerance: 150
     proxies:
-      - DO WS CDN
-      - DO WS CDN TLS
+      - DO WS
       - DO TR-GO
   - name: BP gRPC
     type: url-test
@@ -282,17 +246,17 @@ proxy-groups:
     interval: 300
     tolerance: 150
     proxies:
-      - ID WS CDN
-      - DO WS CDN
+      - ID WS
+      - DO WS
   - name: BP CDN TLS
     type: url-test
     url: http://www.gstatic.com/generate_204
     interval: 300
     tolerance: 150
     proxies:
-      - ID WS CDN TLS
+      - ID WS
       - ID TR-GO
-      - DO WS CDN TLS
+      - DO WS
       - DO TR-GO
   - name: LB CH gRPC
     type: load-balance
@@ -316,25 +280,25 @@ proxy-groups:
     interval: 300
     strategy: consistent-hashing
     proxies:
-      - ID WS CDN
-      - DO WS CDN
+      - ID WS
+      - DO WS
   - name: LB RR CDN
     type: load-balance
     url: http://www.gstatic.com/generate_204
     interval: 300
     strategy: round-robin
     proxies:
-      - ID WS CDN
-      - DO WS CDN
+      - ID WS
+      - DO WS
   - name: LB CH CDN TLS
     type: load-balance
     url: http://www.gstatic.com/generate_204
     interval: 300
     strategy: consistent-hashing
     proxies:
-      - ID WS CDN TLS
+      - ID WS
       - ID TR-GO
-      - DO WS CDN TLS
+      - DO WS
       - DO TR-GO
   - name: LB RR CDN TLS
     type: load-balance
@@ -342,9 +306,9 @@ proxy-groups:
     interval: 300
     strategy: round-robin
     proxies:
-      - ID WS CDN TLS
+      - ID WS
       - ID TR-GO
-      - DO WS CDN TLS
+      - DO WS
       - DO TR-GO
 rule-providers:
   rule_browser:
