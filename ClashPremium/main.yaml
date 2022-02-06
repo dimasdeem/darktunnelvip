@@ -165,7 +165,7 @@ proxies:
     type: trojan
     server: sgdo-vip02.darktunnel.net
     port: 80
-    password: 
+    password: 3a357238-cc62-4995-8568-e15fa21538a3
     network: tcp
     udp: true
     sni: v27.tiktokcdn.com
@@ -176,7 +176,7 @@ proxies:
     type: trojan
     server: v27.tiktokcdn.com
     port: 443
-    password: 
+    password: 3a357238-cc62-4995-8568-e15fa21538a3
     udp: true
     network: ws
     ws-opts:
@@ -190,7 +190,7 @@ proxies:
     type: trojan
     server: v27.tiktokcdn.com
     port: 443
-    password: 
+    password: 3a357238-cc62-4995-8568-e15fa21538a3
     udp: true
     network: ws
     ws-opts:
