@@ -449,12 +449,6 @@ rule-providers:
     path: "./rule_metaverse-dev.yaml"
     url: https://darktunnel-vip02.netlify.app/ClashPremium/rule_metaverse-dev.yaml
     interval: 600
-  rule_whatsappcidr:
-    type: http
-    behavior: ipcidr
-    path: "./rule_whatsappcidr.yaml"
-    url: https://darktunnel-vip02.netlify.app/ClashPremium/rule_whatsappcidr.yaml
-    interval: 600
   rule_youtube:
     type: http
     behavior: domain
@@ -493,7 +487,6 @@ rules:
   - RULE-SET,rule_gaming,BP gRPC
   - RULE-SET,rule_games,BP gRPC
   - RULE-SET,rule_portgames,BP gRPC
-  - RULE-SET,rule_whatsappcidr,BP gRPC
   - RULE-SET,rule_browser,Global ID
   - RULE-SET,rule_videoconferences,LB CH CDN
   - DST-PORT,21,MAIN
