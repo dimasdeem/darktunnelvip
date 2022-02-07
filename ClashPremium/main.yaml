@@ -433,11 +433,29 @@ rule-providers:
     path: "./rule_whatsappcidr.yaml"
     url: https://darktunnel-vip02.netlify.app/ClashPremium/rule_whatsappcidr.yaml
     interval: 600
+  rule_whatsapp:
+    type: http
+    behavior: classical
+    path: "./rule_whatsapp.yaml"
+    url: https://darktunnel-vip02.netlify.app/ClashPremium/rule_whatsapp.yaml
+    interval: 600
   rule_youtube:
     type: http
     behavior: domain
     path: "./rule_youtube.yaml"
     url: https://darktunnel-vip02.netlify.app/ClashPremium/rule_youtube.yaml
+    interval: 600
+  rule_instagram:
+    type: http
+    behavior: classical
+    path: "./rule_instagram.yaml"
+    url: https://darktunnel-vip02.netlify.app/ClashPremium/rule_instagram.yaml
+    interval: 600
+  rule_tiktok:
+    type: http
+    behavior: classical
+    path: "./rule_tiktok.yaml"
+    url: https://darktunnel-vip02.netlify.app/ClashPremium/rule_tiktok.yaml
     interval: 600
 rules:
   - PROCESS-NAME,v2ray,DIRECT
@@ -473,7 +491,10 @@ rules:
   - RULE-SET,rule_portgames,Global ALL TR
   - RULE-SET,rule_browser,Global ID
   - RULE-SET,rule_whatsappcidr,LB WS
+  - RULE-SET,,rule_whatsapp,LB WS
   - RULE-SET,rule_videoconferences,Global US
+  - RULE-SET,rule_instagram,LB WS
+  - RULE-SET,rule_tiktok,Global US
   - DST-PORT,21,MAIN
   - DST-PORT,22,MAIN
   - DST-PORT,23,MAIN
