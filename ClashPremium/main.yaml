@@ -524,18 +524,18 @@ rules:
   - PROCESS-NAME,ss-local.exe,DIRECT
   - PROCESS-NAME,privoxy.exe,DIRECT
   - RULE-SET,rule_reject,REJECT
-  - RULE-SET,rule_porn,LB WS
+  - RULE-SET,rule_porn,Global ALL TR
   - RULE-SET,rule_lancidr,DIRECT,no-resolve
   - RULE-SET,rule_direct,DIRECT
   - RULE-SET,rule_speedtest,Global ID WS
   - RULE-SET,rule_streaming,Global US
   - RULE-SET,rule_youtube,Global US
-  - RULE-SET,rule_sosmed,LB WS
-  - RULE-SET,rule_line,LB WS
+  - RULE-SET,rule_sosmed,Global ALL TR XTLS
+  - RULE-SET,rule_line,Global ALL TR XTLS
   - RULE-SET,rule_metaverse,Global ALL TR
   - RULE-SET,rule_metaverse-dev,Global ALL TR
-  - RULE-SET,rule_telegram,LB WS
-  - RULE-SET,rule_telegramcidr,LB WS
+  - RULE-SET,rule_telegram,Global ALL TR XTLS
+  - RULE-SET,rule_telegramcidr,Global ALL TR XTLS
   - RULE-SET,rule_gaming,Global ALL TR
   - RULE-SET,rule_games,Global ALL TR
   - RULE-SET,rule_portgames,Global ALL TR
