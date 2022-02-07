@@ -88,8 +88,8 @@ proxies:
     ws-opts:
       path: /vmess-ws
       headers:
-        Host: p77-sign-sg-lite.tiktokcdn.com
-    servername: p77-sign-sg-lite.tiktokcdn.com
+        Host: v27.tiktokcdn.com
+    servername: v27.tiktokcdn.com
 #DO
   - name: DO WS
     type: vmess
@@ -104,8 +104,8 @@ proxies:
     ws-opts:
       path: /vmess-ws
       headers:
-        Host: p77-sign-sg-lite.tiktokcdn.com
-    servername: p77-sign-sg-lite.tiktokcdn.com
+        Host: v27.tiktokcdn.com
+    servername: v27.tiktokcdn.com
 #US
   - name: US WS
     type: vmess
@@ -120,8 +120,8 @@ proxies:
     ws-opts:
       path: /vmess-ws
       headers:
-        Host: p77-sign-sg-lite.tiktokcdn.com
-    servername: p77-sign-sg-lite.tiktokcdn.com
+        Host: v27.tiktokcdn.com
+    servername: v27.tiktokcdn.com
 #Trojan
 #ID
   - name: ID TR
@@ -164,8 +164,8 @@ proxies:
     ws-opts:
       path: /trojan-ws
       headers:
-        Host: p77-sign-sg-lite.tiktokcdn.com
-    sni: p77-sign-sg-lite.tiktokcdn.com
+        Host: v27.tiktokcdn.com
+    sni: v27.tiktokcdn.com
     skip-cert-verify: true
 #DO
   - name: DO TR-GO
@@ -178,8 +178,8 @@ proxies:
     ws-opts:
       path: /trojan-ws
       headers:
-        Host: p77-sign-sg-lite.tiktokcdn.com
-    sni: p77-sign-sg-lite.tiktokcdn.com
+        Host: v27.tiktokcdn.com
+    sni: v27.tiktokcdn.com
     skip-cert-verify: true
 #US
   - name: US TR-GO
@@ -192,8 +192,8 @@ proxies:
     ws-opts:
       path: /trojan-ws
       headers:
-        Host: p77-sign-sg-lite.tiktokcdn.com
-    sni: p77-sign-sg-lite.tiktokcdn.com
+        Host: v27.tiktokcdn.com
+    sni: v27.tiktokcdn.com
     skip-cert-verify: true
 proxy-groups:
   - name: MAIN
