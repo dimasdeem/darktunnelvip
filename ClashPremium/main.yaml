@@ -125,6 +125,37 @@ proxies:
         Host: v27.tiktokcdn.com
     servername: v27.tiktokcdn.com
     skip-cert-verify: true
+#Trojan XTLS
+  - name: ID TR XTLS
+    type: trojan
+    server: vip02.darktunnel.net
+    port: 443
+    password: 3a357238-cc62-4995-8568-e15fa21538a3
+    udp: true
+    xtls: true
+    flow: xtls-rprx-direct
+    sni: v27.tiktokcdn.com
+    skip-cert-verify: true
+ - name: DO TR XTLS
+    type: trojan
+    server: sgdo-vip02.darktunnel.net
+    port: 443
+    password: 3a357238-cc62-4995-8568-e15fa21538a3
+    udp: true
+    xtls: true
+    flow: xtls-rprx-direct
+    sni: v27.tiktokcdn.com
+    skip-cert-verify: true
+ - name: US TR XTLS
+    type: trojan
+    server: vip02.darktunnel.net
+    port: 443
+    password: 3a357238-cc62-4995-8568-e15fa21538a3
+    udp: true
+    xtls: true
+    flow: xtls-rprx-direct
+    sni: v27.tiktokcdn.com
+    skip-cert-verify: true
 #Trojan
 #ID
   - name: ID TR
@@ -212,6 +243,7 @@ proxy-groups:
       - Global US WS
       - Global ALL WS
       - Global ALL TR
+      - Global ALL TR XTLS
       - LB gRPC
       - LB WS
   - name: VMess
@@ -228,10 +260,13 @@ proxy-groups:
     proxies:
       - ID TR
       - ID TR-GO
+      - ID TR XTLS
       - DO TR
       - DO TR-GO
+      - DO TR XTLS
       - US TR
       - US TR-GO
+      - US TR XTLS
   - name: Global ID
     type: fallback
     url: http://www.gstatic.com/generate_204
@@ -242,6 +277,7 @@ proxy-groups:
       - ID WS
       - ID TR
       - ID TR-GO
+      - ID TR XTLS
   - name: Global SG
     type: fallback
     url: http://www.gstatic.com/generate_204
@@ -252,6 +288,7 @@ proxy-groups:
       - DO WS
       - DO TR
       - DO TR-GO
+      - DO TR XTLS
   - name: Global US
     type: fallback
     url: http://www.gstatic.com/generate_204
@@ -262,6 +299,7 @@ proxy-groups:
       - US WS
       - US TR
       - US TR-GO
+      - US TR XTLS
   - name: Global ID WS
     type: fallback
     url: http://www.gstatic.com/generate_204
@@ -307,6 +345,15 @@ proxy-groups:
       - ID TR
       - DO TR
       - US TR
+  - name: Global ALL TR XTLS
+    type: fallback
+    url: http://www.gstatic.com/generate_204
+    interval: 300
+    tolerance: 150
+    proxies:
+      - ID TR XTLS
+      - DO TR XTLS
+      - US TR XTLS
   - name: LB gRPC
     type: load-balance
     url: http://www.gstatic.com/generate_204
@@ -493,8 +540,8 @@ rules:
   - RULE-SET,rule_games,Global ALL TR
   - RULE-SET,rule_portgames,Global ALL TR
   - RULE-SET,rule_browser,Global ID
-  - RULE-SET,rule_whatsappcidr,LB WS
-  - RULE-SET,rule_whatsapp,LB WS
+  - RULE-SET,rule_whatsappcidr,Global ALL TR XTLS
+  - RULE-SET,rule_whatsapp,Global ALL TR XTLS
   - RULE-SET,rule_videoconferences,Global US
   - RULE-SET,rule_instagram,LB WS
   - RULE-SET,rule_tiktok,Global US
