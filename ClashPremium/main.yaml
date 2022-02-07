@@ -88,8 +88,9 @@ proxies:
     ws-opts:
       path: /vmess-ws
       headers:
-        Host: vip02.darktunnel.net
+        Host: v27.tiktokcdn.com
     servername: v27.tiktokcdn.com
+    skip-cert-verify: true
 #DO
   - name: DO WS
     type: vmess
@@ -104,8 +105,9 @@ proxies:
     ws-opts:
       path: /vmess-ws
       headers:
-        Host: sgdo-vip02.darktunnel.net
+        Host: v27.tiktokcdn.com
     servername: v27.tiktokcdn.com
+    skip-cert-verify: true
 #US
   - name: US WS
     type: vmess
@@ -120,8 +122,9 @@ proxies:
     ws-opts:
       path: /vmess-ws
       headers:
-        Host: us-vip.darktunnel.net
+        Host: v27.tiktokcdn.com
     servername: v27.tiktokcdn.com
+    skip-cert-verify: true
 #Trojan
 #ID
   - name: ID TR
