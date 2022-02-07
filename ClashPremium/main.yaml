@@ -58,6 +58,21 @@ proxies:
     grpc-opts:
       grpc-service-name: vmess-grpc
     skip-cert-verify: true
+#US
+  - name: US gRPC
+    type: vmess
+    server: us-vip.darktunnel.net
+    port: 443
+    uuid: 3a357238-cc62-4995-8568-e15fa21538a3
+    alterId: 0
+    cipher: auto
+    udp: true
+    tls: true
+    servername: p77-sign-sg-lite.tiktokcdn.com
+    network: grpc
+    grpc-opts:
+      grpc-service-name: vmess-grpc
+    skip-cert-verify: true
 #WS
 #ID
   - name: ID WS
@@ -79,6 +94,22 @@ proxies:
   - name: DO WS
     type: vmess
     server: sgdo-vip02.darktunnel.net
+    port: 443
+    uuid: 3a357238-cc62-4995-8568-e15fa21538a3
+    alterId: 0
+    cipher: auto
+    udp: true
+    tls: true
+    network: ws
+    ws-opts:
+      path: /vmess-ws
+      headers:
+        Host: p77-sign-sg-lite.tiktokcdn.com
+    servername: p77-sign-sg-lite.tiktokcdn.com
+#US
+  - name: US WS
+    type: vmess
+    server: us-vip.darktunnel.net
     port: 443
     uuid: 3a357238-cc62-4995-8568-e15fa21538a3
     alterId: 0
@@ -164,8 +195,10 @@ proxy-groups:
     proxies:
       - ID gRPC
       - DO gRPC
+      - US gRPC
       - ID WS
       - DO WS
+      - US WS
   - name: Trojan
     type: select
     proxies:
@@ -239,6 +272,7 @@ proxy-groups:
     proxies:
      - ID gRPC
      - DO gRPC
+     - US gRPC
   - name: LB RR gRPC
     type: load-balance
     url: http://www.gstatic.com/generate_204
@@ -247,6 +281,7 @@ proxy-groups:
     proxies:
       - ID gRPC
       - DO gRPC
+      - US gRPC
   - name: LB CH CDN
     type: load-balance
     url: http://www.gstatic.com/generate_204
@@ -255,6 +290,7 @@ proxy-groups:
     proxies:
       - ID WS
       - DO WS
+      - US WS
   - name: LB RR CDN
     type: load-balance
     url: http://www.gstatic.com/generate_204
@@ -263,6 +299,7 @@ proxy-groups:
     proxies:
       - ID WS
       - DO WS
+      - US WS
   - name: LB CH CDN TLS
     type: load-balance
     url: http://www.gstatic.com/generate_204
