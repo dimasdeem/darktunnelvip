@@ -491,7 +491,7 @@ rules:
   - RULE-SET,rule_portgames,Global ALL TR
   - RULE-SET,rule_browser,Global ID
   - RULE-SET,rule_whatsappcidr,LB WS
-  - RULE-SET,,rule_whatsapp,LB WS
+  - RULE-SET,rule_whatsapp,LB WS
   - RULE-SET,rule_videoconferences,Global US
   - RULE-SET,rule_instagram,LB WS
   - RULE-SET,rule_tiktok,Global US
