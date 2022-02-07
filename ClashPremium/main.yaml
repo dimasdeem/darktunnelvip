@@ -136,7 +136,7 @@ proxies:
     flow: xtls-rprx-direct
     sni: v27.tiktokcdn.com
     skip-cert-verify: true
- - name: DO TR XTLS
+  - name: DO TR XTLS
     type: trojan
     server: sgdo-vip02.darktunnel.net
     port: 443
@@ -146,7 +146,7 @@ proxies:
     flow: xtls-rprx-direct
     sni: v27.tiktokcdn.com
     skip-cert-verify: true
- - name: US TR XTLS
+  - name: US TR XTLS
     type: trojan
     server: vip02.darktunnel.net
     port: 443
