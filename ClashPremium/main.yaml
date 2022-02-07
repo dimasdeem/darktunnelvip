@@ -1,68 +1,31 @@
-port: 3080
-socks-port: 3081
-redir-port: 3082
-mixed-port: 3083
+port: 7890
+socks-port: 7891
+redir-port: 7892
+mixed-port: 7893
 mode: rule
 log-level: info
 allow-lan: false
 unified-delay: true
+ipv6: false
 external-controller: 0.0.0.0:9090
 secret: ""
 bind-address: "*"
-ipv6: false
 dns:
   enable: true
   ipv6: false
-  system-dns: false
   enhanced-mode: redir-host
   listen: 127.0.0.1:7874
-  geoip: true
-  default-nameserver:
-    - 162.159.36.1
-    - 162.159.46.1
   nameserver:
-    - 162.159.36.1
-    - https://162.159.36.1/dns-query
-    - udp://162.159.36.1:53
     - 8.8.8.8
     - 1.1.1.1
     - tcp://1.1.1.1
     - tcp://8.8.8.8
   fallback:
-    - https://162.159.36.1/dns-query
-    - udp://162.159.36.1:53
     - https://dns.google/dns-query
     - https://cloudflare-dns.com/dns-query
     - tls://1.1.1.1:853
     - tls://8.8.8.8:853
-  fallback-filter:
-    geoip: true
-    ipcidr:
-      - 0.0.0.0/8
-      - 10.0.0.0/8
-      - 100.64.0.0/10
-      - 127.0.0.0/8
-      - 169.254.0.0/16
-      - 172.16.0.0/12
-      - 192.0.0.0/24
-      - 192.0.2.0/24
-      - 192.88.99.0/24
-      - 192.168.0.0/16
-      - 198.18.0.0/15
-      - 198.51.100.0/24
-      - 203.0.113.0/24
-      - 224.0.0.0/4
-      - 240.0.0.0/4
-      - 255.255.255.255/32
-    domain:
-      - '+.google.com'
-      - '+.cloudflare.com'
-      - '+.cloudflare-dns.com'
-      - '+.facebook.com'
-      - '+.youtube.com'
-      - "+.githubusercontent.com"
-profile:
-  store-selected: true
+  
 proxies:
 #VMess
 #ID
