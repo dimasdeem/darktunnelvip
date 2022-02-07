@@ -112,6 +112,9 @@ payload:
 
   # > MEDIAFIRE
   - DOMAIN-SUFFIX,app.mediafire.com
+  
+  # >
+  - DOMAIN-SUFFIX,www.terabox.com
 
   # > AREA KHUSUS XL AKRAB
   # > GOOGLE MEET
