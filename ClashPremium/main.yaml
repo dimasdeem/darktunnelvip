@@ -203,19 +203,14 @@ proxy-groups:
       - Trojan
       - Global ID
       - Global SG
+      - Global US
       - Global ID WS
       - Global SG WS
+      - Global US WS
       - Global ALL WS
       - Global ALL TR
-      - BP gRPC
-      - BP CDN
-      - BP CDN TLS
-      - LB CH gRPC
-      - LB RR gRPC
-      - LB CH CDN
-      - LB RR CDN
-      - LB CH CDN TLS
-      - LB RR CDN TLS
+      - LB gRPC
+      - LB WS
   - name: VMess
     type: select
     proxies:
@@ -232,6 +227,8 @@ proxy-groups:
       - ID TR-GO
       - DO TR
       - DO TR-GO
+      - US TR
+      - US TR-GO
   - name: Global ID
     type: fallback
     url: http://www.gstatic.com/generate_204
@@ -239,7 +236,9 @@ proxy-groups:
     tolerance: 150
     proxies:
       - ID gRPC
+      - ID WS
       - ID TR
+      - ID TR-GO
   - name: Global SG
     type: fallback
     url: http://www.gstatic.com/generate_204
@@ -247,7 +246,19 @@ proxy-groups:
     tolerance: 150
     proxies:
       - DO gRPC
+      - DO WS
       - DO TR
+      - DO TR-GO
+  - name: Global US
+    type: fallback
+    url: http://www.gstatic.com/generate_204
+    interval: 300
+    tolerance: 150
+    proxies:
+      - US gRPC
+      - US WS
+      - US TR
+      - US TR-GO
   - name: Global ID WS
     type: fallback
     url: http://www.gstatic.com/generate_204
@@ -264,6 +275,14 @@ proxy-groups:
     proxies:
       - DO WS
       - DO TR-GO
+  - name: Global US WS
+    type: fallback
+    url: http://www.gstatic.com/generate_204
+    interval: 300
+    tolerance: 150
+    proxies:
+      - US WS
+      - US TR-GO
   - name: Global ALL WS
     type: fallback
     url: http://www.gstatic.com/generate_204
@@ -273,6 +292,9 @@ proxy-groups:
       - DO WS
       - ID WS
       - US WS
+      - DO TR-GO
+      - ID TR-GO
+      - US TR-GO
   - name: Global ALL TR
     type: fallback
     url: http://www.gstatic.com/generate_204
@@ -282,36 +304,7 @@ proxy-groups:
       - ID TR
       - DO TR
       - US TR
-  - name: BP gRPC
-    type: url-test
-    url: http://www.gstatic.com/generate_204
-    interval: 300
-    tolerance: 150
-    proxies:
-      - ID gRPC
-      - DO gRPC
-      - US gRPC
-  - name: BP CDN
-    type: url-test
-    url: http://www.gstatic.com/generate_204
-    interval: 300
-    tolerance: 150
-    proxies:
-      - ID WS
-      - DO WS
-      - US WS
-  - name: BP CDN TLS
-    type: url-test
-    url: http://www.gstatic.com/generate_204
-    interval: 300
-    tolerance: 150
-    proxies:
-      - ID WS
-      - ID TR-GO
-      - DO WS
-      - DO TR-GO
-      - US WS
-  - name: LB CH gRPC
+  - name: LB gRPC
     type: load-balance
     url: http://www.gstatic.com/generate_204
     interval: 300
@@ -320,49 +313,11 @@ proxy-groups:
      - ID gRPC
      - DO gRPC
      - US gRPC
-  - name: LB RR gRPC
-    type: load-balance
-    url: http://www.gstatic.com/generate_204
-    interval: 300
-    strategy: round-robin
-    proxies:
-      - ID gRPC
-      - DO gRPC
-      - US gRPC
-  - name: LB CH CDN
+  - name: LB WS
     type: load-balance
     url: http://www.gstatic.com/generate_204
     interval: 300
     strategy: consistent-hashing
-    proxies:
-      - ID WS
-      - DO WS
-      - US WS
-  - name: LB RR CDN
-    type: load-balance
-    url: http://www.gstatic.com/generate_204
-    interval: 300
-    strategy: round-robin
-    proxies:
-      - ID WS
-      - DO WS
-      - US WS
-  - name: LB CH CDN TLS
-    type: load-balance
-    url: http://www.gstatic.com/generate_204
-    interval: 300
-    strategy: consistent-hashing
-    proxies:
-      - ID WS
-      - ID TR-GO
-      - DO WS
-      - DO TR-GO
-      - US WS
-  - name: LB RR CDN TLS
-    type: load-balance
-    url: http://www.gstatic.com/generate_204
-    interval: 300
-    strategy: round-robin
     proxies:
       - ID WS
       - ID TR-GO
@@ -501,24 +456,24 @@ rules:
   - PROCESS-NAME,ss-local.exe,DIRECT
   - PROCESS-NAME,privoxy.exe,DIRECT
   - RULE-SET,rule_reject,REJECT
-  - RULE-SET,rule_porn,LB RR CDN TLS
+  - RULE-SET,rule_porn,LB WS
   - RULE-SET,rule_lancidr,DIRECT,no-resolve
   - RULE-SET,rule_direct,DIRECT
   - RULE-SET,rule_speedtest,Global ID WS
-  - RULE-SET,rule_streaming,LB RR CDN TLS
-  - RULE-SET,rule_youtube,LB RR CDN TLS
-  - RULE-SET,rule_sosmed,LB RR gRPC
-  - RULE-SET,rule_line,LB CH gRPC
-  - RULE-SET,rule_metaverse,LB RR gRPC
-  - RULE-SET,rule_metaverse-dev,LB RR gRPC
-  - RULE-SET,rule_telegram,LB CH gRPC
-  - RULE-SET,rule_telegramcidr,LB CH gRPC
-  - RULE-SET,rule_gaming,BP gRPC
-  - RULE-SET,rule_games,BP gRPC
-  - RULE-SET,rule_portgames,BP gRPC
+  - RULE-SET,rule_streaming,Global US
+  - RULE-SET,rule_youtube,Global US
+  - RULE-SET,rule_sosmed,LB WS
+  - RULE-SET,rule_line,LB WS
+  - RULE-SET,rule_metaverse,Global ALL TR
+  - RULE-SET,rule_metaverse-dev,Global ALL TR
+  - RULE-SET,rule_telegram,LB WS
+  - RULE-SET,rule_telegramcidr,LB WS
+  - RULE-SET,rule_gaming,Global ALL TR
+  - RULE-SET,rule_games,Global ALL TR
+  - RULE-SET,rule_portgames,Global ALL TR
   - RULE-SET,rule_browser,Global ID
-  - RULE-SET,rule_whatsappcidr,LB CH gRPC
-  - RULE-SET,rule_videoconferences,LB CH CDN
+  - RULE-SET,rule_whatsappcidr,LB WS
+  - RULE-SET,rule_videoconferences,Global US
   - DST-PORT,21,MAIN
   - DST-PORT,22,MAIN
   - DST-PORT,23,MAIN
