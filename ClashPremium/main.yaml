@@ -181,6 +181,7 @@ proxy-groups:
       - Global SG
       - Global ID WS
       - Global SG WS
+      - Global ALL WS
       - BP gRPC
       - BP CDN
       - BP CDN TLS
