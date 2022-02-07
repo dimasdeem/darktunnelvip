@@ -3,18 +3,20 @@ socks-port: 3081
 redir-port: 3082
 mixed-port: 3083
 mode: rule
-log-level: silent
-allow-lan: true
+log-level: info
+allow-lan: false
+unified-delay: true
 external-controller: 0.0.0.0:9090
+secret: ""
 bind-address: "*"
 ipv6: false
 dns:
   enable: true
-  ipv6: true
+  ipv6: false
   system-dns: false
   enhanced-mode: redir-host
-  listen: 127.0.0.1:5354
-  geoip: false
+  listen: 127.0.0.1:7874
+  geoip: true
   default-nameserver:
     - 162.159.36.1
     - 162.159.46.1
@@ -22,9 +24,17 @@ dns:
     - 162.159.36.1
     - https://162.159.36.1/dns-query
     - udp://162.159.36.1:53
+    - 8.8.8.8
+    - 1.1.1.1
+    - tcp://1.1.1.1
+    - tcp://8.8.8.8
   fallback:
     - https://162.159.36.1/dns-query
     - udp://162.159.36.1:53
+    - https://dns.google/dns-query
+    - https://cloudflare-dns.com/dns-query
+    - tls://1.1.1.1:853
+    - tls://8.8.8.8:853
   fallback-filter:
     geoip: true
     ipcidr:
