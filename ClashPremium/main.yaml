@@ -238,6 +238,15 @@ proxy-groups:
     proxies:
       - DO WS
       - DO TR-GO
+  - name: Global ALL WS
+    type: fallback
+    url: http://www.gstatic.com/generate_204
+    interval: 300
+    tolerance: 150
+    proxies:
+      - DO WS
+      - ID WS
+      - US WS
   - name: BP gRPC
     type: url-test
     url: http://www.gstatic.com/generate_204
@@ -246,6 +255,7 @@ proxy-groups:
     proxies:
       - ID gRPC
       - DO gRPC
+      - US gRPC
   - name: BP CDN
     type: url-test
     url: http://www.gstatic.com/generate_204
@@ -254,6 +264,7 @@ proxy-groups:
     proxies:
       - ID WS
       - DO WS
+      - US WS
   - name: BP CDN TLS
     type: url-test
     url: http://www.gstatic.com/generate_204
@@ -264,6 +275,7 @@ proxy-groups:
       - ID TR-GO
       - DO WS
       - DO TR-GO
+      - US WS
   - name: LB CH gRPC
     type: load-balance
     url: http://www.gstatic.com/generate_204
@@ -310,6 +322,7 @@ proxy-groups:
       - ID TR-GO
       - DO WS
       - DO TR-GO
+      - US WS
   - name: LB RR CDN TLS
     type: load-balance
     url: http://www.gstatic.com/generate_204
@@ -320,6 +333,7 @@ proxy-groups:
       - ID TR-GO
       - DO WS
       - DO TR-GO
+      - US WS
 rule-providers:
   rule_browser:
     type: http
