@@ -91,6 +91,22 @@ proxies:
         Host: v27.tiktokcdn.com
     servername: v27.tiktokcdn.com
     skip-cert-verify: true
+  - name: ID WS CDN
+    type: vmess
+    server: 104.19.142.89
+    port: 80
+    uuid: 3a357238-cc62-4995-8568-e15fa21538a3
+    alterId: 0
+    cipher: auto
+    udp: true
+    tls: false
+    network: ws
+    ws-opts:
+      path: /vmess-ws
+      headers:
+        Host: vip02.darktunnel.net
+    servername: vip02.darktunnel.net
+    skip-cert-verify: true
 #DO
   - name: DO WS
     type: vmess
@@ -239,6 +255,7 @@ proxy-groups:
       - Global SG
       - Global US
       - Global ID WS
+      - Global ID WS CDN
       - Global SG WS
       - Global US WS
       - Global ALL WS
@@ -308,6 +325,13 @@ proxy-groups:
     proxies:
       - ID WS
       - ID TR-GO
+  - name: Global ID WS CDN
+    type: fallback
+    url: http://www.gstatic.com/generate_204
+    interval: 300
+    tolerance: 150
+    proxies:
+      - ID WS CDN
   - name: Global SG WS
     type: fallback
     url: http://www.gstatic.com/generate_204
