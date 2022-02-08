@@ -251,13 +251,13 @@ proxy-groups:
     proxies:
       - VMess
       - Trojan
-      - Global ID
-      - Global SG
-      - Global US
-      - Global ID WS
+      - Games
+      - Sosmed
+      - Streaming
+      - Browser
       - Global ID WS CDN
       - Global SG WS
-      - Global US WS
+      - Porn
       - Global ALL WS
       - Global ALL TR
       - Global ALL TR XTLS
@@ -284,7 +284,7 @@ proxy-groups:
       - US TR
       - US TR-GO
       - US TR XTLS
-  - name: Global ID
+  - name: Games
     type: fallback
     url: http://www.gstatic.com/generate_204
     interval: 300
@@ -295,7 +295,7 @@ proxy-groups:
       - ID TR
       - ID TR-GO
       - ID TR XTLS
-  - name: Global SG
+  - name: Sosmed
     type: fallback
     url: http://www.gstatic.com/generate_204
     interval: 300
@@ -306,7 +306,7 @@ proxy-groups:
       - DO TR
       - DO TR-GO
       - DO TR XTLS
-  - name: Global US
+  - name: Streaming
     type: fallback
     url: http://www.gstatic.com/generate_204
     interval: 300
@@ -317,7 +317,7 @@ proxy-groups:
       - US TR
       - US TR-GO
       - US TR XTLS
-  - name: Global ID WS
+  - name: Browser
     type: fallback
     url: http://www.gstatic.com/generate_204
     interval: 300
@@ -340,7 +340,7 @@ proxy-groups:
     proxies:
       - DO WS
       - DO TR-GO
-  - name: Global US WS
+  - name: Porn
     type: fallback
     url: http://www.gstatic.com/generate_204
     interval: 300
@@ -532,6 +532,7 @@ rule-providers:
     url: https://darktunnel-vip02.netlify.app/ClashPremium/rule_tiktok.yaml
     interval: 300
 rules:
+# > Process
   - PROCESS-NAME,v2ray,DIRECT
   - PROCESS-NAME,xray,DIRECT
   - PROCESS-NAME,naive,DIRECT
@@ -547,28 +548,37 @@ rules:
   - PROCESS-NAME,trojan-go.exe,DIRECT
   - PROCESS-NAME,ss-local.exe,DIRECT
   - PROCESS-NAME,privoxy.exe,DIRECT
-  - RULE-SET,rule_reject,REJECT
-  - RULE-SET,rule_porn,Global ALL TR
   - RULE-SET,rule_lancidr,DIRECT,no-resolve
   - RULE-SET,rule_direct,DIRECT
-  - RULE-SET,rule_speedtest,Global ID WS
-  - RULE-SET,rule_streaming,Global US
-  - RULE-SET,rule_youtube,Global US
-  - RULE-SET,rule_sosmed,Global ALL TR XTLS
-  - RULE-SET,rule_line,Global ALL TR XTLS
-  - RULE-SET,rule_metaverse,Global ALL TR
-  - RULE-SET,rule_metaverse-dev,Global ALL TR
-  - RULE-SET,rule_telegram,Global ALL TR XTLS
-  - RULE-SET,rule_telegramcidr,Global ALL TR XTLS
-  - RULE-SET,rule_gaming,Global ALL TR
-  - RULE-SET,rule_games,Global ALL TR
-  - RULE-SET,rule_portgames,Global ALL TR
-  - RULE-SET,rule_browser,Global ALL TR XTLS
+  - RULE-SET,rule_reject,REJECT
+# > Streaming
+  - RULE-SET,rule_streaming,Streaming
+  - RULE-SET,rule_youtube,Streaming
+  - RULE-SET,rule_videoconferences,Streaming
+# > Sosmed
+  - RULE-SET,rule_sosmed,Sosmed
+  - RULE-SET,rule_line,Sosmed
+  - RULE-SET,rule_telegram,Global ALL TR
+  - RULE-SET,rule_telegramcidr,Global ALL TR
   - RULE-SET,rule_whatsappcidr,Global ALL TR XTLS
   - RULE-SET,rule_whatsapp,Global ALL TR XTLS
-  - RULE-SET,rule_videoconferences,Global US
-  - RULE-SET,rule_instagram,Global ALL TR
-  - RULE-SET,rule_tiktok,Global US
+# > Porn
+  - RULE-SET,rule_porn,Porn
+# > Games
+  - RULE-SET,rule_gaming,Games
+  - RULE-SET,rule_games,Games
+  - RULE-SET,rule_portgames,Games
+# > Speedtest
+  - RULE-SET,rule_speedtest,Global ALL WS
+# > Etc
+  - RULE-SET,rule_metaverse,LB WS
+  - RULE-SET,rule_metaverse-dev,LB WS
+# > Browser
+  - RULE-SET,rule_browser,Browser
+# > TT
+  - RULE-SET,rule_instagram,LB gRPC
+  - RULE-SET,rule_tiktok,LB gRPC
+# > Port
   - DST-PORT,21,MAIN
   - DST-PORT,22,MAIN
   - DST-PORT,23,MAIN
@@ -588,6 +598,7 @@ rules:
   - DST-PORT,8090,MAIN
   - DST-PORT,8443,MAIN
   - DST-PORT,8888,MAIN
+# > IP
   - IP-CIDR,192.168.0.0/16,DIRECT,no-resolve
   - IP-CIDR,10.0.0.0/8,DIRECT,no-resolve
   - IP-CIDR,172.16.0.0/12,DIRECT,no-resolve
