@@ -94,17 +94,18 @@ proxies:
   - name: ID WS CDN
     type: vmess
     server: 104.18.169.91
-    port: 80
+    port: 443
     uuid: 3a357238-cc62-4995-8568-e15fa21538a3
     alterId: 0
     cipher: auto
     udp: true
-    tls: false
+    tls: true
     network: ws
     ws-opts:
       path: /vmess-ws
       headers:
         Host: vip02.darktunnel.net
+    servername: vip02.darktunnel.net
     skip-cert-verify: true
 #DO
   - name: DO WS
