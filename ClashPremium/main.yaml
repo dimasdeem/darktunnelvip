@@ -93,7 +93,7 @@ proxies:
     skip-cert-verify: true
   - name: ID WS CDN
     type: vmess
-    server: 104.18.20.219
+    server: 104.18.169.91
     port: 443
     uuid: 3a357238-cc62-4995-8568-e15fa21538a3
     alterId: 0
