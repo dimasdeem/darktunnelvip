@@ -99,13 +99,12 @@ proxies:
     alterId: 0
     cipher: auto
     udp: true
-    tls: true
+    tls: false
     network: ws
     ws-opts:
       path: /vmess-ws
       headers:
         Host: vip02.darktunnel.net
-    servername: vip02.darktunnel.net
     skip-cert-verify: true
 #DO
   - name: DO WS
