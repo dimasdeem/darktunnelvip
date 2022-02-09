@@ -246,6 +246,24 @@ proxies:
     sni: v27.tiktokcdn.com
     skip-cert-verify: true
 proxy-groups:
+  - name: All
+    type: select
+    proxies:
+      - ID gRPC
+      - DO gRPC
+      - US gRPC
+      - ID WS
+      - DO WS
+      - US WS
+      - ID TR
+      - ID TR-GO
+      - ID TR XTLS
+      - DO TR
+      - DO TR-GO
+      - DO TR XTLS
+      - US TR
+      - US TR-GO
+      - US TR XTLS
   - name: MAIN
     type: select
     proxies:
