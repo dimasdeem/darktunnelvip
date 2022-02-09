@@ -570,9 +570,9 @@ rules:
   - RULE-SET,rule_direct,DIRECT
   - RULE-SET,rule_reject,REJECT
 # > Streaming
-  - RULE-SET,rule_streaming,Streaming
-  - RULE-SET,rule_youtube,Streaming
-  - RULE-SET,rule_videoconferences,Streaming
+  - RULE-SET,rule_streaming,Streaming,Global ALL TR XTLS
+  - RULE-SET,rule_youtube,Streaming,Global ALL TR XTLS
+  - RULE-SET,rule_videoconferences,Streaming,Global ALL TR XTLS
 # > Sosmed
   - RULE-SET,rule_sosmed,Sosmed
   - RULE-SET,rule_line,Sosmed
@@ -581,7 +581,7 @@ rules:
   - RULE-SET,rule_whatsappcidr,Global ALL TR XTLS
   - RULE-SET,rule_whatsapp,Global ALL TR XTLS
 # > Porn
-  - RULE-SET,rule_porn,Porn
+  - RULE-SET,rule_porn,Porn,Global ALL TR XTLS
 # > Games
   - RULE-SET,rule_gaming,Games
   - RULE-SET,rule_games,Games
