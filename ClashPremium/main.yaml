@@ -247,7 +247,10 @@ proxies:
     skip-cert-verify: true
 proxy-groups:
   - name: All
-    type: select
+    type: load-balance
+    url: 'http://www.gstatic.com/generate_204'
+    interval: 300
+    strategy: consistent-hashing
     proxies:
       - ID gRPC
       - DO gRPC
