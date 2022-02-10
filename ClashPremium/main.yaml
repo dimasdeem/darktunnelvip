@@ -573,9 +573,9 @@ rules:
   - RULE-SET,rule_direct,DIRECT
   - RULE-SET,rule_reject,REJECT
 # > Streaming
-  - RULE-SET,rule_streaming,Streaming,Global ALL TR
-  - RULE-SET,rule_youtube,Streaming,Global ALL TR
-  - RULE-SET,rule_videoconferences,Streaming,Global ALL TR
+  - RULE-SET,rule_streaming,Global ALL TR
+  - RULE-SET,rule_youtube,Global ALL TR
+  - RULE-SET,rule_videoconferences,Global ALL TR
 # > Sosmed
   - RULE-SET,rule_sosmed,Sosmed
   - RULE-SET,rule_line,Sosmed
