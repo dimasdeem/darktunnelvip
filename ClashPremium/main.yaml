@@ -91,23 +91,6 @@ proxies:
         Host: v27.tiktokcdn.com
     servername: v27.tiktokcdn.com
     skip-cert-verify: true
-  - name: ID WS CDN
-    type: vmess
-    server: 104.18.169.91
-    port: 443
-    uuid: 3a357238-cc62-4995-8568-e15fa21538a3
-    alterId: 0
-    cipher: auto
-    udp: true
-    tls: true
-    network: ws
-    ws-opts:
-      path: /vmess-ws
-      headers:
-        Host: vip02.darktunnel.net
-    servername: vip02.darktunnel.net
-    skip-cert-verify: true
-#DO
   - name: DO WS
     type: vmess
     server: sgdo-vip02.darktunnel.net
@@ -245,28 +228,30 @@ proxies:
         Host: v27.tiktokcdn.com
     sni: v27.tiktokcdn.com
     skip-cert-verify: true
+#Streaming
+  - name: DO stream TR
+    type: trojan
+    server: sgdo-vip02.darktunnel.net
+    port: 443
+    password: 3a357238-cc62-4995-8568-e15fa21538a3
+    network: tcp
+    udp: true
+    sni: p77-sign-sg-lite.tiktokcdn.com
+    skip-cert-verify: true
+  - name: DO stream TR-GO
+    type: trojan
+    server: sgdo-vip02.darktunnel.net
+    port: 443
+    password: 3a357238-cc62-4995-8568-e15fa21538a3
+    udp: true
+    network: ws
+    ws-opts:
+      path: /trojan-ws
+      headers:
+        Host: v27.tiktokcdn.com
+    sni: v27.tiktokcdn.com
+    skip-cert-verify: true
 proxy-groups:
-  - name: All
-    type: load-balance
-    url: 'http://www.gstatic.com/generate_204'
-    interval: 300
-    strategy: consistent-hashing
-    proxies:
-      - ID gRPC
-      - DO gRPC
-      - US gRPC
-      - ID WS
-      - DO WS
-      - US WS
-      - ID TR
-      - ID TR-GO
-      - ID TR XTLS
-      - DO TR
-      - DO TR-GO
-      - DO TR XTLS
-      - US TR
-      - US TR-GO
-      - US TR XTLS
   - name: MAIN
     type: select
     proxies:
@@ -276,7 +261,6 @@ proxy-groups:
       - Sosmed
       - Streaming
       - Browser
-      - Global ID WS CDN
       - Global SG WS
       - Porn
       - Global ALL WS
@@ -333,11 +317,8 @@ proxy-groups:
     interval: 300
     tolerance: 150
     proxies:
-      - US gRPC
-      - US WS
-      - US TR
-      - US TR-GO
-      - US TR XTLS
+      - DO stream TR
+      - DO stream TR-GO
   - name: Browser
     type: fallback
     url: http://www.gstatic.com/generate_204
@@ -346,13 +327,6 @@ proxy-groups:
     proxies:
       - ID WS
       - ID TR-GO
-  - name: Global ID WS CDN
-    type: fallback
-    url: http://www.gstatic.com/generate_204
-    interval: 300
-    tolerance: 150
-    proxies:
-      - ID WS CDN
   - name: Global SG WS
     type: fallback
     url: http://www.gstatic.com/generate_204
@@ -573,9 +547,9 @@ rules:
   - RULE-SET,rule_direct,DIRECT
   - RULE-SET,rule_reject,REJECT
 # > Streaming
-  - RULE-SET,rule_streaming,Global ALL TR
-  - RULE-SET,rule_youtube,Global ALL TR
-  - RULE-SET,rule_videoconferences,Global ALL TR
+  - RULE-SET,rule_streaming,Streaming
+  - RULE-SET,rule_youtube,Streaming
+  - RULE-SET,rule_videoconferences,Streaming
 # > Sosmed
   - RULE-SET,rule_sosmed,Sosmed
   - RULE-SET,rule_line,Sosmed
