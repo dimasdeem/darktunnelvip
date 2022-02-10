@@ -352,11 +352,11 @@ proxy-groups:
   
 rule-providers:
   rule_Ads:
-    type: classical
+    type: http
     behavior: classical
-    path: "./rule_Ads.yaml"
+    path: "./Advertising_Classical.yaml"
     url: https://raw.githubusercontent.com/dimasdeem/ClashMaster/main/Advertising_Classical.yaml
-    interval: 3600
+    interval: 300
   rule_browser:
     type: http
     behavior: classical
