@@ -276,7 +276,7 @@ proxies:
       headers:
         Host: support.file1.com
     sni: support.file1.com
-    skip-cert-verify: tru
+    skip-cert-verify: true
 proxy-groups:
   - name: COBA
     type: select
