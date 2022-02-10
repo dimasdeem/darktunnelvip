@@ -35,7 +35,29 @@ payload:
   # > BING
   - DOMAIN-SUFFIX,4.bing.com
   - DOMAIN-SUFFIX,www.bing.com
-
+  
+  # > GITHUB
+  - DOMAIN-SUFFIX,github.com
+  - DOMAIN-SUFFIX,0.github.com
+  - DOMAIN-SUFFIX,000.github.com
+  - DOMAIN-SUFFIX,mtb2000.github.com
+  - DOMAIN-SUFFIX,hagino3000.github.com
+  - DOMAIN-SUFFIX,davatron5000.github.com
+  - DOMAIN-SUFFIX,moonmaster9000.github.com
+  - DOMAIN-SUFFIX,ok100.github.com
+  - DOMAIN-SUFFIX,walkman100.github.com
+  - DOMAIN-SUFFIX,lifuzhao100.github.com
+  - DOMAIN-SUFFIX,mask200.github.com
+  - DOMAIN-SUFFIX,0x0800.github.com
+  - DOMAIN-SUFFIX,loktar00.github.com
+  - DOMAIN-SUFFIX,ezi0x00.github.com
+  - DOMAIN-SUFFIX,10.github.com
+  - DOMAIN-SUFFIX,yhz61010.github.com
+  - DOMAIN-SUFFIX,covid19-2010.github.com
+  - DOMAIN-SUFFIX,naihe2010.github.com
+  - DOMAIN-SUFFIX,chai2010.github.com
+  - DOMAIN-SUFFIX,110.github.com
+  
   # > MICROSOFT
   - DOMAIN-SUFFIX,smartscreen-prod.microsoft.com
   - DOMAIN-SUFFIX,self.events.data.microsoft.com
@@ -113,12 +135,13 @@ payload:
   # > MEDIAFIRE
   - DOMAIN-SUFFIX,app.mediafire.com
   
-  # >
+  # > TERABOX
   - DOMAIN-SUFFIX,www.terabox.com
 
   # > AREA KHUSUS XL AKRAB
   # > GOOGLE MEET
   - DOMAIN-SUFFIX,meetings.googleapis.com
+  
   # > GOOGLE CLASSROOM
   - DOMAIN-SUFFIX,classroom.google.com
 
