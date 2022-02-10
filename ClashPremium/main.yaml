@@ -15,16 +15,28 @@ dns:
   ipv6: false
   enhanced-mode: redir-host
   listen: 127.0.0.1:7874
+  default-nameserver:
+    - 114.114.114.114
+    - 119.29.29.29
+    - 8.8.8.8
+    - 8.8.4.4
+    - 1.1.1.1
+    - 1.0.0.1
+    - 192.168.8.1
   nameserver:
     - 8.8.8.8
     - 1.1.1.1
     - tcp://1.1.1.1
     - tcp://8.8.8.8
+    - 192.168.8.1
+    - dhcp://"eth1"
   fallback:
     - https://dns.google/dns-query
     - https://cloudflare-dns.com/dns-query
     - tls://1.1.1.1:853
     - tls://8.8.8.8:853
+    - tls://dns.rubyfish.cn:853
+    - https://1.1.1.1/dns-query
   
 proxies:
 #VMess
@@ -379,9 +391,9 @@ proxy-groups:
     interval: 300
     strategy: consistent-hashing
     proxies:
-     - ID gRPC
-     - DO gRPC
-     - US gRPC
+      - ID gRPC
+      - DO gRPC
+      - US gRPC
   - name: LB WS
     type: load-balance
     url: http://www.gstatic.com/generate_204
