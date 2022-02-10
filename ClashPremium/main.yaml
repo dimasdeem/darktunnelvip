@@ -263,25 +263,7 @@ proxies:
         Host: v27.tiktokcdn.com
     sni: v27.tiktokcdn.com
     skip-cert-verify: true
-#coba
-  - name: coba
-    type: trojan
-    server: vip02.darktunnel.net
-    port: 443
-    password: 3a357238-cc62-4995-8568-e15fa21538a3
-    udp: true
-    network: ws
-    ws-opts:
-      path: /trojan-ws
-      headers:
-        Host: support.file1.com
-    sni: support.file1.com
-    skip-cert-verify: true
 proxy-groups:
-  - name: COBA
-    type: select
-    proxies:
-    - coba
   - name: MAIN
     type: select
     proxies:
