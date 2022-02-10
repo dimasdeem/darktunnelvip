@@ -491,7 +491,7 @@ rule-providers:
     interval: 300
 rules:
 # >ADS
-  - rule_Ads,REJECT
+  - RULE-SET,rule_Ads,REJECT
 # > Process
   - PROCESS-NAME,v2ray,DIRECT
   - PROCESS-NAME,xray,DIRECT
