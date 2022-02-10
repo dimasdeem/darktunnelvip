@@ -351,6 +351,12 @@ proxy-groups:
       - ID TT TR-GO
   
 rule-providers:
+  rule_Ads:
+    type: classical
+    behavior: classical
+    path: "./rule_Ads.yaml"
+    url: https://raw.githubusercontent.com/dimasdeem/ClashMaster/main/Advertising_Classical.yaml
+    interval: 3600
   rule_browser:
     type: http
     behavior: classical
@@ -484,6 +490,8 @@ rule-providers:
     url: https://darktunnel-vip02.netlify.app/ClashPremium/rule_tiktok.yaml
     interval: 300
 rules:
+# >ADS
+  - rule_Ads,REJECT
 # > Process
   - PROCESS-NAME,v2ray,DIRECT
   - PROCESS-NAME,xray,DIRECT
