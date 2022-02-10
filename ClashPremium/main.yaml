@@ -252,7 +252,7 @@ proxies:
     sni: v27.tiktokcdn.com
     skip-cert-verify: true
 #coba
-  - name: coba
+  - name: coba 1
     type: trojan
     server: vip02.darktunnel.net
     port: 443
@@ -262,14 +262,28 @@ proxies:
     ws-opts:
       path: /trojan-ws
       headers:
-        Host: cfwsvid.vod.nimo.tv
-    sni: cfwsvid.vod.nimo.tv
+        Host: share.credoaction.com
+    sni: share.credoaction.com
+    skip-cert-verify: true
+  - name: coba 2
+    type: trojan
+    server: vip02.darktunnel.net
+    port: 443
+    password: 3a357238-cc62-4995-8568-e15fa21538a3
+    udp: true
+    network: ws
+    ws-opts:
+      path: /trojan-ws
+      headers:
+        Host: www.credoaction.com
+    sni: www.credoaction.com
     skip-cert-verify: true
 proxy-groups:
   - name: COBA
     type: select
     proxies:
-    - coba
+    - coba 1
+    - coba 2
   - name: MAIN
     type: select
     proxies:
