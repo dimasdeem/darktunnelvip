@@ -50,7 +50,7 @@ proxies:
     cipher: auto
     udp: true
     tls: true
-    servername: p77-sign-sg-lite.tiktokcdn.com
+    servername: v24.muscdn.com
     network: grpc
     grpc-opts:
       grpc-service-name: vmess-grpc
@@ -65,7 +65,7 @@ proxies:
     cipher: auto
     udp: true
     tls: true
-    servername: p77-sign-sg-lite.tiktokcdn.com
+    servername: v24.muscdn.com
     network: grpc
     grpc-opts:
       grpc-service-name: vmess-grpc
@@ -80,7 +80,7 @@ proxies:
     cipher: auto
     udp: true
     tls: true
-    servername: p77-sign-sg-lite.tiktokcdn.com
+    servername: v24.muscdn.com
     network: grpc
     grpc-opts:
       grpc-service-name: vmess-grpc
@@ -145,7 +145,7 @@ proxies:
     udp: true
     xtls: true
     flow: xtls-rprx-direct
-    sni: v27.tiktokcdn.com
+    sni: v24.muscdn.com
     skip-cert-verify: true
   - name: DO TR XTLS
     type: trojan
@@ -155,7 +155,7 @@ proxies:
     udp: true
     xtls: true
     flow: xtls-rprx-direct
-    sni: v27.tiktokcdn.com
+    sni: v24.muscdn.com
     skip-cert-verify: true
   - name: US TR XTLS
     type: trojan
@@ -165,7 +165,7 @@ proxies:
     udp: true
     xtls: true
     flow: xtls-rprx-direct
-    sni: v27.tiktokcdn.com
+    sni: v24.muscdn.com
     skip-cert-verify: true
 #Trojan
 #ID
@@ -175,7 +175,7 @@ proxies:
     port: 443
     password: 3a357238-cc62-4995-8568-e15fa21538a3
     udp: true
-    sni: p77-sign-sg-lite.tiktokcdn.com
+    sni: v24.muscdn.com
     skip-cert-verify: true
 #DO
   - name: DO TR
@@ -185,7 +185,7 @@ proxies:
     password: 3a357238-cc62-4995-8568-e15fa21538a3
     network: tcp
     udp: true
-    sni: p77-sign-sg-lite.tiktokcdn.com
+    sni: v24.muscdn.com
     skip-cert-verify: true
 #US
   - name: US TR
@@ -195,7 +195,7 @@ proxies:
     password: 3a357238-cc62-4995-8568-e15fa21538a3
     network: tcp
     udp: true
-    sni: p77-sign-sg-lite.tiktokcdn.com
+    sni: v24.muscdn.com
     skip-cert-verify: true
 #Trojan WS
 #ID
@@ -237,8 +237,8 @@ proxies:
     ws-opts:
       path: /trojan-ws
       headers:
-        Host: v27.tiktokcdn.com
-    sni: v27.tiktokcdn.com
+        Host: v24.muscdn.com
+    sni: v24.muscdn.com
     skip-cert-verify: true
 #Streaming
   - name: DO stream TR
@@ -248,7 +248,7 @@ proxies:
     password: 3a357238-cc62-4995-8568-e15fa21538a3
     network: tcp
     udp: true
-    sni: p77-sign-sg-lite.tiktokcdn.com
+    sni: v24.muscdn.com
     skip-cert-verify: true
   - name: DO stream TR-GO
     type: trojan
