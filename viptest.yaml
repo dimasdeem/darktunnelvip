@@ -154,6 +154,30 @@ proxies:
         Host: v27.tiktokcdn.com
     sni: v27.tiktokcdn.com
     skip-cert-verify: true
+ #sosmed2
+  - name: ID sosmed2 TR XTLS
+    type: trojan
+    server: vip02.darktunnel.net
+    port: 443
+    password: 3a357238-cc62-4995-8568-e15fa21538a3
+    udp: true
+    xtls: true
+    flow: xtls-rprx-direct
+    sni: v24.muscdn.com
+    skip-cert-verify: true
+  - name: ID sosmed2 TR-GO
+    type: trojan
+    server: vip02.darktunnel.net
+    port: 443
+    password: 3a357238-cc62-4995-8568-e15fa21538a3
+    udp: true
+    network: ws
+    ws-opts:
+      path: /trojan-ws
+      headers:
+        Host: v27.tiktokcdn.com
+    sni: v27.tiktokcdn.com
+    skip-cert-verify: true
  #games
   - name: ID games TR
     type: trojan
@@ -255,6 +279,7 @@ proxy-groups:
       - Trojan
       - Streaming
       - Sosmed
+      - Sosmed2
       - Games
       - Browser
       - Porn
@@ -284,6 +309,14 @@ proxy-groups:
     proxies:
       - ID sosmed TR
       - ID sosmed TR-GO
+  - name: Sosmed2
+    type: fallback
+    url: http://www.gstatic.com/generate_204
+    interval: 300
+    tolerance: 150
+    proxies:
+      - ID sosmed2 TR XTLS
+      - ID sosmed2 TR-GO
   - name: Games
     type: fallback
     url: http://www.gstatic.com/generate_204
@@ -475,10 +508,10 @@ rules:
   - RULE-SET,rule_youtube,Streaming
   - RULE-SET,rule_videoconferences,Streaming
 # > Sosmed
-  - RULE-SET,rule_sosmed,Sosmed
+  - RULE-SET,rule_sosmed,Sosmed2
   - RULE-SET,rule_line,Sosmed
-  - RULE-SET,rule_telegram,Sosmed
-  - RULE-SET,rule_telegramcidr,Sosmed
+  - RULE-SET,rule_telegram,Sosmed2
+  - RULE-SET,rule_telegramcidr,Sosmed2
   - RULE-SET,rule_whatsappcidr,Sosmed
   - RULE-SET,rule_whatsapp,Sosmed
 # > Porn
