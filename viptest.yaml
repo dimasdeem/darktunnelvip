@@ -1,0 +1,530 @@
+port: 7890
+socks-port: 7891
+redir-port: 7892
+mixed-port: 7893
+mode: rule
+log-level: info
+allow-lan: true
+unified-delay: true
+ipv6: false
+external-controller: 0.0.0.0:9090
+secret: ""
+bind-address: "*"
+dns:
+  enable: true
+  ipv6: false
+  enhanced-mode: redir-host
+  listen: 127.0.0.1:7874
+  default-nameserver:
+    - 114.114.114.114
+    - 119.29.29.29
+    - 8.8.8.8
+    - 8.8.4.4
+    - 1.1.1.1
+    - 1.0.0.1
+    - 192.168.8.1
+  nameserver:
+    - 8.8.8.8
+    - 1.1.1.1
+    - tcp://1.1.1.1
+    - tcp://8.8.8.8
+    - 192.168.8.1
+    - dhcp://"eth1"
+  fallback:
+    - https://dns.google/dns-query
+    - https://cloudflare-dns.com/dns-query
+    - tls://1.1.1.1:853
+    - tls://8.8.8.8:853
+    - tls://dns.rubyfish.cn:853
+    - https://1.1.1.1/dns-query
+  
+proxies:
+#Trojan XTLS
+  - name: ID TR XTLS
+    type: trojan
+    server: vip02.darktunnel.net
+    port: 443
+    password: 3a357238-cc62-4995-8568-e15fa21538a3
+    udp: true
+    xtls: true
+    flow: xtls-rprx-direct
+    sni: v24.muscdn.com
+    skip-cert-verify: true
+  - name: DO TR XTLS
+    type: trojan
+    server: sgdo-vip02.darktunnel.net
+    port: 443
+    password: 3a357238-cc62-4995-8568-e15fa21538a3
+    udp: true
+    xtls: true
+    flow: xtls-rprx-direct
+    sni: v24.muscdn.com
+    skip-cert-verify: true
+#Trojan
+#ID
+  - name: ID TR
+    type: trojan
+    server: vip02.darktunnel.net
+    port: 443
+    password: 3a357238-cc62-4995-8568-e15fa21538a3
+    udp: true
+    sni: v24.muscdn.com
+    skip-cert-verify: true
+#DO
+  - name: DO TR
+    type: trojan
+    server: sgdo-vip02.darktunnel.net
+    port: 443
+    password: 3a357238-cc62-4995-8568-e15fa21538a3
+    network: tcp
+    udp: true
+    sni: v24.muscdn.com
+    skip-cert-verify: true
+#Trojan WS
+#ID
+  - name: ID TR-GO
+    type: trojan
+    server: vip02.darktunnel.net
+    port: 443
+    password: 3a357238-cc62-4995-8568-e15fa21538a3
+    udp: true
+    network: ws
+    ws-opts:
+      path: /trojan-ws
+      headers:
+        Host: v27.tiktokcdn.com
+    sni: v27.tiktokcdn.com
+    skip-cert-verify: true
+#DO
+  - name: DO TR-GO
+    type: trojan
+    server: sgdo-vip02.darktunnel.net
+    port: 443
+    password: 3a357238-cc62-4995-8568-e15fa21538a3
+    udp: true
+    network: ws
+    ws-opts:
+      path: /trojan-ws
+      headers:
+        Host: v27.tiktokcdn.com
+    sni: v27.tiktokcdn.com
+    skip-cert-verify: true
+#Streaming
+  - name: DO stream TR
+    type: trojan
+    server: sgdo-vip02.darktunnel.net
+    port: 443
+    password: 3a357238-cc62-4995-8568-e15fa21538a3
+    network: tcp
+    udp: true
+    sni: v24.muscdn.com
+    skip-cert-verify: true
+  - name: DO stream TR-GO
+    type: trojan
+    server: sgdo-vip02.darktunnel.net
+    port: 443
+    password: 3a357238-cc62-4995-8568-e15fa21538a3
+    udp: true
+    network: ws
+    ws-opts:
+      path: /trojan-ws
+      headers:
+        Host: v27.tiktokcdn.com
+    sni: v27.tiktokcdn.com
+    skip-cert-verify: true
+#sosmed
+  - name: ID sosmed TR
+    type: trojan
+    server: vip02.darktunnel.net
+    port: 443
+    password: 3a357238-cc62-4995-8568-e15fa21538a3
+    udp: true
+    sni: v24.muscdn.com
+    skip-cert-verify: true
+  - name: ID sosmed TR-GO
+    type: trojan
+    server: vip02.darktunnel.net
+    port: 443
+    password: 3a357238-cc62-4995-8568-e15fa21538a3
+    udp: true
+    network: ws
+    ws-opts:
+      path: /trojan-ws
+      headers:
+        Host: v27.tiktokcdn.com
+    sni: v27.tiktokcdn.com
+    skip-cert-verify: true
+ #games
+  - name: ID games TR
+    type: trojan
+    server: vip02.darktunnel.net
+    port: 443
+    password: 3a357238-cc62-4995-8568-e15fa21538a3
+    udp: true
+    sni: v24.muscdn.com
+    skip-cert-verify: true
+  - name: ID games TR-GO
+    type: trojan
+    server: vip02.darktunnel.net
+    port: 443
+    password: 3a357238-cc62-4995-8568-e15fa21538a3
+    udp: true
+    network: ws
+    ws-opts:
+      path: /trojan-ws
+      headers:
+        Host: v27.tiktokcdn.com
+    sni: v27.tiktokcdn.com
+    skip-cert-verify: true
+#browser
+  - name: ID browser TR-GO
+    type: trojan
+    server: vip02.darktunnel.net
+    port: 443
+    password: 3a357238-cc62-4995-8568-e15fa21538a3
+    udp: true
+    network: ws
+    ws-opts:
+      path: /trojan-ws
+      headers:
+        Host: v27.tiktokcdn.com
+    sni: v27.tiktokcdn.com
+    skip-cert-verify: true
+  - name: DO browser TR-GO
+    type: trojan
+    server: sgdo-vip02.darktunnel.net
+    port: 443
+    password: 3a357238-cc62-4995-8568-e15fa21538a3
+    udp: true
+    network: ws
+    ws-opts:
+      path: /trojan-ws
+      headers:
+        Host: v27.tiktokcdn.com
+    sni: v27.tiktokcdn.com
+    skip-cert-verify: true
+#porn
+  - name: DO porn TR
+    type: trojan
+    server: sgdo-vip02.darktunnel.net
+    port: 443
+    password: 3a357238-cc62-4995-8568-e15fa21538a3
+    network: tcp
+    udp: true
+    sni: v24.muscdn.com
+    skip-cert-verify: true
+  - name: DO porn TR-GO
+    type: trojan
+    server: sgdo-vip02.darktunnel.net
+    port: 443
+    password: 3a357238-cc62-4995-8568-e15fa21538a3
+    udp: true
+    network: ws
+    ws-opts:
+      path: /trojan-ws
+      headers:
+        Host: v27.tiktokcdn.com
+    sni: v27.tiktokcdn.com
+    skip-cert-verify: true
+#TT
+  - name: ID TT TR
+    type: trojan
+    server: vip02.darktunnel.net
+    port: 443
+    password: 3a357238-cc62-4995-8568-e15fa21538a3
+    udp: true
+    sni: v24.muscdn.com
+    skip-cert-verify: true
+  - name: ID TT TR-GO
+    type: trojan
+    server: vip02.darktunnel.net
+    port: 443
+    password: 3a357238-cc62-4995-8568-e15fa21538a3
+    udp: true
+    network: ws
+    ws-opts:
+      path: /trojan-ws
+      headers:
+        Host: v27.tiktokcdn.com
+    sni: v27.tiktokcdn.com
+    skip-cert-verify: true
+proxy-groups:
+  - name: MAIN
+    type: select
+    proxies:
+      - Trojan
+      - Streaming
+      - Sosmed
+      - Games
+      - Browser
+      - Porn
+      - TT
+  - name: Trojan
+    type: select
+    proxies:
+      - ID TR
+      - ID TR-GO
+      - ID TR XTLS
+      - DO TR
+      - DO TR-GO
+      - DO TR XTLS
+  - name: Streaming
+    type: fallback
+    url: http://www.gstatic.com/generate_204
+    interval: 300
+    tolerance: 150
+    proxies:
+      - DO stream TR
+      - DO stream TR-GO
+  - name: Sosmed
+    type: fallback
+    url: http://www.gstatic.com/generate_204
+    interval: 300
+    tolerance: 150
+    proxies:
+      - ID sosmed TR
+      - ID sosmed TR-GO
+  - name: Games
+    type: fallback
+    url: http://www.gstatic.com/generate_204
+    interval: 300
+    tolerance: 150
+    proxies:
+      - ID games TR
+      - ID games TR-GO
+  - name: Browser
+    type: fallback
+    url: http://www.gstatic.com/generate_204
+    interval: 300
+    tolerance: 150
+    proxies:
+      - ID browser TR-GO
+      - DO browser TR-GO
+  - name: Porn
+    type: fallback
+    url: http://www.gstatic.com/generate_204
+    interval: 300
+    tolerance: 150
+    proxies:
+      - DO porn TR
+      - DO porn TR-GO
+  - name: TT
+    type: fallback
+    url: http://www.gstatic.com/generate_204
+    interval: 300
+    tolerance: 150
+    proxies:
+      - ID TT TR
+      - ID TT TR-GO
+  
+rule-providers:
+  rule_browser:
+    type: http
+    behavior: classical
+    path: "./rule_browser.yaml"
+    url: https://darktunnel-vip02.netlify.app/ClashPremium/rule_browser.yaml
+    interval: 300
+  rule_videoconferences:
+    type: http
+    behavior: classical
+    path: "./rule_videoconferences.yaml"
+    url: https://darktunnel-vip02.netlify.app/ClashPremium/rule_videoconferences.yaml
+    interval: 300
+  rule_sosmed:
+    type: http
+    behavior: classical
+    path: "./rule_sosmed.yaml"
+    url: https://darktunnel-vip02.netlify.app/ClashPremium/rule_sosmed.yaml
+    interval: 300
+  rule_speedtest:
+    type: http
+    behavior: domain
+    path: "./rule_speedtest.yaml"
+    url: https://darktunnel-vip02.netlify.app/ClashPremium/rule_speedtest.yaml
+    interval: 300
+  rule_streaming:
+    type: http
+    behavior: classical
+    path: "./rule_streaming.yaml"
+    url: https://darktunnel-vip02.netlify.app/ClashPremium/rule_streaming.yaml
+    interval: 300
+  rule_gaming:
+    type: http
+    behavior: classical
+    path: "./rule_gaming.yaml"
+    url: https://darktunnel-vip02.netlify.app/ClashPremium/rule_gaming.yaml
+    interval: 300
+  rule_direct:
+    type: http
+    behavior: classical
+    path: "./rule_direct.yaml"
+    url: https://darktunnel-vip02.netlify.app/ClashPremium/rule_direct.yaml
+    interval: 300
+  rule_reject:
+    type: http
+    behavior: domain
+    path: "./rule_reject.yaml"
+    url: https://darktunnel-vip02.netlify.app/ClashPremium/rule_reject.yaml
+    interval: 300
+  rule_porn:
+    type: http
+    behavior: domain
+    path: "./rule_porn.yaml"
+    url: https://darktunnel-vip02.netlify.app/ClashPremium/rule_porn.yaml
+    interval: 300
+  rule_lancidr:
+    type: http
+    behavior: ipcidr
+    path: "./rule_lancidr.yaml"
+    url: https://darktunnel-vip02.netlify.app/ClashPremium/rule_lancidr.yaml
+    interval: 300
+  rule_telegramcidr:
+    type: http
+    behavior: ipcidr
+    path: "./rule_telegramcidr.yaml"
+    url: https://darktunnel-vip02.netlify.app/ClashPremium/rule_telegramcidr.yaml
+    interval: 300
+  rule_telegram:
+    type: http
+    behavior: domain
+    path: "./rule_telegram.yaml"
+    url: https://darktunnel-vip02.netlify.app/ClashPremium/rule_telegram.yaml
+    interval: 300
+  rule_games:
+    type: http
+    behavior: domain
+    path: "./rule_games.yaml"
+    url: https://darktunnel-vip02.netlify.app/ClashPremium/rule_games.yaml
+    interval: 300
+  rule_portgames:
+    type: http
+    behavior: classical
+    path: "./rule_portgames.yaml"
+    url: https://darktunnel-vip02.netlify.app/ClashPremium/rule_portgames.yaml
+    interval: 300
+  rule_line:
+    type: http
+    behavior: domain
+    path: "./rule_line.yaml"
+    url: https://darktunnel-vip02.netlify.app/ClashPremium/rule_line.yaml
+    interval: 300
+  rule_metaverse:
+    type: http
+    behavior: domain
+    path: "./rule_metaverse.yaml"
+    url: https://darktunnel-vip02.netlify.app/ClashPremium/rule_metaverse.yaml
+    interval: 300
+  rule_metaverse-dev:
+    type: http
+    behavior: domain
+    path: "./rule_metaverse-dev.yaml"
+    url: https://darktunnel-vip02.netlify.app/ClashPremium/rule_metaverse-dev.yaml
+    interval: 300
+  rule_whatsappcidr:
+    type: http
+    behavior: ipcidr
+    path: "./rule_whatsappcidr.yaml"
+    url: https://darktunnel-vip02.netlify.app/ClashPremium/rule_whatsappcidr.yaml
+    interval: 300
+  rule_whatsapp:
+    type: http
+    behavior: classical
+    path: "./rule_whatsapp.yaml"
+    url: https://darktunnel-vip02.netlify.app/ClashPremium/rule_whatsapp.yaml
+    interval: 300
+  rule_youtube:
+    type: http
+    behavior: domain
+    path: "./rule_youtube.yaml"
+    url: https://darktunnel-vip02.netlify.app/ClashPremium/rule_youtube.yaml
+    interval: 300
+  rule_instagram:
+    type: http
+    behavior: classical
+    path: "./rule_instagram.yaml"
+    url: https://darktunnel-vip02.netlify.app/ClashPremium/rule_instagram.yaml
+    interval: 300
+  rule_tiktok:
+    type: http
+    behavior: classical
+    path: "./rule_tiktok.yaml"
+    url: https://darktunnel-vip02.netlify.app/ClashPremium/rule_tiktok.yaml
+    interval: 300
+rules:
+# > Process
+  - PROCESS-NAME,v2ray,DIRECT
+  - PROCESS-NAME,xray,DIRECT
+  - PROCESS-NAME,naive,DIRECT
+  - PROCESS-NAME,trojan,DIRECT
+  - PROCESS-NAME,trojan-go,DIRECT
+  - PROCESS-NAME,ss-local,DIRECT
+  - PROCESS-NAME,privoxy,DIRECT
+  - PROCESS-NAME,leaf,DIRECT
+  - PROCESS-NAME,v2ray.exe,DIRECT
+  - PROCESS-NAME,xray.exe,DIRECT
+  - PROCESS-NAME,naive.exe,DIRECT
+  - PROCESS-NAME,trojan.exe,DIRECT
+  - PROCESS-NAME,trojan-go.exe,DIRECT
+  - PROCESS-NAME,ss-local.exe,DIRECT
+  - PROCESS-NAME,privoxy.exe,DIRECT
+  - RULE-SET,rule_lancidr,DIRECT,no-resolve
+  - RULE-SET,rule_direct,DIRECT
+  - RULE-SET,rule_reject,REJECT
+# > Streaming
+  - RULE-SET,rule_streaming,Streaming
+  - RULE-SET,rule_youtube,Streaming
+  - RULE-SET,rule_videoconferences,Streaming
+# > Sosmed
+  - RULE-SET,rule_sosmed,Sosmed
+  - RULE-SET,rule_line,Sosmed
+  - RULE-SET,rule_telegram,Sosmed
+  - RULE-SET,rule_telegramcidr,Sosmed
+  - RULE-SET,rule_whatsappcidr,Sosmed
+  - RULE-SET,rule_whatsapp,Sosmed
+# > Porn
+  - RULE-SET,rule_porn,Porn
+# > Games
+  - RULE-SET,rule_gaming,Games
+  - RULE-SET,rule_games,Games
+  - RULE-SET,rule_portgames,Games
+# > Speedtest
+  - RULE-SET,rule_speedtest,Trojan
+# > Etc
+  - RULE-SET,rule_metaverse,Trojan
+  - RULE-SET,rule_metaverse-dev,Trojan
+# > Browser
+  - RULE-SET,rule_browser,Browser
+# > TT
+  - RULE-SET,rule_instagram,TT
+  - RULE-SET,rule_tiktok,TT
+# > Port
+  - DST-PORT,21,MAIN
+  - DST-PORT,22,MAIN
+  - DST-PORT,23,MAIN
+  - DST-PORT,25,MAIN
+  - DST-PORT,80,MAIN
+  - DST-PORT,81,MAIN
+  - DST-PORT,143,MAIN
+  - DST-PORT,443,MAIN
+  - DST-PORT,465,MAIN
+  - DST-PORT,587,MAIN
+  - DST-PORT,993,MAIN
+  - DST-PORT,995,MAIN
+  - DST-PORT,8000,MAIN
+  - DST-PORT,8008,MAIN
+  - DST-PORT,8080,MAIN
+  - DST-PORT,8081,MAIN
+  - DST-PORT,8090,MAIN
+  - DST-PORT,8443,MAIN
+  - DST-PORT,8888,MAIN
+# > IP
+  - IP-CIDR,192.168.0.0/16,DIRECT,no-resolve
+  - IP-CIDR,10.0.0.0/8,DIRECT,no-resolve
+  - IP-CIDR,172.16.0.0/12,DIRECT,no-resolve
+  - IP-CIDR,127.0.0.0/8,DIRECT,no-resolve
+  - IP-CIDR,100.64.0.0/10,DIRECT,no-resolve
+  - IP-CIDR6,::1/128,DIRECT,no-resolve
+  - IP-CIDR6,fc00::/7,DIRECT,no-resolve
+  - IP-CIDR6,fe80::/10,DIRECT,no-resolve
+  - IP-CIDR6,fd00::/8,DIRECT,no-resolve
+  - MATCH,MAIN
