@@ -272,6 +272,20 @@ proxies:
         Host: v27.tiktokcdn.com
     sni: v27.tiktokcdn.com
     skip-cert-verify: true
+#teamviewer
+  - name: DO teamviewer TR-GO
+    type: trojan
+    server: sgdo-vip02.darktunnel.net
+    port: 443
+    password: 3a357238-cc62-4995-8568-e15fa21538a3
+    udp: true
+    network: ws
+    ws-opts:
+      path: /trojan-ws
+      headers:
+        Host: v27.tiktokcdn.com
+    sni: v27.tiktokcdn.com
+    skip-cert-verify: true
 proxy-groups:
   - name: MAIN
     type: select
@@ -333,6 +347,13 @@ proxy-groups:
     proxies:
       - ID browser TR-GO
       - DO browser TR-GO
+  - name: Team
+    type: fallback
+    url: http://www.gstatic.com/generate_204
+    interval: 300
+    tolerance: 150
+    proxies:
+      - DO teamviewer TR-GO
   - name: Porn
     type: url-test
     url: http://www.gstatic.com/generate_204
@@ -483,6 +504,12 @@ rule-providers:
     path: "./rule_tiktok.yaml"
     url: https://darktunnel-vip02.netlify.app/ClashPremium/rule_tiktok.yaml
     interval: 300
+  rule_teamviewer:
+    type: http
+    behavior: classical
+    path: "./rule_teamviewer.yaml"
+    url: https://darktunnel-vip02.netlify.app/ClashPremium/rule_teamviewer.yaml
+    interval: 300
 rules:
 # > Process
   - PROCESS-NAME,v2ray,DIRECT
@@ -527,6 +554,8 @@ rules:
   - RULE-SET,rule_metaverse-dev,Trojan
 # > Browser
   - RULE-SET,rule_browser,Browser
+# > teamviewer
+  - RULE-SET,rule_teamviewer,Team
 # > TT
   - RULE-SET,rule_instagram,TT
   - RULE-SET,rule_tiktok,TT
