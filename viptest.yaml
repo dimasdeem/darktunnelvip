@@ -287,7 +287,7 @@ proxies:
     sni: v27.tiktokcdn.com
     skip-cert-verify: true
 #coba
-  - name: Coba
+  - name: Coba1
     type: vmess
     server: 104.19.143.108
     port: 443
@@ -316,6 +316,7 @@ proxy-groups:
       - Browser
       - Porn
       - TT
+      - Coba
   - name: Trojan
     type: select
     proxies:
@@ -328,7 +329,7 @@ proxy-groups:
   - name: Coba
     type: select
     proxies:
-      - Coba
+      - Coba1
   - name: Streaming
     type: url-test
     url: http://www.gstatic.com/generate_204
