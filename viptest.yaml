@@ -317,7 +317,7 @@ proxy-groups:
       - DO stream TR
       - DO stream TR-GO
   - name: Sosmed
-    type: url-test
+    type: fallback
     url: http://www.gstatic.com/generate_204
     interval: 300
     tolerance: 150
@@ -325,7 +325,7 @@ proxy-groups:
       - ID sosmed TR
       - ID sosmed TR-GO
   - name: Sosmed2
-    type: url-test
+    type: fallback
     url: http://www.gstatic.com/generate_204
     interval: 300
     tolerance: 150
@@ -356,7 +356,7 @@ proxy-groups:
     proxies:
       - DO teamviewer TR-GO
   - name: Porn
-    type: url-test
+    type: fallback
     url: http://www.gstatic.com/generate_204
     interval: 300
     tolerance: 150
@@ -364,7 +364,7 @@ proxy-groups:
       - DO porn TR
       - DO porn TR-GO
   - name: TT
-    type: url-test
+    type: fallback
     url: http://www.gstatic.com/generate_204
     interval: 300
     tolerance: 150
