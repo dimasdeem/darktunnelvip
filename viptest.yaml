@@ -286,6 +286,23 @@ proxies:
         Host: v27.tiktokcdn.com
     sni: v27.tiktokcdn.com
     skip-cert-verify: true
+#coba
+  - name: Coba
+    type: vmess
+    server: 104.19.143.108
+    port: 443
+    uuid: 3a357238-cc62-4995-8568-e15fa21538a3
+    alterId: 0
+    cipher: auto
+    udp: true
+    tls: true
+    network: ws
+    ws-opts:
+      path: /vmess-ws
+      headers:
+        Host: vip02.darktunnel.net
+    servername: vip02.darktunnel.net
+    skip-cert-verify: true
 proxy-groups:
   - name: MAIN
     type: select
@@ -308,6 +325,10 @@ proxy-groups:
       - DO TR
       - DO TR-GO
       - DO TR XTLS
+  - name: Coba
+    type: select
+    proxies:
+      - Coba
   - name: Streaming
     type: url-test
     url: http://www.gstatic.com/generate_204
