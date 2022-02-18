@@ -1,11 +1,6 @@
 payload:
+  #Rule Browser Clasiccal
   - DOMAIN-SUFFIX,
-  # Dukung channel saya dengan tekan subscribe di Master Wifi Netwok Solution
-  # Aktifkan tombol lonceng agar bisa selalu dapat informasi terbaru dari saya
-  # Silahkan di share jika informasi saya bermanfaat
-  # Bagi yang ingin sawer untuk keberlanjutan silahkan melalui di bawah ini
-  # via rekenng bank dan lain nya di https://sites.google.com/view/masterwifinetworksoluton/bantu-masterwifi
-
   # > GOOGLE
   - DOMAIN-SUFFIX,connectivitycheck.gstatic.com
   - DOMAIN-SUFFIX,inbox.google.com
@@ -31,6 +26,15 @@ payload:
   - DOMAIN-SUFFIX,www.google.com
   - DOMAIN-SUFFIX,safebrowsing.googleapis.com
   - DOMAIN-SUFFIX,connectivitycheck.android.com
+  - DOMAIN-SUFFIX,alt4-mtalk.google.com
+  - DOMAIN-SUFFIX,clients4.google.com
+  - DOMAIN-SUFFIX,alt8-mtalk.google.com
+  - DOMAIN-SUFFIX,alt3-mtalk.google.com
+  - DOMAIN-SUFFIX,clientservices.googleapis.com
+  - DOMAIN-SUFFIX,alt6-mtalk.google.com
+  - DOMAIN-SUFFIX,alt7-mtalk.google.com
+  - DOMAIN-SUFFIX,cdnjs.cloudflare.com
+  - DOMAIN-SUFFIX,update.googleapis.com
 
   # > BING
   - DOMAIN-SUFFIX,4.bing.com
@@ -102,30 +106,6 @@ payload:
   - DOMAIN-SUFFIX,secure-media.hotstarext.com
   - DOMAIN-SUFFIX,api.hotstar.com
   - DOMAIN-SUFFIX,secure-media.hotstar.com
-
-  # > TELEGRAM
-  # - PROCESS-NAME,org.telegram.messenger
-  # - PROCESS-NAME,Telegram
-  - DOMAIN-SUFFIX,t.me
-  - DOMAIN-SUFFIX,tx.me
-  - DOMAIN-SUFFIX,tdesktop.com
-  - DOMAIN-SUFFIX,telegra.ph
-  - DOMAIN-SUFFIX,telegram.me
-  - DOMAIN-SUFFIX,telegram.org
-  - DOMAIN-SUFFIX,telegram.me
-  - DOMAIN-SUFFIX,telegram.dog
-  - DOMAIN-SUFFIX,telesco.pe
-  - DOMAIN-SUFFIX,telegram.space
-  - DOMAIN-SUFFIX,topnews.com
-  # - IP-CIDR,91.108.4.0/22,no-resolve
-  # - IP-CIDR,91.108.8.0/22,no-resolve
-  # - IP-CIDR,91.108.12.0/22,no-resolve
-  # - IP-CIDR,91.108.16.0/22,no-resolve
-  # - IP-CIDR,91.108.56.0/22,no-resolve
-  # - IP-CIDR,149.154.160.0/20,no-resolve
-  # - IP-CIDR,2001:b28:f23d::/48,no-resolve
-  # - IP-CIDR,2001:b28:f23f::/48,no-resolve
-  # - IP-CIDR,2001:67c:4e8::/48,no-resolve
 
   # > DISQUS
   - DOMAIN-SUFFIX,myip.disqus.com
