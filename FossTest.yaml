@@ -44,96 +44,55 @@ proxy-groups:
     type: select
     proxies:
     - SG1_4 Contabo
+rule-providers:
+  rule_speedtest:
+    type: http
+    behavior: domain
+    path: "./rule_speedtest.yaml"
+    url: https://darktunnel-vip02.netlify.app/ClashPremium/rule_speedtest.yaml
+    interval: 300
+  rule_telegramcidr:
+    type: http
+    behavior: ipcidr
+    path: "./rule_telegramcidr.yaml"
+    url: https://darktunnel-vip02.netlify.app/ClashPremium/rule_telegramcidr.yaml
+    interval: 300
+  rule_telegram:
+    type: http
+    behavior: domain
+    path: "./rule_telegram.yaml"
+    url: https://darktunnel-vip02.netlify.app/ClashPremium/rule_telegram.yaml
+    interval: 300
+  rule_whatsappcidr:
+    type: http
+    behavior: ipcidr
+    path: "./rule_whatsappcidr.yaml"
+    url: https://darktunnel-vip02.netlify.app/ClashPremium/rule_whatsappcidr.yaml
+    interval: 300
+  rule_whatsapp:
+    type: http
+    behavior: classical
+    path: "./rule_whatsapp.yaml"
+    url: https://darktunnel-vip02.netlify.app/ClashPremium/rule_whatsapp.yaml
+    interval: 300
+  rule_youtube:
+    type: http
+    behavior: domain
+    path: "./rule_youtube.yaml"
+    url: https://darktunnel-vip02.netlify.app/ClashPremium/rule_youtube.yaml
+    interval: 300
+  rule_instagram:
+    type: http
+    behavior: domain
+    path: "./rule_instagram.yaml"
+    url: https://darktunnel-vip02.netlify.app/ClashPremium/rule_instagram.yaml
+    interval: 300
 rules:
-# > Whatsapp
-  - DOMAIN-SUFFIX,g.whatsapp.net,SG1
-  - DOMAIN-SUFFIX,web.whatsapp.com,SG1
-  - DOMAIN-SUFFIX,scontent.whatsapp.net,SG1
-  - DOMAIN-SUFFIX,whatsapp.com,SG1
-  - DOMAIN-SUFFIX,static.whatsapp.net,SG1
-  - DOMAIN-SUFFIX,whatsapp.net,SG1
-  - DOMAIN-SUFFIX,mmg.whatsapp.net,SG1
-  - DOMAIN-SUFFIX,media.fbdj2-1.fna.whatsapp.net,SG1
-  - DOMAIN-SUFFIX,media-xsp1-2.cdn.whatsapp.net,SG1
-  - DST-PORT,38211,SG1
-# > Facebook
-  - DOMAIN-SUFFIX,www.facebook.com,SG1
-  - DOMAIN-SUFFIX,static.xx.fbcdn.net,SG1
-  - DOMAIN-SUFFIX,web.facebook.com,SG1
-  - DOMAIN-SUFFIX,scontent.xx.fbcdn.net,SG1
-  - DOMAIN-SUFFIX,scontent-hkt1-2.xx.fbcdn.net,SG1
-  - DOMAIN-SUFFIX,graph.facebook.com,SG1
-  - DOMAIN-SUFFIX,gateway.facebook.com,SG1
-  - DOMAIN-SUFFIX,scontent-sin6-4.xx.fbcdn.net,SG1
-  - DOMAIN-SUFFIX,scontent-den4-1.xx.fbcdn.net,SG1
-  - DOMAIN-SUFFIX,scontent-xsp1-3.xx.fbcdn.net,SG1
-  - DOMAIN-SUFFIX,scontent-sin6-2.xx.fbcdn.net,SG1
-  - DOMAIN-SUFFIX,scontent-sin6-3.xx.fbcdn.net,SG1
-  - DOMAIN-SUFFIX,video-sin6-1.xx.fbcdn.net,SG1
-  - DOMAIN-SUFFIX,video-xsp1-3.xx.fbcdn.net,SG1
-  - DOMAIN-SUFFIX,video-xsp1-2.xx.fbcdn.net,SG1
-  - DOMAIN-SUFFIX,video-xsp1-1.xx.fbcdn.net,SG1
-  - DOMAIN-SUFFIX,video-sin6-2.xx.fbcdn.net,SG1
-  - DOMAIN-SUFFIX,video-sin6-3.xx.fbcdn.net,SG1
-  - DOMAIN-SUFFIX,video-sin6-4.xx.fbcdn.net,SG1
-  - DOMAIN-SUFFIX,scontent-sin6-1.xx.fbcdn.net,SG1
-  - DOMAIN-SUFFIX,edge-chat.facebook.com,SG1
-  - DOMAIN-SUFFIX,b-graph.facebook.com,SG1
-  - DOMAIN-SUFFIX,b-www.facebook.com,SG1
-  - DOMAIN-SUFFIX,scontent.fcgk6-2.fna.fbcdn.net,SG1
-  - DOMAIN-SUFFIX,mqtt-mini.facebook.com,SG1
-  - DOMAIN-SUFFIX,snaptu-z.facebook.com,SG1
-# > Telegram
-  - DOMAIN-SUFFIX,telegra.ph,SG4
-  - DOMAIN-SUFFIX,telegram.org,SG4
-  - DOMAIN-SUFFIX,t.me,SG4
-  - DOMAIN-SUFFIX,tx.me,SG4
-  - DOMAIN-SUFFIX,tdesktop.com,SG4
-  - DOMAIN-SUFFIX,telegra.ph,SG4
-  - DOMAIN-SUFFIX,telegram.me,SG4
-  - DOMAIN-SUFFIX,telegram.org,SG4
-  - DOMAIN-SUFFIX,telegram.me,SG4
-  - DOMAIN-SUFFIX,telegram.dog,SG4
-  - DOMAIN-SUFFIX,telesco.pe,SG4
-  - DOMAIN-SUFFIX,telegram.space,SG4
-  - IP-CIDR,91.108.4.0/22,SG4
-  - IP-CIDR,91.108.8.0/21,SG4
-  - IP-CIDR,91.108.16.0/22,SG4
-  - IP-CIDR,91.108.56.0/22,SG4
-  - IP-CIDR,149.154.160.0/20,SG4
-  - IP-CIDR6,2001:67c:4e8::/48,SG4
-  - IP-CIDR6,2001:b28:f23d::/48,SG4
-  - IP-CIDR6,2001:b28:f23f::/48,SG4
-# > Instagram
-  - DOMAIN-SUFFIX,www.instagram.com,SG4
-  - DOMAIN-SUFFIX,scontent-xsp1-3.cdninstagram.com,SG4
-  - DOMAIN-SUFFIX,graph.instagram.com,SG4
-  - DOMAIN-SUFFIX,edge-chat.instagram.com,SG4
-  - DOMAIN-SUFFIX,i.instagram.com,SG4
-  - DOMAIN-SUFFIX,scontent-sin6-2.cdninstagram.com,SG4
-  - DOMAIN-SUFFIX,scontent-sin6-4.cdninstagram.com,SG4
-  - DOMAIN-SUFFIX,scontent-sin6-1.cdninstagram.com,SG4
-  - DOMAIN-SUFFIX,scontent-xsp1-1.cdninstagram.co,SG4
-  - DOMAIN-SUFFIX,scontent-xsp1-1.cdninstagram.com,SG4
-  - DOMAIN-SUFFIX,scontent-sin6-3.cdninstagram.com,SG4
-  - DOMAIN-SUFFIX,scontent-xsp1-2.cdninstagram.com,SG4
-  - DOMAIN-SUFFIX,scontent.cdninstagram.com,SG4
-  - DOMAIN-SUFFIX,instagram.fbdj2-1.fna.fbcdn.net,SG4
-  # > SPEEDTEST
-  - DOMAIN-SUFFIX,speedtest.cbn.id,SG1
-  - DOMAIN-SUFFIX,speedtest.net,SG1
-  - DOMAIN-SUFFIX,fast.com,SG1
-  - DOMAIN-SUFFIX,api.fast.com,SG1
-  - DOMAIN-SUFFIX,c.speedtestcustom.com,SG1
-  - DOMAIN-SUFFIX,cbn.speedtestcustom.com,SG1
-  - DOMAIN-SUFFIX,speedtest-intl.xl.co.id.prod.hosts.ooklaserver.net,SG1
-  - DOMAIN-SUFFIX,gurgle.speedtest.net,SG1
-  - DOMAIN-SUFFIX,speedtest.com.sg.prod.hosts.ooklaserver.net,SG1
-  - DOMAIN-SUFFIX,speedtest-sg.iconpln.net.id.prod.hosts.ooklaserver.net,SG1
-  - DOMAIN-SUFFIX,m1speedtest1.m1net.com.sg.prod.hosts.ooklaserver.net,SG1
-  - DOMAIN-SUFFIX,speedtest.myrepublic.com.sg.prod.hosts.ooklaserver.net,SG1
-  - DOMAIN-SUFFIX,sg-speedtest.fast.net.id.prod.hosts.ooklaserver.net,SG1
-  - DOMAIN-SUFFIX,singnet-speedtest.singnet.com.sg.prod.hosts.ooklaserver.net,SG1
-  - DOMAIN-SUFFIX,speedtest1.indosat.com.prod.hosts.ooklaserver.net,SG1
-  - DOMAIN-SUFFIX,speedtest-ix.idola.net.id,SG1
+  - RULE-SET,rule_speedtest,SG1
+  - RULE-SET,rule_telegramcidr,SG4
+  - RULE-SET,rule_telegram,SG4
+  - RULE-SET,rule_whatsappcidr,SG1
+  - RULE-SET,rule_whatsapp,SG1
+  - RULE-SET,rule_youtube,SG4
+  - RULE-SET,rule_instagram,SG4
   - MATCH,ALL
