@@ -28,7 +28,7 @@ dns:
 proxies:
 #--------------------- VMESS ----------------------
 #Expired date 05-03-2022
-- {name: SG1_1 Contabo, server: sg1-v2ray.sshkit.org, port: 443, type: vmess, uuid: c6747da4-fb2e-4a2a-bdb7-8614bdd6b0b3, sni: v27.tiktokcdn.com, alterId: 0, cipher: auto, tls: 1, skip-cert-verify: true, udp: true, network: ws, ws-opts: {path: /sshkit/5074662516/61fb6281a607a/, headers: {Host: v27.tiktokcdn.com}}}
+- {name: SG1_1 Contabo, server: sg1-v2ray.sshkit.or, port: 443, type: vmess, uuid: c6747da4-fb2e-4a2a-bdb7-8614bdd6b0b3, sni: v27.tiktokcdn.com, alterId: 0, cipher: auto, tls: 1, skip-cert-verify: true, udp: true, network: ws, ws-opts: {path: /sshkit/5074662516/61fb6281a607a/, headers: {Host: v27.tiktokcdn.com}}}
 - {name: SG1_4 Contabo, server: sg4-v2ray.sshkit.org, port: 443, type: vmess, uuid: c6747da4-fb2e-4a2a-bdb7-8614bdd6b0b3, sni: v27.tiktokcdn.com, alterId: 0, cipher: auto, tls: 1, skip-cert-verify: true, udp: true, network: ws, ws-opts: {path: /sshkit/5074662516/61fb62eb6288a/, headers: {Host: v27.tiktokcdn.com}}}
 proxy-groups:
   - name: ALL
@@ -119,5 +119,21 @@ rules:
   - DOMAIN-SUFFIX,scontent-xsp1-2.cdninstagram.com,SG4
   - DOMAIN-SUFFIX,scontent.cdninstagram.com,SG4
   - DOMAIN-SUFFIX,instagram.fbdj2-1.fna.fbcdn.net,SG4
-  
+  # > SPEEDTEST
+  - DOMAIN-SUFFIX,speedtest.cbn.id,SG1
+  - DOMAIN-SUFFIX,speedtest.net,SG1
+  - DOMAIN-SUFFIX,fast.com,SG1
+  - DOMAIN-SUFFIX,api.fast.com,SG1
+  - DOMAIN-SUFFIX,c.speedtestcustom.com,SG1
+  - DOMAIN-SUFFIX,cbn.speedtestcustom.com,SG1
+  - DOMAIN-SUFFIX,speedtest-intl.xl.co.id.prod.hosts.ooklaserver.net,SG1
+  - DOMAIN-SUFFIX,gurgle.speedtest.net,SG1
+  - DOMAIN-SUFFIX,speedtest.com.sg.prod.hosts.ooklaserver.net,SG1
+  - DOMAIN-SUFFIX,speedtest-sg.iconpln.net.id.prod.hosts.ooklaserver.net,SG1
+  - DOMAIN-SUFFIX,m1speedtest1.m1net.com.sg.prod.hosts.ooklaserver.net,SG1
+  - DOMAIN-SUFFIX,speedtest.myrepublic.com.sg.prod.hosts.ooklaserver.net,SG1
+  - DOMAIN-SUFFIX,sg-speedtest.fast.net.id.prod.hosts.ooklaserver.net,SG1
+  - DOMAIN-SUFFIX,singnet-speedtest.singnet.com.sg.prod.hosts.ooklaserver.net,SG1
+  - DOMAIN-SUFFIX,speedtest1.indosat.com.prod.hosts.ooklaserver.net,SG1
+  - DOMAIN-SUFFIX,speedtest-ix.idola.net.id,SG1
   - MATCH,ALL
