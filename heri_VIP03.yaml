@@ -21,60 +21,60 @@ dns:
     - https://cloudflare-dns.com/dns-query
 proxies:
 #V2Ray WS
-  - {name: ID V2Ray WS, server: 103.150.103.214, port: 443, type: vmess, uuid: 3a357238-cc62-4995-8568-e15fa21538a3, sni: v24.muscdn.com, alterId: 0, cipher: auto, tls: true, skip-cert-verify: true, udp: true, network: ws, ws-opts: {path: /vmess-ws, headers: {Host: v24.muscdn.com}}}
-  - {name: DO V2Ray WS, server: 188.166.253.80, port: 443, type: vmess, uuid: 3a357238-cc62-4995-8568-e15fa21538a3, sni: v24.muscdn.com, alterId: 0, cipher: auto, tls: true, skip-cert-verify: true, udp: true, network: ws, ws-opts: {path: /vmess-ws, headers: {Host: v24.muscdn.com}}}
-  - {name: US V2Ray WS, server: 143.110.146.70, port: 443, type: vmess, uuid: 3a357238-cc62-4995-8568-e15fa21538a3, sni: v24.muscdn.com, alterId: 0, cipher: auto, tls: true, skip-cert-verify: true, udp: true, network: ws, ws-opts: {path: /vmess-ws, headers: {Host: v24.muscdn.com}}}
+  - {name: ID V2Ray WS, server: 43.229.254.147, port: 443, type: vmess, uuid: 27f06ee8-5724-4201-8ec9-2b86b016d6d4, sni: v24.muscdn.com, alterId: 0, cipher: auto, tls: true, skip-cert-verify: true, udp: true, network: ws, ws-opts: {path: /vmess-ws, headers: {Host: v24.muscdn.com}}}
+  - {name: DO V2Ray WS, server: 167.71.207.30, port: 443, type: vmess, uuid: 27f06ee8-5724-4201-8ec9-2b86b016d6d4, sni: v24.muscdn.com, alterId: 0, cipher: auto, tls: true, skip-cert-verify: true, udp: true, network: ws, ws-opts: {path: /vmess-ws, headers: {Host: v24.muscdn.com}}}
+  - {name: US V2Ray WS, server: 143.110.146.70, port: 443, type: vmess, uuid: 27f06ee8-5724-4201-8ec9-2b86b016d6d4, sni: v24.muscdn.com, alterId: 0, cipher: auto, tls: true, skip-cert-verify: true, udp: true, network: ws, ws-opts: {path: /vmess-ws, headers: {Host: v24.muscdn.com}}}
 
 #V2Ray gRPC
-  - {name: ID V2Ray gRPC, server: 103.150.103.214, port: 443, type: vmess, uuid: 3a357238-cc62-4995-8568-e15fa21538a3, servername: v24.muscdn.com, alterId: 0, cipher: auto, tls: true, skip-cert-verify: true, udp: true, network: grpc, grpc-opts: {grpc-service-name: vmess-grpc}}
-  - {name: DO V2Ray gRPC, server: 188.166.253.80, port: 443, type: vmess, uuid: 3a357238-cc62-4995-8568-e15fa21538a3, servername: v24.muscdn.com, alterId: 0, cipher: auto, tls: true, skip-cert-verify: true, udp: true, network: grpc, grpc-opts: {grpc-service-name: vmess-grpc}}
-  - {name: US V2Ray gRPC, server: 143.110.146.70, port: 443, type: vmess, uuid: 3a357238-cc62-4995-8568-e15fa21538a3, servername: v24.muscdn.com, alterId: 0, cipher: auto, tls: true, skip-cert-verify: true, udp: true, network: grpc, grpc-opts: {grpc-service-name: vmess-grpc}}
+  - {name: ID V2Ray gRPC, server: 43.229.254.147, port: 443, type: vmess, uuid: 27f06ee8-5724-4201-8ec9-2b86b016d6d4, servername: v24.muscdn.com, alterId: 0, cipher: auto, tls: true, skip-cert-verify: true, udp: true, network: grpc, grpc-opts: {grpc-service-name: vmess-grpc}}
+  - {name: DO V2Ray gRPC, server: 167.71.207.30, port: 443, type: vmess, uuid: 27f06ee8-5724-4201-8ec9-2b86b016d6d4, servername: v24.muscdn.com, alterId: 0, cipher: auto, tls: true, skip-cert-verify: true, udp: true, network: grpc, grpc-opts: {grpc-service-name: vmess-grpc}}
+  - {name: US V2Ray gRPC, server: 143.110.146.70, port: 443, type: vmess, uuid: 27f06ee8-5724-4201-8ec9-2b86b016d6d4, servername: v24.muscdn.com, alterId: 0, cipher: auto, tls: true, skip-cert-verify: true, udp: true, network: grpc, grpc-opts: {grpc-service-name: vmess-grpc}}
 
 #Trojan
-  - {name: ID TR, type: trojan, server: 103.150.103.214, port: 443, password: 3a357238-cc62-4995-8568-e15fa21538a3, udp: true, sni: v24.muscdn.com, skip-cert-verify: true}
-  - {name: DO TR, type: trojan, server: 188.166.253.80, port: 443, password: 3a357238-cc62-4995-8568-e15fa21538a3, udp: true, sni: v24.muscdn.com, skip-cert-verify: true}
-  - {name: US TR, type: trojan, server: 143.110.146.70, port: 443, password: 3a357238-cc62-4995-8568-e15fa21538a3, udp: true, sni: v24.muscdn.com, skip-cert-verify: true}
+  - {name: ID TR, type: trojan, server: 43.229.254.147, port: 443, password: 27f06ee8-5724-4201-8ec9-2b86b016d6d4, udp: true, sni: v24.muscdn.com, skip-cert-verify: true}
+  - {name: DO TR, type: trojan, server: 167.71.207.30, port: 443, password: 27f06ee8-5724-4201-8ec9-2b86b016d6d4, udp: true, sni: v24.muscdn.com, skip-cert-verify: true}
+  - {name: US TR, type: trojan, server: 143.110.146.70, port: 443, password: 27f06ee8-5724-4201-8ec9-2b86b016d6d4, udp: true, sni: v24.muscdn.com, skip-cert-verify: true}
 
 #Trojan XTLS
-  - {name: ID TR XTLS, type: trojan, server: 103.150.103.214, port: 443, password: 3a357238-cc62-4995-8568-e15fa21538a3, udp: true, xtls: true, flow: xtls-rprx-direct, sni: v24.muscdn.com, skip-cert-verify: true}
-  - {name: DO TR XTLS, type: trojan, server: 188.166.253.80, port: 443, password: 3a357238-cc62-4995-8568-e15fa21538a3, udp: true, xtls: true, flow: xtls-rprx-direct, sni: v24.muscdn.com, skip-cert-verify: true}
-  - {name: US TR XTLS, type: trojan, server: 143.110.146.70, port: 443, password: 3a357238-cc62-4995-8568-e15fa21538a3, udp: true, xtls: true, flow: xtls-rprx-direct, sni: v24.muscdn.com, skip-cert-verify: true}
+  - {name: ID TR XTLS, type: trojan, server: 43.229.254.147, port: 443, password: 27f06ee8-5724-4201-8ec9-2b86b016d6d4, udp: true, xtls: true, flow: xtls-rprx-direct, sni: v24.muscdn.com, skip-cert-verify: true}
+  - {name: DO TR XTLS, type: trojan, server: 167.71.207.30, port: 443, password: 27f06ee8-5724-4201-8ec9-2b86b016d6d4, udp: true, xtls: true, flow: xtls-rprx-direct, sni: v24.muscdn.com, skip-cert-verify: true}
+  - {name: US TR XTLS, type: trojan, server: 143.110.146.70, port: 443, password: 27f06ee8-5724-4201-8ec9-2b86b016d6d4, udp: true, xtls: true, flow: xtls-rprx-direct, sni: v24.muscdn.com, skip-cert-verify: true}
 
 #Trojan WS
-  - {name: ID TR WS, server: 103.150.103.214, port: 443, type: trojan, password: 3a357238-cc62-4995-8568-e15fa21538a3, skip-cert-verify: true, sni: v24.muscdn.com, network: ws, ws-opts: {path: /trojan-ws, headers: {Host: 43.229.254.147}}, udp: true}
-  - {name: DO TR WS, server: 188.166.253.80, port: 443, type: trojan, password: 3a357238-cc62-4995-8568-e15fa21538a3, skip-cert-verify: true, sni: v24.muscdn.com, network: ws, ws-opts: {path: /trojan-ws, headers: {Host: 188.166.253.80}}, udp: true}
-  - {name: US TR WS, server: 143.110.146.70, port: 443, type: trojan, password: 3a357238-cc62-4995-8568-e15fa21538a3, skip-cert-verify: true, sni: v24.muscdn.com, network: ws, ws-opts: {path: /trojan-ws, headers: {Host: 143.110.146.70}}, udp: true}
+  - {name: ID TR WS, server: 43.229.254.147, port: 443, type: trojan, password: 27f06ee8-5724-4201-8ec9-2b86b016d6d4, skip-cert-verify: true, sni: v24.muscdn.com, network: ws, ws-opts: {path: /trojan-ws, headers: {Host: 43.229.254.147}}, udp: true}
+  - {name: DO TR WS, server: 167.71.207.30, port: 443, type: trojan, password: 27f06ee8-5724-4201-8ec9-2b86b016d6d4, skip-cert-verify: true, sni: v24.muscdn.com, network: ws, ws-opts: {path: /trojan-ws, headers: {Host: 167.71.207.30}}, udp: true}
+  - {name: US TR WS, server: 143.110.146.70, port: 443, type: trojan, password: 27f06ee8-5724-4201-8ec9-2b86b016d6d4, skip-cert-verify: true, sni: v24.muscdn.com, network: ws, ws-opts: {path: /trojan-ws, headers: {Host: 143.110.146.70}}, udp: true}
 
 #Expired date 15-03-2022
   - {name: SG LB, server: 194.233.86.246, port: 443, udp: true, type: trojan, password: b1d7cf60-8d31-11ec-b831-217f943883dc, sni: v27.tiktokcdn.com, skip-cert-verify: true}
-  - {name: DO LB, type: trojan, server: 188.166.253.80, port: 443, password: 3a357238-cc62-4995-8568-e15fa21538a3, udp: true, sni: v24.muscdn.com, skip-cert-verify: true}
+  - {name: DO LB, type: trojan, server: 167.71.207.30, port: 443, password: 27f06ee8-5724-4201-8ec9-2b86b016d6d4, udp: true, sni: v24.muscdn.com, skip-cert-verify: true}
 
 #streaming
-  - {name: DO stream TR XTLS, type: trojan, server: 188.166.253.80, port: 443, password: 3a357238-cc62-4995-8568-e15fa21538a3, udp: true, xtls: true, flow: xtls-rprx-direct, sni: v24.muscdn.com, skip-cert-verify: true}
-  - {name: DO stream TR, type: trojan, server: 188.166.253.80, port: 443, password: 3a357238-cc62-4995-8568-e15fa21538a3, udp: true, sni: v24.muscdn.com, skip-cert-verify: true}
-  - {name: DO stream TR WS, server: 188.166.253.80, port: 443, type: trojan, password: 3a357238-cc62-4995-8568-e15fa21538a3, skip-cert-verify: true, sni: v24.muscdn.com, network: ws, ws-opts: {path: /trojan-ws, headers: {Host: 188.166.253.80}}, udp: true}
+  - {name: DO stream TR XTLS, type: trojan, server: 167.71.207.30, port: 443, password: 27f06ee8-5724-4201-8ec9-2b86b016d6d4, udp: true, xtls: true, flow: xtls-rprx-direct, sni: v24.muscdn.com, skip-cert-verify: true}
+  - {name: DO stream TR, type: trojan, server: 167.71.207.30, port: 443, password: 27f06ee8-5724-4201-8ec9-2b86b016d6d4, udp: true, sni: v24.muscdn.com, skip-cert-verify: true}
+  - {name: DO stream TR WS, server: 167.71.207.30, port: 443, type: trojan, password: 27f06ee8-5724-4201-8ec9-2b86b016d6d4, skip-cert-verify: true, sni: v24.muscdn.com, network: ws, ws-opts: {path: /trojan-ws, headers: {Host: 167.71.207.30}}, udp: true}
 
 #sosmed
-  - {name: ID sosmed TR, type: trojan, server: 103.150.103.214, port: 443, password: 3a357238-cc62-4995-8568-e15fa21538a3, udp: true, sni: v24.muscdn.com, skip-cert-verify: true}
-  - {name: ID sosmed TR WS, server: 103.150.103.214, port: 443, type: trojan, password: 3a357238-cc62-4995-8568-e15fa21538a3, skip-cert-verify: true, sni: v24.muscdn.com, network: ws, ws-opts: {path: /trojan-ws, headers: {Host: 43.229.254.147}}, udp: true}
+  - {name: ID sosmed TR, type: trojan, server: 43.229.254.147, port: 443, password: 27f06ee8-5724-4201-8ec9-2b86b016d6d4, udp: true, sni: v24.muscdn.com, skip-cert-verify: true}
+  - {name: ID sosmed TR WS, server: 43.229.254.147, port: 443, type: trojan, password: 27f06ee8-5724-4201-8ec9-2b86b016d6d4, skip-cert-verify: true, sni: v24.muscdn.com, network: ws, ws-opts: {path: /trojan-ws, headers: {Host: 43.229.254.147}}, udp: true}
 
 #sosmed2
-  - {name: ID sosmed2 TR, type: trojan, server: 103.150.103.214, port: 443, password: 3a357238-cc62-4995-8568-e15fa21538a3, udp: true, sni: v24.muscdn.com, skip-cert-verify: true}
-  - {name: ID sosmed2 TR XTLS, type: trojan, server: 103.150.103.214, port: 443, password: 3a357238-cc62-4995-8568-e15fa21538a3, udp: true, xtls: true, flow: xtls-rprx-direct, sni: v24.muscdn.com, skip-cert-verify: true}
+  - {name: ID sosmed2 TR, type: trojan, server: 43.229.254.147, port: 443, password: 27f06ee8-5724-4201-8ec9-2b86b016d6d4, udp: true, sni: v24.muscdn.com, skip-cert-verify: true}
+  - {name: ID sosmed2 TR XTLS, type: trojan, server: 43.229.254.147, port: 443, password: 27f06ee8-5724-4201-8ec9-2b86b016d6d4, udp: true, xtls: true, flow: xtls-rprx-direct, sni: v24.muscdn.com, skip-cert-verify: true}
 
 #sosmed3
-  - {name: ID sosmed3 TR WS, server: 103.150.103.214, port: 443, type: trojan, password: 3a357238-cc62-4995-8568-e15fa21538a3, skip-cert-verify: true, sni: v24.muscdn.com, network: ws, ws-opts: {path: /trojan-ws, headers: {Host: 43.229.254.147}}, udp: true}
-  - {name: ID sosmed3 V2Ray WS, server: 103.150.103.214, port: 443, type: vmess, uuid: 3a357238-cc62-4995-8568-e15fa21538a3, sni: v24.muscdn.com, alterId: 0, cipher: auto, tls: true, skip-cert-verify: true, udp: true, network: ws, ws-opts: {path: /vmess-ws, headers: {Host: v24.muscdn.com}}}
-  - {name: ID sosmed3 TR XTLS, type: trojan, server: 103.150.103.214, port: 443, password: 3a357238-cc62-4995-8568-e15fa21538a3, udp: true, xtls: true, flow: xtls-rprx-direct, sni: v24.muscdn.com, skip-cert-verify: true}
+  - {name: ID sosmed3 TR WS, server: 43.229.254.147, port: 443, type: trojan, password: 27f06ee8-5724-4201-8ec9-2b86b016d6d4, skip-cert-verify: true, sni: v24.muscdn.com, network: ws, ws-opts: {path: /trojan-ws, headers: {Host: 43.229.254.147}}, udp: true}
+  - {name: ID sosmed3 V2Ray WS, server: 43.229.254.147, port: 443, type: vmess, uuid: 27f06ee8-5724-4201-8ec9-2b86b016d6d4, sni: v24.muscdn.com, alterId: 0, cipher: auto, tls: true, skip-cert-verify: true, udp: true, network: ws, ws-opts: {path: /vmess-ws, headers: {Host: v24.muscdn.com}}}
+  - {name: ID sosmed3 TR XTLS, type: trojan, server: 43.229.254.147, port: 443, password: 27f06ee8-5724-4201-8ec9-2b86b016d6d4, udp: true, xtls: true, flow: xtls-rprx-direct, sni: v24.muscdn.com, skip-cert-verify: true}
 
 #game
-  - {name: ID game TR, type: trojan, server: 103.150.103.214, port: 443, password: 3a357238-cc62-4995-8568-e15fa21538a3, udp: true, sni: v24.muscdn.com, skip-cert-verify: true}
-  - {name: ID game TR WS, server: 103.150.103.214, port: 443, type: trojan, password: 3a357238-cc62-4995-8568-e15fa21538a3, skip-cert-verify: true, sni: v24.muscdn.com, network: ws, ws-opts: {path: /trojan-ws, headers: {Host: 43.229.254.147}}, udp: true}
+  - {name: ID game TR, type: trojan, server: 43.229.254.147, port: 443, password: 27f06ee8-5724-4201-8ec9-2b86b016d6d4, udp: true, sni: v24.muscdn.com, skip-cert-verify: true}
+  - {name: ID game TR WS, server: 43.229.254.147, port: 443, type: trojan, password: 27f06ee8-5724-4201-8ec9-2b86b016d6d4, skip-cert-verify: true, sni: v24.muscdn.com, network: ws, ws-opts: {path: /trojan-ws, headers: {Host: 43.229.254.147}}, udp: true}
 
 #porn
-  - {name: DO porn TR, type: trojan, server: 188.166.253.80, port: 443, password: 3a357238-cc62-4995-8568-e15fa21538a3, udp: true, sni: v24.muscdn.com, skip-cert-verify: true}
-  - {name: DO porn TR WS, server: 188.166.253.80, port: 443, type: trojan, password: 3a357238-cc62-4995-8568-e15fa21538a3, skip-cert-verify: true, sni: v24.muscdn.com, network: ws, ws-opts: {path: /trojan-ws, headers: {Host: 188.166.253.80}}, udp: true}
-  - {name: DO porn TR XTLS, type: trojan, server: 188.166.253.80, port: 443, password: 3a357238-cc62-4995-8568-e15fa21538a3, udp: true, xtls: true, flow: xtls-rprx-direct, sni: v24.muscdn.com, skip-cert-verify: true}
+  - {name: DO porn TR, type: trojan, server: 167.71.207.30, port: 443, password: 27f06ee8-5724-4201-8ec9-2b86b016d6d4, udp: true, sni: v24.muscdn.com, skip-cert-verify: true}
+  - {name: DO porn TR WS, server: 167.71.207.30, port: 443, type: trojan, password: 27f06ee8-5724-4201-8ec9-2b86b016d6d4, skip-cert-verify: true, sni: v24.muscdn.com, network: ws, ws-opts: {path: /trojan-ws, headers: {Host: 167.71.207.30}}, udp: true}
+  - {name: DO porn TR XTLS, type: trojan, server: 167.71.207.30, port: 443, password: 27f06ee8-5724-4201-8ec9-2b86b016d6d4, udp: true, xtls: true, flow: xtls-rprx-direct, sni: v24.muscdn.com, skip-cert-verify: true}
 proxy-groups:
   - name: MAIN
     type: select
@@ -166,9 +166,10 @@ proxy-groups:
       - DO porn TR XTLS
 rule-providers:
   rule_teamviewer:
-    type: file
+    type: http
     behavior: classical
     path: "./rule/rule_teamviewer.yaml"
+    url: https://darktunnel-vip02.netlify.app/ClashPremium/classical_teamviewer.yaml
   rule_speedtest:
     type: http
     behavior: domain
