@@ -1,0 +1,308 @@
+tproxy-port: 7893
+bind-address: "*"
+mode: rule
+allow-lan: true
+log-level: silent
+external-controller: 0.0.0.0:9090
+external-ui: yacd-gh-pages
+unified-delay: true
+ipv6: false
+dns:
+  enable: true
+  ipv6: false
+  listen: 0.0.0.0:1053
+  enhanced-mode: fake-ip
+  fake-ip-range: 28.0.0.0/8
+  use-host: true
+  nameserver:
+    - 1.1.1.1
+  fallback:
+    - 1.0.0.1
+    - https://cloudflare-dns.com/dns-query
+proxies:
+#V2Ray WS
+  - {name: ID V2Ray WS, server: 103.150.103.214, port: 443, type: vmess, uuid: 3a357238-cc62-4995-8568-e15fa21538a3, sni: v24.muscdn.com, alterId: 0, cipher: auto, tls: true, skip-cert-verify: true, udp: true, network: ws, ws-opts: {path: /vmess-ws, headers: {Host: v24.muscdn.com}}}
+  - {name: DO V2Ray WS, server: 188.166.253.80, port: 443, type: vmess, uuid: 3a357238-cc62-4995-8568-e15fa21538a3, sni: v24.muscdn.com, alterId: 0, cipher: auto, tls: true, skip-cert-verify: true, udp: true, network: ws, ws-opts: {path: /vmess-ws, headers: {Host: v24.muscdn.com}}}
+  - {name: US V2Ray WS, server: 143.110.146.70, port: 443, type: vmess, uuid: 3a357238-cc62-4995-8568-e15fa21538a3, sni: v24.muscdn.com, alterId: 0, cipher: auto, tls: true, skip-cert-verify: true, udp: true, network: ws, ws-opts: {path: /vmess-ws, headers: {Host: v24.muscdn.com}}}
+
+#V2Ray gRPC
+  - {name: ID V2Ray gRPC, server: 103.150.103.214, port: 443, type: vmess, uuid: 3a357238-cc62-4995-8568-e15fa21538a3, servername: v24.muscdn.com, alterId: 0, cipher: auto, tls: true, skip-cert-verify: true, udp: true, network: grpc, grpc-opts: {grpc-service-name: vmess-grpc}}
+  - {name: DO V2Ray gRPC, server: 188.166.253.80, port: 443, type: vmess, uuid: 3a357238-cc62-4995-8568-e15fa21538a3, servername: v24.muscdn.com, alterId: 0, cipher: auto, tls: true, skip-cert-verify: true, udp: true, network: grpc, grpc-opts: {grpc-service-name: vmess-grpc}}
+  - {name: US V2Ray gRPC, server: 143.110.146.70, port: 443, type: vmess, uuid: 3a357238-cc62-4995-8568-e15fa21538a3, servername: v24.muscdn.com, alterId: 0, cipher: auto, tls: true, skip-cert-verify: true, udp: true, network: grpc, grpc-opts: {grpc-service-name: vmess-grpc}}
+
+#Trojan
+  - {name: ID TR, type: trojan, server: 103.150.103.214, port: 443, password: 3a357238-cc62-4995-8568-e15fa21538a3, udp: true, sni: v24.muscdn.com, skip-cert-verify: true}
+  - {name: DO TR, type: trojan, server: 188.166.253.80, port: 443, password: 3a357238-cc62-4995-8568-e15fa21538a3, udp: true, sni: v24.muscdn.com, skip-cert-verify: true}
+  - {name: US TR, type: trojan, server: 143.110.146.70, port: 443, password: 3a357238-cc62-4995-8568-e15fa21538a3, udp: true, sni: v24.muscdn.com, skip-cert-verify: true}
+
+#Trojan XTLS
+  - {name: ID TR XTLS, type: trojan, server: 103.150.103.214, port: 443, password: 3a357238-cc62-4995-8568-e15fa21538a3, udp: true, xtls: true, flow: xtls-rprx-direct, sni: v24.muscdn.com, skip-cert-verify: true}
+  - {name: DO TR XTLS, type: trojan, server: 188.166.253.80, port: 443, password: 3a357238-cc62-4995-8568-e15fa21538a3, udp: true, xtls: true, flow: xtls-rprx-direct, sni: v24.muscdn.com, skip-cert-verify: true}
+  - {name: US TR XTLS, type: trojan, server: 143.110.146.70, port: 443, password: 3a357238-cc62-4995-8568-e15fa21538a3, udp: true, xtls: true, flow: xtls-rprx-direct, sni: v24.muscdn.com, skip-cert-verify: true}
+
+#Trojan WS
+  - {name: ID TR WS, server: 103.150.103.214, port: 443, type: trojan, password: 3a357238-cc62-4995-8568-e15fa21538a3, skip-cert-verify: true, sni: v24.muscdn.com, network: ws, ws-opts: {path: /trojan-ws, headers: {Host: 43.229.254.147}}, udp: true}
+  - {name: DO TR WS, server: 188.166.253.80, port: 443, type: trojan, password: 3a357238-cc62-4995-8568-e15fa21538a3, skip-cert-verify: true, sni: v24.muscdn.com, network: ws, ws-opts: {path: /trojan-ws, headers: {Host: 188.166.253.80}}, udp: true}
+  - {name: US TR WS, server: 143.110.146.70, port: 443, type: trojan, password: 3a357238-cc62-4995-8568-e15fa21538a3, skip-cert-verify: true, sni: v24.muscdn.com, network: ws, ws-opts: {path: /trojan-ws, headers: {Host: 143.110.146.70}}, udp: true}
+
+#Expired date 15-03-2022
+  - {name: SG LB, server: 194.233.86.246, port: 443, udp: true, type: trojan, password: b1d7cf60-8d31-11ec-b831-217f943883dc, sni: v27.tiktokcdn.com, skip-cert-verify: true}
+  - {name: DO LB, type: trojan, server: 188.166.253.80, port: 443, password: 3a357238-cc62-4995-8568-e15fa21538a3, udp: true, sni: v24.muscdn.com, skip-cert-verify: true}
+
+#streaming
+  - {name: DO stream TR XTLS, type: trojan, server: 188.166.253.80, port: 443, password: 3a357238-cc62-4995-8568-e15fa21538a3, udp: true, xtls: true, flow: xtls-rprx-direct, sni: v24.muscdn.com, skip-cert-verify: true}
+  - {name: DO stream TR, type: trojan, server: 188.166.253.80, port: 443, password: 3a357238-cc62-4995-8568-e15fa21538a3, udp: true, sni: v24.muscdn.com, skip-cert-verify: true}
+  - {name: DO stream TR WS, server: 188.166.253.80, port: 443, type: trojan, password: 3a357238-cc62-4995-8568-e15fa21538a3, skip-cert-verify: true, sni: v24.muscdn.com, network: ws, ws-opts: {path: /trojan-ws, headers: {Host: 188.166.253.80}}, udp: true}
+
+#sosmed
+  - {name: ID sosmed TR, type: trojan, server: 103.150.103.214, port: 443, password: 3a357238-cc62-4995-8568-e15fa21538a3, udp: true, sni: v24.muscdn.com, skip-cert-verify: true}
+  - {name: ID sosmed TR WS, server: 103.150.103.214, port: 443, type: trojan, password: 3a357238-cc62-4995-8568-e15fa21538a3, skip-cert-verify: true, sni: v24.muscdn.com, network: ws, ws-opts: {path: /trojan-ws, headers: {Host: 43.229.254.147}}, udp: true}
+
+#sosmed2
+  - {name: ID sosmed2 TR, type: trojan, server: 103.150.103.214, port: 443, password: 3a357238-cc62-4995-8568-e15fa21538a3, udp: true, sni: v24.muscdn.com, skip-cert-verify: true}
+  - {name: ID sosmed2 TR XTLS, type: trojan, server: 103.150.103.214, port: 443, password: 3a357238-cc62-4995-8568-e15fa21538a3, udp: true, xtls: true, flow: xtls-rprx-direct, sni: v24.muscdn.com, skip-cert-verify: true}
+
+#sosmed3
+  - {name: ID sosmed3 TR WS, server: 103.150.103.214, port: 443, type: trojan, password: 3a357238-cc62-4995-8568-e15fa21538a3, skip-cert-verify: true, sni: v24.muscdn.com, network: ws, ws-opts: {path: /trojan-ws, headers: {Host: 43.229.254.147}}, udp: true}
+  - {name: ID sosmed3 V2Ray WS, server: 103.150.103.214, port: 443, type: vmess, uuid: 3a357238-cc62-4995-8568-e15fa21538a3, sni: v24.muscdn.com, alterId: 0, cipher: auto, tls: true, skip-cert-verify: true, udp: true, network: ws, ws-opts: {path: /vmess-ws, headers: {Host: v24.muscdn.com}}}
+  - {name: ID sosmed3 TR XTLS, type: trojan, server: 103.150.103.214, port: 443, password: 3a357238-cc62-4995-8568-e15fa21538a3, udp: true, xtls: true, flow: xtls-rprx-direct, sni: v24.muscdn.com, skip-cert-verify: true}
+
+#game
+  - {name: ID game TR, type: trojan, server: 103.150.103.214, port: 443, password: 3a357238-cc62-4995-8568-e15fa21538a3, udp: true, sni: v24.muscdn.com, skip-cert-verify: true}
+  - {name: ID game TR WS, server: 103.150.103.214, port: 443, type: trojan, password: 3a357238-cc62-4995-8568-e15fa21538a3, skip-cert-verify: true, sni: v24.muscdn.com, network: ws, ws-opts: {path: /trojan-ws, headers: {Host: 43.229.254.147}}, udp: true}
+
+#porn
+  - {name: DO porn TR, type: trojan, server: 188.166.253.80, port: 443, password: 3a357238-cc62-4995-8568-e15fa21538a3, udp: true, sni: v24.muscdn.com, skip-cert-verify: true}
+  - {name: DO porn TR WS, server: 188.166.253.80, port: 443, type: trojan, password: 3a357238-cc62-4995-8568-e15fa21538a3, skip-cert-verify: true, sni: v24.muscdn.com, network: ws, ws-opts: {path: /trojan-ws, headers: {Host: 188.166.253.80}}, udp: true}
+  - {name: DO porn TR XTLS, type: trojan, server: 188.166.253.80, port: 443, password: 3a357238-cc62-4995-8568-e15fa21538a3, udp: true, xtls: true, flow: xtls-rprx-direct, sni: v24.muscdn.com, skip-cert-verify: true}
+proxy-groups:
+  - name: MAIN
+    type: select
+    proxies:
+      - V2Ray
+      - Trojan
+      - LoadBalance
+  - name: LoadBalance
+    type: load-balance
+    url: 'http://www.gstatic.com/generate_204'
+    interval: 300
+    strategy: round-robin
+    proxies:
+      - DO LB
+      - SG LB
+      - V2Ray
+      - Trojan
+  - name: V2Ray
+    type: select
+    proxies:
+      - ID V2Ray WS
+      - DO V2Ray WS
+      - US V2Ray WS
+      - ID V2Ray gRPC
+      - DO V2Ray gRPC
+      - US V2Ray gRPC
+  - name: Trojan
+    type: select
+    proxies:
+      - ID TR
+      - DO TR
+      - US TR
+      - ID TR XTLS
+      - DO TR XTLS
+      - US TR XTLS
+      - ID TR WS
+      - DO TR WS
+      - US TR WS
+  - name: Sosmed
+    type: load-balance
+    url: 'http://www.gstatic.com/generate_204'
+    interval: 300
+    strategy: consistent-hashing
+    proxies:
+      - ID sosmed TR
+      - ID sosmed TR WS
+  - name: Sosmed2
+    type: load-balance
+    url: 'http://www.gstatic.com/generate_204'
+    interval: 300
+    strategy: consistent-hashing
+    proxies:
+      - ID sosmed2 TR
+      - ID sosmed2 TR XTLS
+  - name: Sosmed3
+    type: load-balance
+    url: 'http://www.gstatic.com/generate_204'
+    interval: 300
+    strategy: consistent-hashing
+    proxies:
+      - ID sosmed3 TR WS
+      - ID sosmed3 V2Ray WS
+      - ID sosmed3 TR XTLS
+  - name: Streaming
+    type: load-balance
+    url: 'http://www.gstatic.com/generate_204'
+    interval: 300
+    strategy: consistent-hashing
+    proxies:
+      - DO stream TR XTLS
+      - DO stream TR
+      - DO stream TR WS
+  - name: Games
+    type: load-balance
+    url: 'http://www.gstatic.com/generate_204'
+    interval: 300
+    strategy: consistent-hashing
+    proxies:
+      - ID game TR
+      - ID game TR WS
+  - name: Porn
+    type: load-balance
+    url: 'http://www.gstatic.com/generate_204'
+    interval: 300
+    strategy: consistent-hashing
+    proxies:
+      - DO porn TR
+      - DO porn TR WS
+      - DO porn TR XTLS
+rule-providers:
+  rule_teamviewer:
+    type: file
+    behavior: classical
+    path: "./rule/rule_teamviewer.yaml"
+  rule_speedtest:
+    type: http
+    behavior: domain
+    path: "./rule/rule_speedtest.yaml"
+    url: https://darktunnel-vip02.netlify.app/ClashPremium/domain_speedtest.yaml
+  rule_porn:
+    type: http
+    behavior: domain
+    path: "./rule/rule_porn.yaml"
+    url: https://darktunnel-vip02.netlify.app/ClashPremium/domain_porn.yaml
+  rule_lancidr:
+    type: http
+    behavior: ipcidr
+    path: "./rule/rule_lancidr.yaml"
+    url: https://darktunnel-vip02.netlify.app/ClashPremium/rule_lancidr.yaml
+  rule_telegram:
+    type: http
+    behavior: domain
+    path: "./rule/rule_telegram.yaml"
+    url: https://darktunnel-vip02.netlify.app/ClashPremium/domain_telegram.yaml
+  rule_telegramcidr:
+    type: http
+    behavior: ipcidr
+    path: "./rule/rule_telegramcidr.yaml"
+    url: https://darktunnel-vip02.netlify.app/ClashPremium/cidr_telegram.yaml
+  rule_gaming:
+    type: http
+    behavior: classical
+    path: "./rule/rule_gaming.yaml"
+    url: https://darktunnel-vip02.netlify.app/ClashPremium/classical_games.yaml
+  rule_games:
+    type: http
+    behavior: domain
+    path: "./rule/rule_games.yaml"
+    url: https://darktunnel-vip02.netlify.app/ClashPremium/domain_games.yaml
+  rule_portgames:
+    type: http
+    behavior: classical
+    path: "./rule/rule_portgames.yaml"
+    url: https://darktunnel-vip02.netlify.app/ClashPremium/classical_portgames.yaml
+  rule_metaverse:
+    type: http
+    behavior: domain
+    path: "./rule/rule_metaverse.yaml"
+    url: https://darktunnel-vip02.netlify.app/ClashPremium/domain_metaverse.yaml
+  rule_metaverse-dev:
+    type: http
+    behavior: domain
+    path: "./rule/rule_metaverse-dev.yaml"
+    url: https://darktunnel-vip02.netlify.app/ClashPremium/domain_metaverse-dev.yaml
+  rule_instagram:
+    type: http
+    behavior: domain
+    path: "./rule/rule_instagram.yaml"
+    url: https://darktunnel-vip02.netlify.app/ClashPremium/domain_instagram.yaml
+  rule_instagram_clasic:
+    type: http
+    behavior: classical
+    path: "./rule/rule_instagram_clasic.yaml"
+    url: https://darktunnel-vip02.netlify.app/ClashPremium/classical_instagram.yaml
+  rule_whatsapp:
+    type: http
+    behavior: classical
+    path: "./rule/rule_whatsapp.yaml"
+    url: https://darktunnel-vip02.netlify.app/ClashPremium/classical_whatsapp.yaml
+  rule_whatsappcidr:
+    type: http
+    behavior: ipcidr
+    path: "./rule/rule_whatsappcidr.yaml"
+    url: https://darktunnel-vip02.netlify.app/ClashPremium/cidr_whatsapp.yaml
+  rule_sosmed:
+    type: http
+    behavior: classical
+    path: "./rule/rule_sosmed.yaml"
+    url: https://darktunnel-vip02.netlify.app/ClashPremium/classical_sosmed.yaml
+  rule_line:
+    type: http
+    behavior: domain
+    path: "./rule/rule_line.yaml"
+    url: https://darktunnel-vip02.netlify.app/ClashPremium/domain_line.yaml
+  rule_youtube:
+    type: http
+    behavior: domain
+    path: "./rule/rule_youtube.yaml"
+    url: https://darktunnel-vip02.netlify.app/ClashPremium/domain_youtube.yaml
+  rule_videoconferences:
+    type: http
+    behavior: classical
+    path: "./rule/rule_videoconferences.yaml"
+    url: https://darktunnel-vip02.netlify.app/ClashPremium/classical_videoconferences.yaml
+  rule_streaming:
+    type: http
+    behavior: domain
+    path: "./rule/rule_streaming.yaml"
+    url: https://darktunnel-vip02.netlify.app/ClashPremium/domain_streaming.yaml
+  rule_streamingcidr:
+    type: http
+    behavior: ipcidr
+    path: "./rule/rule_streamingcidr.yaml"
+    url: https://darktunnel-vip02.netlify.app/ClashPremium/cidr_streaming.yaml
+  rule_tiktok:
+    type: http
+    behavior: domain
+    path: "./rule/rule_tiktok.yaml"
+    url: https://darktunnel-vip02.netlify.app/ClashPremium/domain_tiktok.yaml
+rules:
+# > Streaming
+  - RULE-SET,rule_streaming,Streaming
+  - RULE-SET,rule_streamingcidr,Streaming
+  - RULE-SET,rule_youtube,Streaming
+  - RULE-SET,rule_videoconferences,Streaming
+# > Sosmed
+  - RULE-SET,rule_sosmed,Sosmed2
+  - RULE-SET,rule_line,Sosmed
+  - RULE-SET,rule_telegram,Sosmed2
+  - RULE-SET,rule_telegramcidr,Sosmed2
+  - RULE-SET,rule_whatsappcidr,Sosmed
+  - RULE-SET,rule_whatsapp,Sosmed
+# > Porn
+  - RULE-SET,rule_porn,Porn
+# > Games
+  - RULE-SET,rule_gaming,Games
+  - RULE-SET,rule_games,Games
+  - RULE-SET,rule_portgames,Games
+# > Speedtest
+  - RULE-SET,rule_speedtest,MAIN
+# > Etc
+  - RULE-SET,rule_metaverse,Sosmed3
+  - RULE-SET,rule_metaverse-dev,MAIN
+# > teamviewer
+  - RULE-SET,rule_teamviewer,MAIN
+# > TT
+  - RULE-SET,rule_instagram,Sosmed3
+  - RULE-SET,rule_instagram_clasic,Sosmed3
+  - RULE-SET,rule_tiktok,Sosmed3
+  - RULE-SET,rule_lancidr,DIRECT,no-resolve
+  - MATCH,MAIN
