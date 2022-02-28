@@ -1,0 +1,121 @@
+payload:
+# > GOOGLE
+- "+.gstatic.com"
+- "+.google.com"
+- "+.googleusercontent.com"
+- "+.ultraviewer.net"
+- "+.googleapis.com"
+- "+.xx.fbcdn.net"
+- "+.microsoft.com"
+- "+.dns.google"
+- "+.gstatic.com"
+- "+.android.com"
+- "+.cloudflare.com"
+- "+.oppomobile.com"
+- "+.googleadservices.com"
+- "+.cloudflare-dns.com"
+
+# > BING
+- "+.bing.com"
+
+# > GITHUB
+- "+.github.com"
+- "+.githubusercontent.com"
+- "+.githubassets.com"
+- "+.github.io"
+
+# > VIDIO
+- "+.akamaized.net"
+- "+.vidio.com"
+
+# > RCTI +
+- "+.rctiplus.com"
+- "+.rctiplus.id"
+
+# > MOLA
+- "+.koicdn.com"
+- "+.mola.tv"
+
+# > DISNEY HOTSTAR
+- "+.disneyplus.com"
+- "+.hotstar.com"
+- "+.hotstarext.com"
+
+# > DISQUS
+- "+.disqus.com"
+- "+.disquscdn.com"
+
+# > MEDIAFIRE
+- "+.mediafire.com"
+
+# > TERABOX
+- "+.terabox.com"
+
+# > RESTREAM
+- "+.restream.io"
+
+# > Scholar
+- "+.acm.org"
+- "+.acs.org"
+- "+.aip.org"
+- "+.ams.org"
+- "+.annualreviews.org"
+- "+.aps.org"
+- "+.ascelibrary.org"
+- "+.asme.org"
+- "+.astm.org"
+- "+.bmj.com"
+- "+.cambridge.org"
+- "+.cas.org"
+- "+.cell.com"
+- "+.clarivate.com"
+- "+.csiro.au"
+- "+.ebscohost.com"
+- "+.elsevier.com"
+- "+.emerald.com"
+- "+.endnote.com"
+- "+.engineeringvillage.com"
+- "+.icevirtuallibrary.com"
+- "+.ieee.org"
+- "+.imf.org"
+- "+.iop.org"
+- "+.jamanetwork.com"
+- "+.jbc.org"
+- "+.jhu.edu"
+- "+.jstor.org"
+- "+.karger.com"
+- "+.libguides.com"
+- "+.madsrevolution.net"
+- "+.mdpi.com"
+- "+.mpg.de"
+- "+.myilibrary.com"
+- "+.nature.com"
+- "+.ncbi.nlm.nih.gov"
+- "+.oecd-ilibrary.org"
+- "+.osapublishing.org"
+- "+.oup.com"
+- "+.ovid.com"
+- "+.oxfordartonline.com"
+- "+.oxfordbibliographies.com"
+- "+.oxfordmusiconline.com"
+- "+.pnas.org"
+- "+.proquest.com"
+- "+.rsc.org"
+- "+.sagepub.com"
+- "+.sciencedirect.com"
+- "+.sciencemag.org"
+- "+.scitation.org"
+- "+.sci-hub.tw"
+- "+.scopus.com"
+- "+.siam.org"
+- "+.spiedigitallibrary.org"
+- "+.springer.com"
+- "+.springerlink.com"
+- "+.tandfonline.com"
+- "+.un.org"
+- "+.uni-bielefeld.de"
+- "+.webofknowledge.com"
+- "+.westlaw.com"
+- "+.wiley.com"
+- "+.worldbank.org"
+- "+.worldscientific.com"
