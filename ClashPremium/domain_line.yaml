@@ -1,7 +1,3 @@
-# Generated from https://github.com/v2fly/domain-list-community/tree/master/data/line
-
-# Behavior: domain
-
 payload:
 - "+.gcld-line.com"
 - "+.lin.ee"
