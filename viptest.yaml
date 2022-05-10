@@ -35,6 +35,7 @@ dns:
     - tls://dns.rubyfish.cn:853
     - https://1.1.1.1/dns-query
 proxies:
+#09-06-2022
   - name: TR 1
     type: trojan
     server: vpn6.tjvpn.org
