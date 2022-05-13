@@ -110,5 +110,14 @@ proxies:
         Host: v27.tiktokcdn.com
     sni: v27.tiktokcdn.com
     skip-cert-verify: true
+    
+  - name: TR 6
+    type: trojan
+    server: idt3.xserv.cc
+    port: 443
+    password: nsjuvs
+    udp: true
+    sni: v24.muscdn.com
+    skip-cert-verify: true
 rules:
   - MATCH,GLOBAL
