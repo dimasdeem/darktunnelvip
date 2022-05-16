@@ -1,18 +1,21 @@
-port: 7890
-socks-port: 7891
-redir-port: 7892
-mixed-port: 7893
-mode: global
+socks-port: 3080
+mode: rule
 log-level: silent
 allow-lan: true
 unified-delay: true
 ipv6: false
+bind-address: "*"
 dns:
   enable: true
   ipv6: false
-  enhanced-mode: redir-host
-  listen: 127.0.0.1:7874
-  default-nameserver:
+  listen: 0.0.0.0:1053
+  enhanced-mode: fake-ip
+  use-host: true
+  nameserver:
+    - https://cloudflare-dns.com/dns-query
+    - https://dns.google/dns-query
+    - tls://1.1.1.1:853
+    - tls://8.8.8.8:853
     - 114.114.114.114
     - 119.29.29.29
     - 8.8.8.8
@@ -20,17 +23,14 @@ dns:
     - 1.1.1.1
     - 1.0.0.1
     - 192.168.8.1
-  nameserver:
-    - 8.8.8.8
-    - 1.1.1.1
+  fallback:
     - tcp://1.1.1.1
     - tcp://8.8.8.8
-    - 192.168.8.1
-    - dhcp://"eth1"
-  fallback:
-    - https://dns.google/dns-query
+    - 1.1.1.1
+    - 8.8.8.8
     - https://cloudflare-dns.com/dns-query
-    - tls://1.1.1.1:853
+    - https://dns.google/dns-query
+    - https://1.1.1.1/dns-query
     - tls://8.8.8.8:853
     - tls://dns.rubyfish.cn:853
     - https://1.1.1.1/dns-query
@@ -119,5 +119,24 @@ proxies:
     udp: true
     sni: v24.muscdn.com
     skip-cert-verify: true
+proxy-groups:
+  - name: TROJAN
+    type: select
+    url: 'http://hi.bonds.id/ping'
+    interval: 300
+    proxies:
+    - TR 1
+    - TR 2
+    - TR 3
+    - TR 4
+    - TR 5
+    - TR 6
+  - name: TROJAN-GO
+    type: select
+    url: 'http://hi.bonds.id/ping'
+    interval: 300
+    proxies:
+    - TR-GO 1
+    - TR-GO 2
 rules:
-  - MATCH,GLOBAL
+  - MATCH,TROJAN-GO
