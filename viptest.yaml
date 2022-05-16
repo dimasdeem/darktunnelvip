@@ -135,6 +135,12 @@ proxies:
     sni: v27.tiktokcdn.com
     skip-cert-verify: true
 proxy-groups:
+  - name: HACKDEEM
+    type: select
+    proxies:
+    - TROJAN
+    - TROJAN-GO
+    - LB
   - name: TROJAN
     type: select
     url: 'http://hi.bonds.id/ping'
@@ -154,5 +160,14 @@ proxy-groups:
     - TR-GO 1
     - TR-GO 2
     - TR-GO 3
+  - name: LB
+    type: load-balance
+    strategy: round-robin
+    url: 'http://hi.bonds.id/ping'
+    interval: 300
+    proxies:
+    - TR-GO 1
+    - TR-GO 3
+    - TR 1
 rules:
-  - MATCH,TROJAN-GO
+  - MATCH,HACKDEEM
