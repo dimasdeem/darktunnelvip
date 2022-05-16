@@ -111,13 +111,28 @@ proxies:
     sni: v27.tiktokcdn.com
     skip-cert-verify: true
     
+#Expired 15-06-2022
   - name: TR 6
     type: trojan
-    server: idt3.xserv.cc
+    server: vpn8.tjvpn.org
     port: 443
-    password: nsjuvs
+    password: f570ada0-d4f7-11ec-b635-217f943883dc
     udp: true
     sni: v24.muscdn.com
+    skip-cert-verify: true
+    
+  - name: TR-GO 3
+    type: trojan
+    server: vpn8.tjvpn.org
+    port: 443
+    password: f570ada0-d4f7-11ec-b635-217f943883dc
+    udp: true
+    network: ws
+    ws-opts:
+      path: /fastssh
+      headers:
+        Host: v27.tiktokcdn.com
+    sni: v27.tiktokcdn.com
     skip-cert-verify: true
 proxy-groups:
   - name: TROJAN
@@ -138,5 +153,6 @@ proxy-groups:
     proxies:
     - TR-GO 1
     - TR-GO 2
+    - TR-GO 3
 rules:
   - MATCH,TROJAN-GO
