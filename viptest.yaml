@@ -143,6 +143,43 @@ proxies:
     udp: true
     sni: v24.muscdn.com
     skip-cert-verify: true
+
+  - name: TR-GO 4
+    type: trojan
+    server: sg-ovh.tjvpn.org
+    port: 443
+    password: 95cee980-db20-11ec-b239-225401db9d57
+    udp: true
+    network: ws
+    ws-opts:
+      path: /fastssh
+      headers:
+        Host: v27.tiktokcdn.com
+    sni: v27.tiktokcdn.com
+    skip-cert-verify: true
+    
+  - name: TR 8
+    type: trojan
+    server: sghe.tjvpn.org
+    port: 443
+    password: 6cccca10-db21-11ec-b434-225401db9d57
+    udp: true
+    sni: v24.muscdn.com
+    skip-cert-verify: true
+
+  - name: TR-GO 5
+    type: trojan
+    server: sghe.tjvpn.org
+    port: 443
+    password: 6cccca10-db21-11ec-b434-225401db9d57
+    udp: true
+    network: ws
+    ws-opts:
+      path: /fastssh
+      headers:
+        Host: v27.tiktokcdn.com
+    sni: v27.tiktokcdn.com
+    skip-cert-verify: true
 proxy-groups:
   - name: HACKDEEM
     type: select
@@ -162,6 +199,7 @@ proxy-groups:
     - TR 5
     - TR 6
     - TR 7
+    - TR 8
   - name: TROJAN-GO
     type: select
     url: 'http://hi.bonds.id/ping'
@@ -170,6 +208,8 @@ proxy-groups:
     - TR-GO 1
     - TR-GO 2
     - TR-GO 3
+    - TR-GO 4
+    - TR-GO 5
   - name: LB
     type: load-balance
     strategy: round-robin
