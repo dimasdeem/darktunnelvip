@@ -322,7 +322,8 @@ proxy-groups:
     url: 'http://hi.bonds.id/ping'
     interval: 300
     proxies:
-    - TR-GO 1
-    - TR-GO 3
+    - V2ray LB
+    - TR 7
+    - TR 8
 rules:
   - MATCH,HACKDEEM
