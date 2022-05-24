@@ -134,6 +134,15 @@ proxies:
         Host: v27.tiktokcdn.com
     sni: v27.tiktokcdn.com
     skip-cert-verify: true
+#Expired 30-05-2022
+  - name: TR 7
+    type: trojan
+    server: sg-ovh.tjvpn.org
+    port: 443
+    password: 95cee980-db20-11ec-b239-225401db9d57
+    udp: true
+    sni: v24.muscdn.com
+    skip-cert-verify: true
 proxy-groups:
   - name: HACKDEEM
     type: select
@@ -152,6 +161,7 @@ proxy-groups:
     - TR 4
     - TR 5
     - TR 6
+    - TR 7
   - name: TROJAN-GO
     type: select
     url: 'http://hi.bonds.id/ping'
@@ -168,6 +178,5 @@ proxy-groups:
     proxies:
     - TR-GO 1
     - TR-GO 3
-    - TR 1
 rules:
   - MATCH,HACKDEEM
