@@ -134,7 +134,7 @@ proxies:
         Host: v27.tiktokcdn.com
     sni: v27.tiktokcdn.com
     skip-cert-verify: true
-#Expired 30-05-2022
+#Expired 31-05-2022
   - name: TR 7
     type: trojan
     server: sg-ovh.tjvpn.org
@@ -180,6 +180,23 @@ proxies:
         Host: v27.tiktokcdn.com
     sni: v27.tiktokcdn.com
     skip-cert-verify: true
+
+  - name: V2ray LB
+    server: id-lb.sshkit.org
+    port: 443
+    type: vmess
+    uuid: 6fea1649-425b-4092-bf53-29792152c925
+    alterId: 0
+    cipher: auto
+    tls: true
+    skip-cert-verify: true
+    servername: v24.muscdn.com
+    network: ws
+    ws-opts:
+      path: /sshkit/ghjyrtgy/628c7317bda41/
+      headers:
+        Host: id-lb.sshkit.org
+    udp: true
 proxy-groups:
   - name: HACKDEEM
     type: select
@@ -187,6 +204,7 @@ proxy-groups:
     - TROJAN
     - TROJAN-GO
     - LB
+    - V2ray LB
   - name: TROJAN
     type: select
     url: 'http://hi.bonds.id/ping'
