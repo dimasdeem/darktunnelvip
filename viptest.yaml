@@ -142,7 +142,7 @@ proxies:
     udp: true
     sni: v24.muscdn.com
     skip-cert-verify: true
-    
+
   - name: V2ray LB
     server: id-lb.sshkit.org
     port: 443
