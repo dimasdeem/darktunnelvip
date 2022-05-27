@@ -123,8 +123,8 @@ dns:
     - "*.mcdn.bilivideo.cn"
     - +.media.dssott.com
 bug:
-  -&tt v24.muscdn.com
-  -&line blog.clova.line.me
+  - &tt v24.muscdn.com
+  - &line blog.clova.line.me
 proxies:
 #Account Telegram Ari
 #ID: 5085668734
