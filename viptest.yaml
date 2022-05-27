@@ -123,6 +123,110 @@ dns:
     - "*.mcdn.bilivideo.cn"
     - +.media.dssott.com
 proxies:
+#Account Telegram Ari
+#ID: 5085668734
+#Expired 2022-06-26
+  - name: "🇸🇬 Singapore 1 HE"
+    type: vmess
+    server: sg1-v2ray.sshkit.org
+    port: 443
+    uuid: c6747da4-fb2e-4a2a-bdb7-8614bdd6b0b3
+    alterId: 0
+    cipher: auto
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: v24.muscdn.com
+    network: ws
+    ws-opts:
+      path: /sshkit/5085668734/629092b044219/
+      headers:
+        Host: sg1-v2ray.sshkit.org
+        
+  - name: "🇸🇬 Singapore 2 HE"
+    type: vmess
+    server: sg2-v2ray.sshkit.org
+    port: 443
+    uuid: c6747da4-fb2e-4a2a-bdb7-8614bdd6b0b3
+    alterId: 0
+    cipher: auto
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: v24.muscdn.com
+    network: ws
+    ws-opts:
+      path: /sshkit/5085668734/629092f5c1e2e/
+      headers:
+        Host: sg2-v2ray.sshkit.org
+        
+  - name: "🇸🇬 Singapore 3 HE"
+    type: vmess
+    server: sg3-v2ray.sshkit.org
+    port: 443
+    uuid: c6747da4-fb2e-4a2a-bdb7-8614bdd6b0b3
+    alterId: 0
+    cipher: auto
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: v24.muscdn.com
+    network: ws
+    ws-opts:
+      path: /sshkit/5085668734/6290936858b75/
+      headers:
+        Host: sg3-v2ray.sshkit.org
+        
+  - name: "🇸🇬 Singapore 1 CNTB"
+    type: vmess
+    server: sg4-v2ray.sshkit.org
+    port: 443
+    uuid: c6747da4-fb2e-4a2a-bdb7-8614bdd6b0b3
+    alterId: 0
+    cipher: auto
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: v24.muscdn.com
+    network: ws
+    ws-opts:
+      path: /sshkit/5085668734/629093c5966fb/
+      headers:
+        Host: sg4-v2ray.sshkit.org
+        
+  - name: "🇸🇬 Singapore 2 CNTB"
+    type: vmess
+    server: sg5-v2ray.sshkit.org
+    port: 443
+    uuid: c6747da4-fb2e-4a2a-bdb7-8614bdd6b0b3
+    alterId: 0
+    cipher: auto
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: v24.muscdn.com
+    network: ws
+    ws-opts:
+      path: /sshkit/5085668734/6290940e28b04/
+      headers:
+        Host: sg5-v2ray.sshkit.org
+        
+  - name: "🇸🇬 Singapore 3 CNTB"
+    type: vmess
+    server: sg6-v2ray.sshkit.org
+    port: 443
+    uuid: c6747da4-fb2e-4a2a-bdb7-8614bdd6b0b3
+    alterId: 0
+    cipher: auto
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    servername: v24.muscdn.com
+    network: ws
+    ws-opts:
+      path: /sshkit/5085668734/62909466bb552/
+      headers:
+        Host: sg6-v2ray.sshkit.org
 #31-05-2022
   - name: TR 1
     type: trojan
@@ -164,8 +268,19 @@ proxy-groups:
     type: select
     proxies:
     - TROJAN
+    - VMESS
     - LB
-    - V2ray LB
+  - name: VMESS
+    type: select
+    url: 'http://hi.bonds.id/ping'
+    interval: 300
+    proxies:
+    - "🇸🇬 Singapore 1 HE"
+    - "🇸🇬 Singapore 2 HE"
+    - "🇸🇬 Singapore 3 HE"
+    - "🇸🇬 Singapore 1 CNTB"
+    - "🇸🇬 Singapore 2 CNTB"
+    - "🇸🇬 Singapore 3 CNTB"
   - name: TROJAN
     type: select
     url: 'http://hi.bonds.id/ping'
@@ -180,7 +295,7 @@ proxy-groups:
     interval: 300
     proxies:
     - V2ray LB
-    - TR 1
-    - TR 2
+    - VMESS
+    - TROJAN
 rules:
   - MATCH,HACKDEEM
