@@ -123,59 +123,31 @@ dns:
     - "*.mcdn.bilivideo.cn"
     - +.media.dssott.com
 proxies:
-#09-06-2022
+#31-05-2022
   - name: TR 1
     type: trojan
-    server: vpn6.tjvpn.org
+    server: sg-ovh.tjvpn.org
     port: 443
-    password: 5130fa80-d01e-11ec-b934-217f943883dc
+    password: 95cee980-db20-11ec-b239-225401db9d57
     udp: true
     sni: v24.muscdn.com
     skip-cert-verify: true
     
   - name: TR 2
     type: trojan
-    server: vpn6.tjvpn.org
+    server: sghe.tjvpn.org
     port: 443
-    password: 79b61cc0-d01e-11ec-b235-217f943883dc
+    password: 6cccca10-db21-11ec-b434-225401db9d57
     network: tcp
-    udp: true
-    sni: v24.muscdn.com
-    skip-cert-verify: true
-    
-  - name: TR 3
-    type: trojan
-    server: vpn6.tjvpn.org
-    port: 443
-    password: ab12cb70-d01e-11ec-b535-217f943883dc
-    network: tcp
-    udp: true
-    sni: v24.muscdn.com
-    skip-cert-verify: true
-    
-  - name: TR 4
-    type: trojan
-    server: vpn6.tjvpn.org
-    port: 443
-    password: c4c74f30-d01e-11ec-b333-217f943883dc
-    udp: true
-    sni: v24.muscdn.com
-    skip-cert-verify: true
-    
-  - name: TR 5
-    type: trojan
-    server: vpn6.tjvpn.org
-    port: 443
-    password: f12d88a0-d01e-11ec-b635-217f943883dc
     udp: true
     sni: v24.muscdn.com
     skip-cert-verify: true
     
   - name: TR-GO 1
     type: trojan
-    server: vpn6.tjvpn.org
+    server: sg-ovh.tjvpn.org
     port: 443
-    password: 5130fa80-d01e-11ec-b934-217f943883dc
+    password: 95cee980-db20-11ec-b239-225401db9d57
     udp: true
     network: ws
     ws-opts:
@@ -186,76 +158,6 @@ proxies:
     skip-cert-verify: true
     
   - name: TR-GO 2
-    type: trojan
-    server: vpn6.tjvpn.org
-    port: 443
-    password: 0b2bd720-d01f-11ec-b533-217f943883dc
-    udp: true
-    network: ws
-    ws-opts:
-      path: /fastssh
-      headers:
-        Host: v27.tiktokcdn.com
-    sni: v27.tiktokcdn.com
-    skip-cert-verify: true
-    
-#Expired 15-06-2022
-  - name: TR 6
-    type: trojan
-    server: vpn8.tjvpn.org
-    port: 443
-    password: f570ada0-d4f7-11ec-b635-217f943883dc
-    udp: true
-    sni: v24.muscdn.com
-    skip-cert-verify: true
-    
-  - name: TR-GO 3
-    type: trojan
-    server: vpn8.tjvpn.org
-    port: 443
-    password: f570ada0-d4f7-11ec-b635-217f943883dc
-    udp: true
-    network: ws
-    ws-opts:
-      path: /fastssh
-      headers:
-        Host: v27.tiktokcdn.com
-    sni: v27.tiktokcdn.com
-    skip-cert-verify: true
-#Expired 31-05-2022
-  - name: TR 7
-    type: trojan
-    server: sg-ovh.tjvpn.org
-    port: 443
-    password: 95cee980-db20-11ec-b239-225401db9d57
-    udp: true
-    sni: v24.muscdn.com
-    skip-cert-verify: true
-
-  - name: TR-GO 4
-    type: trojan
-    server: sg-ovh.tjvpn.org
-    port: 443
-    password: 95cee980-db20-11ec-b239-225401db9d57
-    udp: true
-    network: ws
-    ws-opts:
-      path: /fastssh
-      headers:
-        Host: v27.tiktokcdn.com
-    sni: v27.tiktokcdn.com
-    skip-cert-verify: true
-    
-  - name: TR 8
-    type: trojan
-    server: sghe.tjvpn.org
-    port: 443
-    password: 6cccca10-db21-11ec-b434-225401db9d57
-    udp: true
-    sni: v24.muscdn.com
-    skip-cert-verify: true
-
-  - name: TR-GO 5
     type: trojan
     server: sghe.tjvpn.org
     port: 443
@@ -300,12 +202,6 @@ proxy-groups:
     proxies:
     - TR 1
     - TR 2
-    - TR 3
-    - TR 4
-    - TR 5
-    - TR 6
-    - TR 7
-    - TR 8
   - name: TROJAN-GO
     type: select
     url: 'http://hi.bonds.id/ping'
@@ -313,9 +209,6 @@ proxy-groups:
     proxies:
     - TR-GO 1
     - TR-GO 2
-    - TR-GO 3
-    - TR-GO 4
-    - TR-GO 5
   - name: LB
     type: load-balance
     strategy: round-robin
@@ -323,7 +216,7 @@ proxy-groups:
     interval: 300
     proxies:
     - V2ray LB
-    - TR 7
-    - TR 8
+    - TR-GO 1
+    - TR-GO 2
 rules:
   - MATCH,HACKDEEM
