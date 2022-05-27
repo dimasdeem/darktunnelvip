@@ -267,22 +267,15 @@ proxies:
         Host: id-lb.sshkit.org
     udp: true
 #05-06-2022
-  - name: V2ray 
-    server: *line
+  - name: TR 3
+    type: trojan
+    server: id-fullv2ray.racevpn.com
     port: 443
-    type: vmess
-    uuid: 00c2a79a-7546-4adf-8935-a72c0f481888
-    alterId: 0
-    cipher: auto
-    tls: true
-    skip-cert-verify: true
-    servername: id.vmess1.xservs.xyz
-    network: ws
-    ws-opts:
-      path: /vmess
-      headers:
-        Host: id.vmess1.xservs.xyz
+    password: 8593c2c7-fbcc-47fb-a2df-ae5ce9f3a5d3
+    network: tcp
     udp: true
+    sni: v24.muscdn.com
+    skip-cert-verify: true
 proxy-groups:
   - name: HACKDEEM
     type: select
@@ -301,7 +294,6 @@ proxy-groups:
     - "🇸🇬 Singapore 1 CNTB"
     - "🇸🇬 Singapore 2 CNTB"
     - "🇸🇬 Singapore 3 CNTB"
-    - V2ray
   - name: TROJAN
     type: select
     url: 'http://hi.bonds.id/ping'
@@ -309,6 +301,7 @@ proxy-groups:
     proxies:
     - TR 1
     - TR 2
+    - TR 3
   - name: LB
     type: load-balance
     strategy: round-robin
