@@ -122,6 +122,9 @@ dns:
     - "*.ffxiv.com"
     - "*.mcdn.bilivideo.cn"
     - +.media.dssott.com
+bug:
+  -&tt v24.muscdn.com
+  -&line blog.clova.line.me
 proxies:
 #Account Telegram Ari
 #ID: 5085668734
@@ -136,7 +139,7 @@ proxies:
     udp: true
     tls: true
     skip-cert-verify: true
-    servername: v24.muscdn.com
+    servername: *tt
     network: ws
     ws-opts:
       path: /sshkit/5085668734/629092b044219/
@@ -153,7 +156,7 @@ proxies:
     udp: true
     tls: true
     skip-cert-verify: true
-    servername: v24.muscdn.com
+    servername: *tt
     network: ws
     ws-opts:
       path: /sshkit/5085668734/629092f5c1e2e/
@@ -162,7 +165,7 @@ proxies:
         
   - name: "🇸🇬 Singapore 3 HE"
     type: vmess
-    server: sg3-v2ray.sshkit.org
+    server: *line
     port: 443
     uuid: c6747da4-fb2e-4a2a-bdb7-8614bdd6b0b3
     alterId: 0
@@ -170,7 +173,7 @@ proxies:
     udp: true
     tls: true
     skip-cert-verify: true
-    servername: v24.muscdn.com
+    servername: sg3-v2ray.sshkit.org
     network: ws
     ws-opts:
       path: /sshkit/5085668734/6290936858b75/
@@ -187,7 +190,7 @@ proxies:
     udp: true
     tls: true
     skip-cert-verify: true
-    servername: v24.muscdn.com
+    servername: *tt
     network: ws
     ws-opts:
       path: /sshkit/5085668734/629093c5966fb/
@@ -204,7 +207,7 @@ proxies:
     udp: true
     tls: true
     skip-cert-verify: true
-    servername: v24.muscdn.com
+    servername: *tt
     network: ws
     ws-opts:
       path: /sshkit/5085668734/6290940e28b04/
@@ -213,7 +216,7 @@ proxies:
         
   - name: "🇸🇬 Singapore 3 CNTB"
     type: vmess
-    server: sg6-v2ray.sshkit.org
+    server: *line
     port: 443
     uuid: c6747da4-fb2e-4a2a-bdb7-8614bdd6b0b3
     alterId: 0
@@ -221,7 +224,7 @@ proxies:
     udp: true
     tls: true
     skip-cert-verify: true
-    servername: v24.muscdn.com
+    servername: sg6-v2ray.sshkit.org
     network: ws
     ws-opts:
       path: /sshkit/5085668734/62909466bb552/
