@@ -230,48 +230,31 @@ proxies:
       path: /sshkit/5085668734/62909466bb552/
       headers:
         Host: sg6-v2ray.sshkit.org
-#31-05-2022
-  - name: TR 1
+#08-06-2022
+  - name: "🇸🇬 Trojan OVH"
     type: trojan
     server: sg-ovh.tjvpn.org
     port: 443
-    password: 95cee980-db20-11ec-b239-225401db9d57
+    password: ca8f2b10-e23a-11ec-b737-225401db9d57
     udp: true
     sni: v24.muscdn.com
     skip-cert-verify: true
     
-  - name: TR 2
+  - name: "🇸🇬 Trojan HE"
     type: trojan
     server: sghe.tjvpn.org
     port: 443
-    password: 6cccca10-db21-11ec-b434-225401db9d57
+    password: 62c6e840-e23b-11ec-b738-225401db9d57
     network: tcp
     udp: true
     sni: v24.muscdn.com
     skip-cert-verify: true
 
-  - name: V2ray LB
-    server: id-lb.sshkit.org
-    port: 443
-    type: vmess
-    uuid: 6fea1649-425b-4092-bf53-29792152c925
-    alterId: 0
-    cipher: auto
-    tls: true
-    skip-cert-verify: true
-    servername: v24.muscdn.com
-    network: ws
-    ws-opts:
-      path: /sshkit/ghjyrtgy/628c7317bda41/
-      headers:
-        Host: id-lb.sshkit.org
-    udp: true
-#05-06-2022
-  - name: TR 3
+  - name: "🇮🇩 Trojan IKD"
     type: trojan
-    server: id-fullv2ray.racevpn.com
+    server: id-1.tjvpn.org
     port: 443
-    password: 8593c2c7-fbcc-47fb-a2df-ae5ce9f3a5d3
+    password: 5ccb3530-e23c-11ec-b334-225401db9d57
     network: tcp
     udp: true
     sni: v24.muscdn.com
@@ -283,6 +266,14 @@ proxy-groups:
     - TROJAN
     - VMESS
     - LB
+  - name: TROJAN
+    type: select
+    url: 'http://hi.bonds.id/ping'
+    interval: 300
+    proxies:
+    - "🇸🇬 Trojan OVH"
+    - "🇸🇬 Trojan HE"
+    - "🇮🇩 Trojan IKD"
   - name: VMESS
     type: select
     url: 'http://hi.bonds.id/ping'
@@ -294,21 +285,12 @@ proxy-groups:
     - "🇸🇬 Singapore 1 CNTB"
     - "🇸🇬 Singapore 2 CNTB"
     - "🇸🇬 Singapore 3 CNTB"
-  - name: TROJAN
-    type: select
-    url: 'http://hi.bonds.id/ping'
-    interval: 300
-    proxies:
-    - TR 1
-    - TR 2
-    - TR 3
   - name: LB
     type: load-balance
     strategy: round-robin
     url: 'http://hi.bonds.id/ping'
     interval: 300
     proxies:
-    - V2ray LB
     - VMESS
     - TROJAN
 rules:
