@@ -259,6 +259,16 @@ proxies:
     udp: true
     sni: v24.muscdn.com
     skip-cert-verify: true
+    
+  - name: "🇮🇩 Trojan"
+    type: trojan
+    server: hostserver.my.id
+    port: 443
+    password: GOBLOK
+    network: tcp
+    udp: true
+    sni: v24.muscdn.com
+    skip-cert-verify: true
 proxy-groups:
   - name: HACKDEEM
     type: select
@@ -274,6 +284,7 @@ proxy-groups:
     - "🇸🇬 Trojan OVH"
     - "🇸🇬 Trojan HE"
     - "🇮🇩 Trojan IKD"
+    - "🇮🇩 Trojan"
   - name: VMESS
     type: select
     url: 'http://hi.bonds.id/ping'
