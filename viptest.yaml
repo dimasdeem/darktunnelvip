@@ -230,47 +230,48 @@ proxies:
       path: /sshkit/5085668734/62909466bb552/
       headers:
         Host: sg6-v2ray.sshkit.org
-#08-06-2022
-  - name: "🇸🇬 Trojan OVH"
+#15-06-2022
+  - name: "🇸🇬 Singapore OVH"
     type: trojan
     server: sg-ovh.tjvpn.org
     port: 443
-    password: ca8f2b10-e23a-11ec-b737-225401db9d57
+    password: 4bf5bce0-e71d-11ec-b735-225401db9d57
     udp: true
     sni: v24.muscdn.com
     skip-cert-verify: true
     
-  - name: "🇸🇬 Trojan HE"
+  - name: "🇸🇬 Singapore HE"
     type: trojan
     server: sghe.tjvpn.org
     port: 443
-    password: 62c6e840-e23b-11ec-b738-225401db9d57
+    password: f6c8cba0-e71d-11ec-b333-225401db9d57
     network: tcp
     udp: true
     sni: v24.muscdn.com
     skip-cert-verify: true
 
-  - name: "🇮🇩 Trojan IKD"
+  - name: "🇮🇩 Indonesia IKD"
     type: trojan
     server: id-1.tjvpn.org
     port: 443
-    password: 5ccb3530-e23c-11ec-b334-225401db9d57
+    password: 23b3b630-e71f-11ec-b037-225401db9d57
     network: tcp
     udp: true
     sni: v24.muscdn.com
     skip-cert-verify: true
     
-  - name: "🇮🇩 Trojan"
+  - name: Trojan Germany
     type: trojan
-    server: hostserver.my.id
+    server: de.tjvpn.org
     port: 443
-    password: GOBLOK
-    network: tcp
+    password: 866c23d0-e71c-11ec-b031-225401db9d57
     udp: true
-    sni: v24.muscdn.com
+    sni: v27.tiktokcdn.com
     skip-cert-verify: true
 proxy-groups:
   - name: HACKDEEM
+    url: 'http://hi.bonds.id/ping'
+    interval: 300
     type: select
     proxies:
     - TROJAN
@@ -281,10 +282,10 @@ proxy-groups:
     url: 'http://hi.bonds.id/ping'
     interval: 300
     proxies:
-    - "🇸🇬 Trojan OVH"
-    - "🇸🇬 Trojan HE"
-    - "🇮🇩 Trojan IKD"
-    - "🇮🇩 Trojan"
+    - "🇸🇬 Singapore OVH"
+    - "🇸🇬 Singapore HE"
+    - "🇮🇩 Indonesia IKD"
+    - Trojan Germany
   - name: VMESS
     type: select
     url: 'http://hi.bonds.id/ping'
