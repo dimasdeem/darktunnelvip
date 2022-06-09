@@ -260,7 +260,7 @@ proxies:
     sni: v24.muscdn.com
     skip-cert-verify: true
     
-  - name: Trojan Germany
+  - name: "🇩🇪 Germany OVH"
     type: trojan
     server: de.tjvpn.org
     port: 443
@@ -285,7 +285,7 @@ proxy-groups:
     - "🇸🇬 Singapore OVH"
     - "🇸🇬 Singapore HE"
     - "🇮🇩 Indonesia IKD"
-    - Trojan Germany
+    - "🇩🇪 Germany OVH"
   - name: VMESS
     type: select
     url: 'http://hi.bonds.id/ping'
