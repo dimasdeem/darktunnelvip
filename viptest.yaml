@@ -230,12 +230,12 @@ proxies:
       path: /sshkit/5085668734/62909466bb552/
       headers:
         Host: sg6-v2ray.sshkit.org
-#15-06-2022
+#22-06-2022
   - name: "🇸🇬 Singapore OVH"
     type: trojan
     server: sg-ovh.tjvpn.org
     port: 443
-    password: 4bf5bce0-e71d-11ec-b735-225401db9d57
+    password: 8163dfa0-eb45-11ec-b438-225401db9d57
     udp: true
     sni: v24.muscdn.com
     skip-cert-verify: true
@@ -244,7 +244,7 @@ proxies:
     type: trojan
     server: sghe.tjvpn.org
     port: 443
-    password: f6c8cba0-e71d-11ec-b333-225401db9d57
+    password: 2a1926f0-eb44-11ec-b830-225401db9d57
     network: tcp
     udp: true
     sni: v24.muscdn.com
@@ -254,7 +254,7 @@ proxies:
     type: trojan
     server: id-1.tjvpn.org
     port: 443
-    password: 23b3b630-e71f-11ec-b037-225401db9d57
+    password: fa1e2e00-eb44-11ec-b130-225401db9d57
     network: tcp
     udp: true
     sni: v24.muscdn.com
