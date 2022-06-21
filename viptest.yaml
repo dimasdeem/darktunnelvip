@@ -234,7 +234,7 @@ proxies:
       path: /sshkit/5085668734/62909466bb552/
       headers:
         Host: sg6-v2ray.sshkit.org
-#22-06-2022
+#29-06-2022
   - name: "🇸🇬 Singapore OVH"
     type: trojan
     server: sg-ovh.tjvpn.org
@@ -268,7 +268,7 @@ proxies:
     type: trojan
     server: de.tjvpn.org
     port: 443
-    password: 866c23d0-e71c-11ec-b031-225401db9d57
+    password: 21b101f0-f12b-11ec-b331-225401db9d57
     udp: true
     sni: v27.tiktokcdn.com
     skip-cert-verify: true
