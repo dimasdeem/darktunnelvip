@@ -239,7 +239,7 @@ proxies:
     type: trojan
     server: sg-ovh.tjvpn.org
     port: 443
-    password: 8163dfa0-eb45-11ec-b438-225401db9d57
+    password: 8f919eb0-f14a-11ec-b931-225401db9d57
     udp: true
     sni: v24.muscdn.com
     skip-cert-verify: true
@@ -248,7 +248,7 @@ proxies:
     type: trojan
     server: sghe.tjvpn.org
     port: 443
-    password: 2a1926f0-eb44-11ec-b830-225401db9d57
+    password: 504d8750-f14b-11ec-b130-225401db9d57
     network: tcp
     udp: true
     sni: v24.muscdn.com
@@ -258,7 +258,7 @@ proxies:
     type: trojan
     server: id-1.tjvpn.org
     port: 443
-    password: fa1e2e00-eb44-11ec-b130-225401db9d57
+    password: cd5d4110-f14b-11ec-b831-225401db9d57
     network: tcp
     udp: true
     sni: v24.muscdn.com
