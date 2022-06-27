@@ -132,7 +132,7 @@ bug:
 proxies:
 #Account Telegram Ari
 #ID: 5085668734
-#Expired 2022-06-26
+#Expired 2022-07-27
   - name: "🇸🇬 Singapore 1 HE"
     type: vmess
     server: sg1-v2ray.sshkit.org
@@ -146,7 +146,7 @@ proxies:
     servername: *tt
     network: ws
     ws-opts:
-      path: /sshkit/5085668734/629092b044219/
+      path: /sshkit/5085668734/62b8fbf193c55/
       headers:
         Host: sg1-v2ray.sshkit.org
         
@@ -163,7 +163,7 @@ proxies:
     servername: *tt
     network: ws
     ws-opts:
-      path: /sshkit/5085668734/629092f5c1e2e/
+      path: /sshkit/5085668734/62b8fc0e66172/
       headers:
         Host: sg2-v2ray.sshkit.org
         
@@ -180,7 +180,7 @@ proxies:
     servername: sg3-v2ray.sshkit.org
     network: ws
     ws-opts:
-      path: /sshkit/5085668734/6290936858b75/
+      path: /sshkit/5085668734/62b8fc243c057/
       headers:
         Host: sg3-v2ray.sshkit.org
         
@@ -197,7 +197,7 @@ proxies:
     servername: *tt
     network: ws
     ws-opts:
-      path: /sshkit/5085668734/629093c5966fb/
+      path: /sshkit/5085668734/62b8fc4eb2e3e/
       headers:
         Host: sg4-v2ray.sshkit.org
         
@@ -214,7 +214,7 @@ proxies:
     servername: *tt
     network: ws
     ws-opts:
-      path: /sshkit/5085668734/6290940e28b04/
+      path: /sshkit/5085668734/62b8fc6715c83/
       headers:
         Host: sg5-v2ray.sshkit.org
         
@@ -231,7 +231,7 @@ proxies:
     servername: sg6-v2ray.sshkit.org
     network: ws
     ws-opts:
-      path: /sshkit/5085668734/62909466bb552/
+      path: /sshkit/5085668734/62b8fc7f05cd1/
       headers:
         Host: sg6-v2ray.sshkit.org
 #29-06-2022
