@@ -144,7 +144,7 @@ proxies:
     udp: true
     tls: true
     skip-cert-verify: true
-    servername: *tt1;*tt2
+    servername: *tt1,*tt2
     network: ws
     ws-opts:
       path: /sshkit/5085668734/62b8fbf193c55/
