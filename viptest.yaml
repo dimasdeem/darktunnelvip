@@ -127,7 +127,8 @@ dns:
     - "*.mcdn.bilivideo.cn"
     - +.media.dssott.com
 bug:
-  - &tt v24.muscdn.com
+  - &tt1 v24.muscdn.com
+  - &tt2 v27.tiktokcdn.com
   - &line blog.clova.line.me
 proxies:
 #Account Telegram Ari
@@ -143,7 +144,7 @@ proxies:
     udp: true
     tls: true
     skip-cert-verify: true
-    servername: *tt
+    servername: *tt1;*tt2
     network: ws
     ws-opts:
       path: /sshkit/5085668734/62b8fbf193c55/
@@ -160,7 +161,7 @@ proxies:
     udp: true
     tls: true
     skip-cert-verify: true
-    servername: *tt
+    servername: *tt1
     network: ws
     ws-opts:
       path: /sshkit/5085668734/62b8fc0e66172/
@@ -169,7 +170,7 @@ proxies:
         
   - name: "🇸🇬 Singapore 3 HE"
     type: vmess
-    server: *line
+    server: sg3-v2ray.sshkit.org
     port: 443
     uuid: c6747da4-fb2e-4a2a-bdb7-8614bdd6b0b3
     alterId: 0
@@ -177,7 +178,7 @@ proxies:
     udp: true
     tls: true
     skip-cert-verify: true
-    servername: sg3-v2ray.sshkit.org
+    servername: *tt1
     network: ws
     ws-opts:
       path: /sshkit/5085668734/62b8fc243c057/
@@ -194,7 +195,7 @@ proxies:
     udp: true
     tls: true
     skip-cert-verify: true
-    servername: *tt
+    servername: *tt1
     network: ws
     ws-opts:
       path: /sshkit/5085668734/62b8fc4eb2e3e/
@@ -211,7 +212,7 @@ proxies:
     udp: true
     tls: true
     skip-cert-verify: true
-    servername: *tt
+    servername: *tt1
     network: ws
     ws-opts:
       path: /sshkit/5085668734/62b8fc6715c83/
@@ -228,7 +229,7 @@ proxies:
     udp: true
     tls: true
     skip-cert-verify: true
-    servername: *tt
+    servername: *tt1
     network: ws
     ws-opts:
       path: /sshkit/5085668734/62b8fc7f05cd1/
