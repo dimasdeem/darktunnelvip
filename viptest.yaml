@@ -127,9 +127,9 @@ dns:
     - "*.mcdn.bilivideo.cn"
     - +.media.dssott.com
 bug:
-  - &tt1 v24.muscdn.com #WS 443
-  - &tt2 v27.tiktokcdn.com #WS 443
-  - &game cf-vod.nimo.tv #WS CDN 80
+  - &tt1 v24.muscdn.com   #WS 443
+  - &tt2 v27.tiktokcdn.com  #WS 443
+  - &game cf-vod.nimo.tv  #WS CDN 80
   - &sg1 1.nusanet.cf
   - &sg2 2.nusanet.cf
   - &sg3 3.nusanet.cf
