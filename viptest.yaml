@@ -268,6 +268,15 @@ proxies:
     udp: true
     sni: *tt1
     skip-cert-verify: true
+    
+  - name: "🇸🇬 FR"
+    type: trojan
+    server: fr-1.tjvpn.org
+    port: 443
+    password: 32c4f010-fc67-11ec-b032-225401db9d57
+    udp: true
+    sni: *tt1
+    skip-cert-verify: true
    
   - name: "🇸🇬 CA WS"
     type: trojan
@@ -309,6 +318,7 @@ proxy-groups:
     proxies:
     - "🇸🇬 Singapore OVH"
     - "🇸🇬 CA"
+    - "🇸🇬 FR"
     - "🇸🇬 CA WS"
   - name: VMESS
     type: select
