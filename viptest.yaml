@@ -263,11 +263,11 @@ proxies:
 #06-07-2022
   - name: "🇸🇬 Singapore OVH"
     type: trojan
-    server: *game
+    server: sg-ovh.tjvpn.org
     port: 443
     password: 8e927990-f76f-11ec-b139-225401db9d57
     udp: true
-    sni: sg-ovh.tjvpn.org
+    sni: *tt1
     skip-cert-verify: true
     
 proxy-groups:
