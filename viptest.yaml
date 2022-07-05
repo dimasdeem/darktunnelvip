@@ -130,12 +130,12 @@ bug:
   - &tt1 v24.muscdn.com   #WS 443
   - &tt2 v27.tiktokcdn.com  #WS 443
   - &game cf-vod.nimo.tv  #WS CDN 80
-  - &sg1 1.nusanet.cf
-  - &sg2 2.nusanet.cf
-  - &sg3 3.nusanet.cf
-  - &sg4 4.nusanet.cf
-  - &sg5 5.nusanet.cf
-  - &sg6 6.nusanet.cf
+  - &sg1 sg1-v2ray.sshkit.org
+  - &sg2 sg2-v2ray.sshkit.org
+  - &sg3 sg3-v2ray.sshkit.org
+  - &sg4 sg4-v2ray.sshkit.org
+  - &sg5 sg5-v2ray.sshkit.org
+  - &sg6 sg6-v2ray.sshkit.org
 proxies:
 #Account Telegram Deem
 #ID: 5353729094
@@ -157,9 +157,95 @@ proxies:
       headers:
         Host: *sg1
 
-  - name: "🇸🇬 Singapore 2 AMP"
+  - name: "🇸🇬 Singapore 2 HE"
     type: vmess
-    server: cf-vod.nimo.tv
+    server: *game
+    port: 80
+    uuid: c6747da4-fb2e-4a2a-bdb7-8614bdd6b0b3
+    alterId: 0
+    cipher: auto
+    udp: true
+    tls: false
+    skip-cert-verify: true
+    servername: *sg2
+    network: ws
+    ws-opts:
+      path: /sshkit/5353729049/62c4332053215/
+      headers:
+        Host: *sg2
+        
+  - name: "🇸🇬 Singapore 3 HE"
+    type: vmess
+    server: *game
+    port: 80
+    uuid: c6747da4-fb2e-4a2a-bdb7-8614bdd6b0b3
+    alterId: 0
+    cipher: auto
+    udp: true
+    tls: false
+    skip-cert-verify: true
+    servername: *sg3
+    network: ws
+    ws-opts:
+      path: /sshkit/5353729049/62c43343272d9/
+      headers:
+        Host: *sg3
+        
+  - name: "🇸🇬 Singapore 4 CTB"
+    type: vmess
+    server: *game
+    port: 80
+    uuid: c6747da4-fb2e-4a2a-bdb7-8614bdd6b0b3
+    alterId: 0
+    cipher: auto
+    udp: true
+    tls: false
+    skip-cert-verify: true
+    servername: *sg4
+    network: ws
+    ws-opts:
+      path: /sshkit/5353729049/62c43477b0dee/
+      headers:
+        Host: *sg4
+        
+  - name: "🇸🇬 Singapore 5 CTB"
+    type: vmess
+    server: *game
+    port: 80
+    uuid: c6747da4-fb2e-4a2a-bdb7-8614bdd6b0b3
+    alterId: 0
+    cipher: auto
+    udp: true
+    tls: false
+    skip-cert-verify: true
+    servername: *sg5
+    network: ws
+    ws-opts:
+      path: /sshkit/5353729049/62c434907f177/
+      headers:
+        Host: *sg5
+        
+  - name: "🇸🇬 Singapore 6 CTB"
+    type: vmess
+    server: *game
+    port: 80
+    uuid: c6747da4-fb2e-4a2a-bdb7-8614bdd6b0b3
+    alterId: 0
+    cipher: auto
+    udp: true
+    tls: false
+    skip-cert-verify: true
+    servername: *sg6
+    network: ws
+    ws-opts:
+      path: /sshkit/5353729049/62c434a651ea0/
+      headers:
+        Host: *sg6
+        
+#Expired 13-07-2022
+  - name: "🇸🇬 Singapore 1 AMP"
+    type: vmess
+    server: *game
     port: 80
     uuid: b80925d6-40fa-4161-9e32-3550965527fd
     alterId: 0
@@ -177,11 +263,11 @@ proxies:
 #06-07-2022
   - name: "🇸🇬 Singapore OVH"
     type: trojan
-    server: sg-ovh.tjvpn.org
+    server: *game
     port: 443
     password: 8e927990-f76f-11ec-b139-225401db9d57
     udp: true
-    sni: v24.muscdn.com
+    sni: sg-ovh.tjvpn.org
     skip-cert-verify: true
     
 proxy-groups:
@@ -205,7 +291,12 @@ proxy-groups:
     interval: 300
     proxies:
     - "🇸🇬 Singapore 1 HE"
-    - "🇸🇬 Singapore 2 AMP"
+    - "🇸🇬 Singapore 2 HE"
+    - "🇸🇬 Singapore 3 HE"
+    - "🇸🇬 Singapore 4 CTB"
+    - "🇸🇬 Singapore 5 CTB"
+    - "🇸🇬 Singapore 6 CTB"
+    - "🇸🇬 Singapore 1 AMP"
   - name: LB
     type: load-balance
     strategy: round-robin
