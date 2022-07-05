@@ -260,6 +260,29 @@ proxies:
       headers:
         Host: sg-atha.v2-ray.com
         
+  - name: "🇸🇬 CA"
+    type: trojan
+    server: ca.tjvpn.org
+    port: 443
+    password: d399fb10-fc63-11ec-b431-225401db9d57
+    udp: true
+    sni: *tt1
+    skip-cert-verify: true
+   
+  - name: "🇸🇬 CA WS"
+    type: trojan
+    server: *game
+    port: 80
+    password: d399fb10-fc63-11ec-b431-225401db9d57
+    sni: ca.tjvpn.org
+    udp: true
+    skip-cert-verify: true
+    network: ws
+    ws-opts:
+      path: /fastssh
+      headers:
+        Host: ca.tjvpn.org
+        
 #06-07-2022
   - name: "🇸🇬 Singapore OVH"
     type: trojan
@@ -285,6 +308,8 @@ proxy-groups:
     interval: 300
     proxies:
     - "🇸🇬 Singapore OVH"
+    - "🇸🇬 CA"
+    - "🇸🇬 CA WS"
   - name: VMESS
     type: select
     url: 'http://hi.bonds.id/ping'
