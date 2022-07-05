@@ -130,6 +130,7 @@ bug:
   - &tt1 v24.muscdn.com
   - &tt2 v27.tiktokcdn.com
   - &line blog.clova.line.me
+  - &game cf-vod.nimo.tv
   - &sg1 1.nusanet.cf
   - &sg2 2.nusanet.cf
   - &sg3 3.nusanet.cf
@@ -140,108 +141,42 @@ proxies:
 #Account Telegram Ari
 #ID: 5085668734
 #Expired 2022-07-27
-  - name: "🇸🇬 Singapore 1 HE"
+  - name: "🇸🇬 Singapore 1 AMP"
     type: vmess
-    server: *sg1
+    server: sg-atha.v2-ray.com
     port: 443
-    uuid: c6747da4-fb2e-4a2a-bdb7-8614bdd6b0b3
+    uuid: b80925d6-40fa-4161-9e32-3550965527fd
     alterId: 0
     cipher: auto
     udp: true
     tls: true
     skip-cert-verify: true
-    servername: *tt1
+    servername: cf-vod.nimo.tv
     network: ws
     ws-opts:
-      path: /sshkit/5085668734/62b8fbf193c55/
+      path: /fastssh/fyvuih7896ff/62c426617e20d/
       headers:
-        Host: *sg1
+        Host: sg-atha.v2-ray.com
         
-  - name: "🇸🇬 Singapore 2 HE"
+        
+  - name: "🇸🇬 Singapore 2 AMP"
     type: vmess
-    server: *sg2
-    port: 443
-    uuid: c6747da4-fb2e-4a2a-bdb7-8614bdd6b0b3
+    server: cf-vod.nimo.tv
+    port: 80
+    uuid: b80925d6-40fa-4161-9e32-3550965527fd
     alterId: 0
     cipher: auto
     udp: true
-    tls: true
+    tls: false
     skip-cert-verify: true
-    servername: *tt2
+    servername: sg-atha.v2-ray.com
     network: ws
     ws-opts:
-      path: /sshkit/5085668734/62b8fc0e66172/
+      path: /fastssh/fyvuih7896ff/62c426617e20d/
       headers:
-        Host: *sg2
-        
-  - name: "🇸🇬 Singapore 3 HE"
-    type: vmess
-    server: *sg3
-    port: 443
-    uuid: c6747da4-fb2e-4a2a-bdb7-8614bdd6b0b3
-    alterId: 0
-    cipher: auto
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: *tt1
-    network: ws
-    ws-opts:
-      path: /sshkit/5085668734/62b8fc243c057/
-      headers:
-        Host: *sg3
-        
-  - name: "🇸🇬 Singapore 1 CNTB"
-    type: vmess
-    server: *sg4
-    port: 443
-    uuid: c6747da4-fb2e-4a2a-bdb7-8614bdd6b0b3
-    alterId: 0
-    cipher: auto
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: *tt1
-    network: ws
-    ws-opts:
-      path: /sshkit/5085668734/62b8fc4eb2e3e/
-      headers:
-        Host: *sg4
-        
-  - name: "🇸🇬 Singapore 2 CNTB"
-    type: vmess
-    server: *sg5
-    port: 443
-    uuid: c6747da4-fb2e-4a2a-bdb7-8614bdd6b0b3
-    alterId: 0
-    cipher: auto
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: *tt2
-    network: ws
-    ws-opts:
-      path: /sshkit/5085668734/62b8fc6715c83/
-      headers:
-        Host: *sg5
-        
-  - name: "🇸🇬 Singapore 3 CNTB"
-    type: vmess
-    server: *sg6
-    port: 443
-    uuid: c6747da4-fb2e-4a2a-bdb7-8614bdd6b0b3
-    alterId: 0
-    cipher: auto
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    servername: *tt1
-    network: ws
-    ws-opts:
-      path: /sshkit/5085668734/62b8fc7f05cd1/
-      headers:
-        Host: *sg6
-        
+        Host: sg-atha.v2-ray.com
+
+
 #06-07-2022
   - name: "🇸🇬 Singapore OVH"
     type: trojan
@@ -251,45 +186,9 @@ proxies:
     udp: true
     sni: v24.muscdn.com
     skip-cert-verify: true
-    
-  - name: "🇸🇬 Singapore HE"
-    type: trojan
-    server: sghe.tjvpn.org
-    port: 443
-    password: 28b27030-f76f-11ec-b034-225401db9d57
-    network: tcp
-    udp: true
-    sni: v24.muscdn.com
-    skip-cert-verify: true
 
-  - name: "🇮🇩 Indonesia IKD"
-    type: trojan
-    server: id-1.tjvpn.org
-    port: 443
-    password: 080365c0-f76e-11ec-b430-225401db9d57
-    network: tcp
-    udp: true
-    sni: v24.muscdn.com
-    skip-cert-verify: true
-    
-  - name: "🇩🇪 Germany OVH"
-    type: trojan
-    server: de.tjvpn.org
-    port: 443
-    password: ddde7de0-f770-11ec-b231-225401db9d57
-    udp: true
-    sni: v27.tiktokcdn.com
-    skip-cert-verify: true
-    
-  - name: "🇫🇷 France OVH"
-    type: trojan
-    server: fr-1.tjvpn.org
-    port: 443
-    password: 1c204720-f771-11ec-b931-225401db9d57
-    udp: true
-    sni: v27.tiktokcdn.com
-    skip-cert-verify: true
-    
+
+
 proxy-groups:
   - name: HACKDEEM
     url: 'http://hi.bonds.id/ping'
@@ -305,21 +204,15 @@ proxy-groups:
     interval: 300
     proxies:
     - "🇸🇬 Singapore OVH"
-    - "🇸🇬 Singapore HE"
-    - "🇮🇩 Indonesia IKD"
-    - "🇩🇪 Germany OVH"
-    - "🇫🇷 France OVH"
+
   - name: VMESS
     type: select
     url: 'http://hi.bonds.id/ping'
     interval: 300
     proxies:
-    - "🇸🇬 Singapore 1 HE"
-    - "🇸🇬 Singapore 2 HE"
-    - "🇸🇬 Singapore 3 HE"
-    - "🇸🇬 Singapore 1 CNTB"
-    - "🇸🇬 Singapore 2 CNTB"
-    - "🇸🇬 Singapore 3 CNTB"
+    - "🇸🇬 Singapore 1 AMP"
+    - "🇸🇬 Singapore 2 AMP"
+
   - name: LB
     type: load-balance
     strategy: round-robin
