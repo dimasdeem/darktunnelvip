@@ -127,10 +127,9 @@ dns:
     - "*.mcdn.bilivideo.cn"
     - +.media.dssott.com
 bug:
-  - &tt1 v24.muscdn.com
-  - &tt2 v27.tiktokcdn.com
-  - &line blog.clova.line.me
-  - &game cf-vod.nimo.tv
+  - &tt1 v24.muscdn.com #WS 443
+  - &tt2 v27.tiktokcdn.com #WS 443
+  - &game cf-vod.nimo.tv #WS CDN 80
   - &sg1 1.nusanet.cf
   - &sg2 2.nusanet.cf
   - &sg3 3.nusanet.cf
@@ -138,27 +137,26 @@ bug:
   - &sg5 5.nusanet.cf
   - &sg6 6.nusanet.cf
 proxies:
-#Account Telegram Ari
-#ID: 5085668734
-#Expired 2022-07-27
-  - name: "🇸🇬 Singapore 1 AMP"
+#Account Telegram Deem
+#ID: 5353729094
+#Expired 2022-08-04
+  - name: "🇸🇬 Singapore 1 HE"
     type: vmess
-    server: sg-atha.v2-ray.com
-    port: 443
-    uuid: b80925d6-40fa-4161-9e32-3550965527fd
+    server: *game
+    port: 80
+    uuid: uuid: c6747da4-fb2e-4a2a-bdb7-8614bdd6b0b3
     alterId: 0
     cipher: auto
     udp: true
-    tls: true
+    tls: false
     skip-cert-verify: true
-    servername: cf-vod.nimo.tv
+    servername: *sg1
     network: ws
     ws-opts:
-      path: /fastssh/fyvuih7896ff/62c426617e20d/
+      path: /sshkit/5353729049/62c42d7ba5005/
       headers:
-        Host: sg-atha.v2-ray.com
-        
-        
+        Host: *sg1
+
   - name: "🇸🇬 Singapore 2 AMP"
     type: vmess
     server: cf-vod.nimo.tv
@@ -175,8 +173,7 @@ proxies:
       path: /fastssh/fyvuih7896ff/62c426617e20d/
       headers:
         Host: sg-atha.v2-ray.com
-
-
+        
 #06-07-2022
   - name: "🇸🇬 Singapore OVH"
     type: trojan
@@ -186,9 +183,7 @@ proxies:
     udp: true
     sni: v24.muscdn.com
     skip-cert-verify: true
-
-
-
+    
 proxy-groups:
   - name: HACKDEEM
     url: 'http://hi.bonds.id/ping'
@@ -204,15 +199,13 @@ proxy-groups:
     interval: 300
     proxies:
     - "🇸🇬 Singapore OVH"
-
   - name: VMESS
     type: select
     url: 'http://hi.bonds.id/ping'
     interval: 300
     proxies:
-    - "🇸🇬 Singapore 1 AMP"
+    - "🇸🇬 Singapore 1 HE"
     - "🇸🇬 Singapore 2 AMP"
-
   - name: LB
     type: load-balance
     strategy: round-robin
