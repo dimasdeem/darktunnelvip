@@ -127,12 +127,12 @@ dns:
     - "*.mcdn.bilivideo.cn"
     - +.media.dssott.com
 bug:
-  - &tt1 v24.muscdn.com   #WS 443
-  - &tt2 v27.tiktokcdn.com  #WS 443
-  - &game cf-vod.nimo.tv  #WS CDN 80
-  - &game1 ir.huya.com  #WS CDN 443
+  - &tt1 v24.muscdn.com   #WS 443 v2ray/trojan
+  - &tt2 v27.tiktokcdn.com  #WS 443 v2ray/trojan
+  - &game cf-vod.nimo.tv  #WS CDN 80 v2ray
+  - &game1 ir.huya.com  #WS CDN 443 trojan-go
   - &game2 cdn.riseofnowlin.mobi
-  - &game3 cftxvid.vod.nimo.tv
+  - &game3 cftxvid.vod.nimo.tv #WS CDN 443 Trojan-go
   - &pgame 104.17.206.159
   - &pgame1 104.18.20.219
   - &pgame2 104.18.3.179
@@ -268,7 +268,7 @@ proxies:
         Host: sg-atha.v2-ray.com
         
   - name: "🇸🇬 CA WS"
-    server: *game2
+    server: *game1
     port: 443
     type: trojan
     password: d399fb10-fc63-11ec-b431-225401db9d57
@@ -282,7 +282,7 @@ proxies:
     udp: true
    
   - name: "🇸🇬 FR WS"
-    server: *game2
+    server: *game1
     port: 443
     type: trojan
     password: 57e1e120-fd0c-11ec-b632-225401db9d57
