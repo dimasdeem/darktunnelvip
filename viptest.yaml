@@ -130,6 +130,13 @@ bug:
   - &tt1 v24.muscdn.com   #WS 443
   - &tt2 v27.tiktokcdn.com  #WS 443
   - &game cf-vod.nimo.tv  #WS CDN 80
+  - &game1 ir.huya.com
+  - &game2 cdn.riseofnowlin.mobi
+  - &game3 cftxvid.vod.nimo.tv
+  - &pgame 104.17.206.159
+  - &pgame1 104.18.20.219
+  - &pgame2 104.18.3.179
+  - &pgame3 104.18.12.120
   - &sg1 sg1-v2ray.sshkit.org
   - &sg2 sg2-v2ray.sshkit.org
   - &sg3 sg3-v2ray.sshkit.org
@@ -245,7 +252,7 @@ proxies:
 #Expired 13-07-2022
   - name: "🇸🇬 Singapore 1 AMP"
     type: vmess
-    server: *game
+    server: *game1
     port: 80
     uuid: b80925d6-40fa-4161-9e32-3550965527fd
     alterId: 0
@@ -260,27 +267,23 @@ proxies:
       headers:
         Host: sg-atha.v2-ray.com
         
-  - name: "🇸🇬 CA"
-    type: trojan
-    server: ca.tjvpn.org
+  - name: "🇸🇬 CA WS"
+    server: *game1
     port: 443
+    type: trojan
     password: d399fb10-fc63-11ec-b431-225401db9d57
-    udp: true
-    sni: *tt1
     skip-cert-verify: true
-    
-  - name: "🇸🇬 FR"
-    type: trojan
-    server: fr-1.tjvpn.org
-    port: 443
-    password: 57e1e120-fd0c-11ec-b632-225401db9d57
+    sni: ca.tjvpn.org
+    network: ws
+    ws-opts:
+      path: /fastssh
+      headers:
+        Host: ca.tjvpn.org
     udp: true
-    sni: *tt1
-    skip-cert-verify: true
    
   - name: "🇸🇬 FR WS"
     server: *game
-    port: 443
+    port: 80
     type: trojan
     password: 57e1e120-fd0c-11ec-b632-225401db9d57
     skip-cert-verify: true
@@ -289,7 +292,7 @@ proxies:
     ws-opts:
       path: /fastssh
       headers:
-        Host: *game
+        Host: fr-1.tjvpn.org
     udp: true
         
 #06-07-2022
@@ -317,8 +320,7 @@ proxy-groups:
     interval: 300
     proxies:
     - "🇸🇬 Singapore OVH"
-    - "🇸🇬 CA"
-    - "🇸🇬 FR"
+    - "🇸🇬 CA WS"
     - "🇸🇬 FR WS"
   - name: VMESS
     type: select
