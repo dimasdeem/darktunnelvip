@@ -280,7 +280,7 @@ proxies:
    
   - name: "🇸🇬 FR WS"
     server: *game
-    port: 80
+    port: 443
     type: trojan
     password: 57e1e120-fd0c-11ec-b632-225401db9d57
     skip-cert-verify: true
