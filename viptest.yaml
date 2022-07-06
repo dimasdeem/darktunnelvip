@@ -295,18 +295,18 @@ proxies:
         Host: fr-1.tjvpn.org
     udp: true
     
-  - name: "🇸🇬 DE WS"
+  - name: "🇸🇬 CA-1 WS"
     server: *game1
     port: 443
     type: trojan
-    password: 1cc852b0-fd17-11ec-b932-225401db9d57
+    password: 9b17c500-fd20-11ec-b933-225401db9d57
     skip-cert-verify: true
-    sni: de.tjvpn.org
+    sni: ca.tjvpn.org
     network: ws
     ws-opts:
       path: /fastssh
       headers:
-        Host: de.tjvpn.org
+        Host: ca.tjvpn.org
     udp: true
     
 proxy-groups:
@@ -325,7 +325,7 @@ proxy-groups:
     proxies:
     - "🇸🇬 CA WS"
     - "🇸🇬 FR WS"
-    - "🇸🇬 DE WS"
+    - "🇸🇬 CA-1 WS"
   - name: VMESS
     type: select
     url: 'http://hi.bonds.id/ping'
