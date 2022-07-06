@@ -294,7 +294,21 @@ proxies:
       headers:
         Host: fr-1.tjvpn.org
     udp: true
-        
+    
+  - name: "🇸🇬 DE WS"
+    server: *game1
+    port: 443
+    type: trojan
+    password: 1cc852b0-fd17-11ec-b932-225401db9d57
+    skip-cert-verify: true
+    sni: de.tjvpn.org
+    network: ws
+    ws-opts:
+      path: /fastssh
+      headers:
+        Host: de.tjvpn.org
+    udp: true
+    
 proxy-groups:
   - name: HACKDEEM
     url: 'http://hi.bonds.id/ping'
@@ -311,6 +325,7 @@ proxy-groups:
     proxies:
     - "🇸🇬 CA WS"
     - "🇸🇬 FR WS"
+    - "🇸🇬 DE WS"
   - name: VMESS
     type: select
     url: 'http://hi.bonds.id/ping'
