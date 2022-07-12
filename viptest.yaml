@@ -248,66 +248,6 @@ proxies:
       path: /sshkit/5353729049/62c434a651ea0/
       headers:
         Host: *sg6
-        
-#Expired 13-07-2022
-  - name: "🇸🇬 Singapore 1 AMP"
-    type: vmess
-    server: *game3
-    port: 80
-    uuid: b80925d6-40fa-4161-9e32-3550965527fd
-    alterId: 0
-    cipher: auto
-    udp: true
-    tls: false
-    skip-cert-verify: true
-    servername: sg-atha.v2-ray.com
-    network: ws
-    ws-opts:
-      path: /fastssh/fyvuih7896ff/62c426617e20d/
-      headers:
-        Host: sg-atha.v2-ray.com
-        
-  - name: "🇸🇬 CA WS"
-    server: *game1
-    port: 443
-    type: trojan
-    password: d399fb10-fc63-11ec-b431-225401db9d57
-    skip-cert-verify: true
-    sni: ca.tjvpn.org
-    network: ws
-    ws-opts:
-      path: /fastssh
-      headers:
-        Host: ca.tjvpn.org
-    udp: true
-   
-  - name: "🇸🇬 FR WS"
-    server: *game1
-    port: 443
-    type: trojan
-    password: 57e1e120-fd0c-11ec-b632-225401db9d57
-    skip-cert-verify: true
-    sni: fr-1.tjvpn.org
-    network: ws
-    ws-opts:
-      path: /fastssh
-      headers:
-        Host: fr-1.tjvpn.org
-    udp: true
-    
-  - name: "🇸🇬 CA-1 WS"
-    server: *game1
-    port: 443
-    type: trojan
-    password: 9b17c500-fd20-11ec-b933-225401db9d57
-    skip-cert-verify: true
-    sni: ca.tjvpn.org
-    network: ws
-    ws-opts:
-      path: /fastssh
-      headers:
-        Host: ca.tjvpn.org
-    udp: true
     
 proxy-groups:
   - name: HACKDEEM
@@ -315,36 +255,11 @@ proxy-groups:
     interval: 300
     type: select
     proxies:
-    - TROJAN
-    - VMESS
-    - LB
-  - name: TROJAN
-    type: select
-    url: 'http://hi.bonds.id/ping'
-    interval: 300
-    proxies:
-    - "🇸🇬 CA WS"
-    - "🇸🇬 FR WS"
-    - "🇸🇬 CA-1 WS"
-  - name: VMESS
-    type: select
-    url: 'http://hi.bonds.id/ping'
-    interval: 300
-    proxies:
     - "🇸🇬 Singapore 1 HE"
     - "🇸🇬 Singapore 2 HE"
     - "🇸🇬 Singapore 3 HE"
     - "🇸🇬 Singapore 4 CTB"
     - "🇸🇬 Singapore 5 CTB"
     - "🇸🇬 Singapore 6 CTB"
-    - "🇸🇬 Singapore 1 AMP"
-  - name: LB
-    type: load-balance
-    strategy: round-robin
-    url: 'http://hi.bonds.id/ping'
-    interval: 300
-    proxies:
-    - VMESS
-    - TROJAN
 rules:
   - MATCH,HACKDEEM
