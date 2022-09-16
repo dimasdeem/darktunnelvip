@@ -134,11 +134,11 @@ bug:
   - &game cf-vod.nimo.tv  #WS CDN 80 v2ray
   - &game1 ir.huya.com  #WS CDN 443 trojan-go
   - &game2 cdn.riseofnowlin.mobi
-  - &game3 cftxvid.vod.nimo.tv #WS CDN 443 Trojan-go
-  - &pgame 104.17.206.159
+  - &game3 api.duniagames.co.id #WS CDN 443 Trojan-go
+  - &pgame3 104.18.41.141 #WS CDN 443
   - &pgame1 104.18.20.219
   - &pgame2 104.18.3.179
-  - &pgame3 104.18.12.120
+  - &pgame 104.18.12.120
   - &popok 104.17.2.81 #WS CDN 443
   - &opok api.midtrans.com 
   - &sg1 sg1-v2ray.sshkit.org
@@ -149,10 +149,10 @@ bug:
   - &sg6 sg6-v2ray.sshkit.org
 proxies:
 #Account Telegram i'am hackdeem
-#Expired 2022-09-14
+#Expired 2022-09-27
   - name: "🇸🇬 Singapore 1 HE"
     type: vmess
-    server: *popok
+    server: *pgame3
     port: 443
     uuid: c6747da4-fb2e-4a2a-bdb7-8614bdd6b0b3
     alterId: 0
@@ -160,16 +160,16 @@ proxies:
     udp: true
     tls: true
     skip-cert-verify: true
-    servername: *opok
+    servername: *game3
     network: ws
     ws-opts:
-      path: ws://api.midtrans.com/sshkit/1771367690/62fa0880e54b9/
+      path: ws://api.duniagames.co.id/sshkit/5085668734/630b54568be3e/
       headers:
         Host: *sg1
         
   - name: "🇸🇬 Singapore 2 HE"
     type: vmess
-    server: *popok
+    server: *pgame3
     port: 443
     uuid: c6747da4-fb2e-4a2a-bdb7-8614bdd6b0b3
     alterId: 0
@@ -177,16 +177,16 @@ proxies:
     udp: true
     tls: true
     skip-cert-verify: true
-    servername: *opok
+    servername: *game3
     network: ws
     ws-opts:
-      path: ws://api.midtrans.com/sshkit/1771367690/62fa08b620916/
+      path: ws://api.duniagames.co.id/sshkit/5085668734/630b5493b64f4/
       headers:
         Host: *sg2
         
   - name: "🇸🇬 Singapore 1 CTB"
     type: vmess
-    server: *popok
+    server: *pgame3
     port: 443
     uuid: c6747da4-fb2e-4a2a-bdb7-8614bdd6b0b3
     alterId: 0
@@ -194,16 +194,16 @@ proxies:
     udp: true
     tls: true
     skip-cert-verify: true
-    servername: *opok
+    servername: *game3
     network: ws
     ws-opts:
-      path: ws://api.midtrans.com/sshkit/1771367690/62fa08d67d11b/
+      path: ws://api.duniagames.co.id/sshkit/5085668734/630b54ab2db3d/
       headers:
         Host: *sg3
         
   - name: "🇸🇬 Singapore 2 CTB"
     type: vmess
-    server: *popok
+    server: *pgame3
     port: 443
     uuid: c6747da4-fb2e-4a2a-bdb7-8614bdd6b0b3
     alterId: 0
@@ -211,10 +211,10 @@ proxies:
     udp: true
     tls: true
     skip-cert-verify: true
-    servername: *opok
+    servername: *game3
     network: ws
     ws-opts:
-      path: ws://api.midtrans.com/sshkit/1771367690/62fa08f4b7abc/
+      path: ws://api.duniagames.co.id/sshkit/5085668734/630b54c254072/
       headers:
         Host: *sg4
         
