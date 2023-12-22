@@ -141,7 +141,8 @@ bug:
   - &pgame 104.18.12.120
   - &popok 104.17.2.81 #WS CDN 443
   - &opok api.midtrans.com 
-  - &sg1 sg1-v2ray.sshkit.org
+  - &vidio akoma.zendesk.com
+  - &sg1 id.hackdeem.cloud
   - &sg2 sg2-v2ray.sshkit.org
   - &sg3 sg3-v2ray.sshkit.org
   - &sg4 sg4-v2ray.sshkit.org
@@ -152,18 +153,18 @@ proxies:
 #Expired 2022-09-27
   - name: "🇸🇬 Singapore 1 HE"
     type: vmess
-    server: *pgame3
-    port: 443
+    server: *vidio
+    port: 80
     uuid: 7076aa18-20ec-4a66-b792-80d0d69ab74c
     alterId: 0
     cipher: auto
     udp: true
-    tls: true
+    tls: false
     skip-cert-verify: true
-    servername: *game3
+    servername: *sg1
     network: ws
     ws-opts:
-      path: ws://api.duniagames.co.id/sshkit/5085668734/630b54568be3e/
+      path: /vmess
       headers:
         Host: *sg1
         
