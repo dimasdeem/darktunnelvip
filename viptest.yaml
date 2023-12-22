@@ -137,32 +137,34 @@ bug:
   - &pgame1 104.18.20.219
   - &pgame2 104.18.3.179
   - &pgame3 104.18.12.120
+  - &vidio akoma.zendesk.com
   - &sg1 sg1-v2ray.sshkit.org
   - &sg2 sg2-v2ray.sshkit.org
   - &sg3 sg3-v2ray.sshkit.org
   - &sg4 sg4-v2ray.sshkit.org
   - &sg5 sg5-v2ray.sshkit.org
   - &sg6 sg6-v2ray.sshkit.org
+  - &id1 id.hackdeem.cloud
 proxies:
 #Account Telegram Deem
 #ID: 5353729094
 #Expired 2022-08-04
   - name: "🇸🇬 Singapore 1 HE"
     type: vmess
-    server: *game
+    server: *vidio
     port: 80
-    uuid: c6747da4-fb2e-4a2a-bdb7-8614bdd6b0b3
+    uuid: 7076aa18-20ec-4a66-b792-80d0d69ab74c
     alterId: 0
     cipher: auto
     udp: true
     tls: false
     skip-cert-verify: true
-    servername: *sg1
+    servername: *id1
     network: ws
     ws-opts:
-      path: /sshkit/5353729049/62c42d7ba5005/
+      path: /vmess
       headers:
-        Host: *sg1
+        Host: *id1
 
   - name: "🇸🇬 Singapore 2 HE"
     type: vmess
