@@ -137,7 +137,7 @@ bug:
   - &pgame1 104.18.20.219
   - &pgame2 104.18.3.179
   - &pgame3 104.18.12.120
-  - &vidio akoma.zendesk.com
+  - &vd akoma.zendesk.com
   - &sg1 sg1-v2ray.sshkit.org
   - &sg2 sg2-v2ray.sshkit.org
   - &sg3 sg3-v2ray.sshkit.org
@@ -151,7 +151,7 @@ proxies:
 #Expired 2022-08-04
   - name: "🇸🇬 Singapore 1 HE"
     type: vmess
-    server: *vidio
+    server: *vd
     port: 80
     uuid: 7076aa18-20ec-4a66-b792-80d0d69ab74c
     alterId: 0
