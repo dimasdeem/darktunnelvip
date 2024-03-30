@@ -145,26 +145,28 @@ bug:
   - &sg5 sg5-v2ray.sshkit.org
   - &sg6 sg6-v2ray.sshkit.org
   - &id1 id.hackdeem.cloud
+  - &vip vip09-trojan.globalssh.com
+  - &shp www.shopee.co.id
 proxies:
 #Account Telegram Deem
 #ID: 5353729094
 #Expired 2022-08-04
   - name: "🇸🇬 Singapore 1 HE"
     type: vmess
-    server: *vd
-    port: 80
-    uuid: 7076aa18-20ec-4a66-b792-80d0d69ab74c
+    server: *vip
+    port: 443
+    uuid: 6ce2b951-3308-4334-98c7-74c3bf2a80cc
     alterId: 0
     cipher: auto
     udp: true
-    tls: false
+    tls: true
     skip-cert-verify: true
-    servername: *id1
+    servername: *shp
     network: ws
     ws-opts:
-      path: /vmess
+      path: /vmess-ws
       headers:
-        Host: *id1
+        Host: *vip
 
   - name: "🇸🇬 Singapore 2 HE"
     type: vmess
