@@ -145,7 +145,7 @@ bug:
   - &sg5 sg5-v2ray.sshkit.org
   - &sg6 sg6-v2ray.sshkit.org
   - &id1 id.hackdeem.cloud
-  - &vip vip09-trojan.globalssh.com
+  - &vip vip09-vmess.globalssh.com
   - &shp www.shopee.co.id
 proxies:
 #Account Telegram Deem
